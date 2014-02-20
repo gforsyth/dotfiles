@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/gil/Dropbox/Class Materials/CFD/steps1-8'
+let g:netrw_dirhist_2='/home/gil/Dropbox/VESPR/arduino/arduino_portreg_test1'
+let g:netrw_dirhist_3='/var/log/journal/15cad69fc35a4eac8341389f92e893d8'
