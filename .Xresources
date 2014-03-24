@@ -9,6 +9,9 @@ dzen2.foreground: white
 dzen2.background: black
 
 
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
 
 *color0:  #2E3436
 *color1:  #a40000
