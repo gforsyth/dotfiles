@@ -73,6 +73,7 @@
 #
 # N.B. The shell used can be changed in `options.wini`.
 Mod4-t := Shell "urxvt"
+Mod4-f := Shell "thunar"
 Mod1-F2 := Shell "gmrun"
 Mod4-w := Shell "chromium"
 
@@ -149,7 +150,7 @@ Mod1-w := HeadFocus 0
 Mod1-w := MovePointerRelative 0 0
 Mod1-e := HeadFocus 1
 Mod1-e := MovePointerRelative 0 0
-Mod1-r := HeadFocus 2
+#Mod1-r := HeadFocus 2
 Mod1-r := MovePointerRelative 0 0
 
 # Move focus and the current client to a particular monitor.
@@ -159,6 +160,9 @@ Mod1-Shift-e := HeadFocusWithClient 1 (GetActive)
 Mod1-Shift-e := MovePointerRelative 0 0
 Mod1-Shift-r := HeadFocusWithClient 2 (GetActive)
 Mod1-Shift-r := MovePointerRelative 0 0
+
+# Rename current workspace 
+Mod1-r := RenameWorkspace (GetWorkspace)(Input "New Name:")
 
 # Your every day Alt-Tab. Use WingoHelp or `wingo-cmd --usage CycleClientNext`
 # to discover what each of the parameters means. (They specify which kinds of
