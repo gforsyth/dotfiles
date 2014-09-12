@@ -42,7 +42,7 @@ alias winesteam="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -n
 
 export BROWSER="/usr/bin/chromium"
 
-export PATH=$PATH:/home/gil/.gem/ruby/2.1.0/bin
+#export PATH=$PATH:/home/gil/.gem/ruby/2.1.0/bin
 #export CPATH=/usr/include/libusb-1.0/:/usr/local/include/aiousb
 #export AIOUSBLIBDIR=/usr/local/lib
 
