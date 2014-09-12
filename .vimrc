@@ -15,18 +15,11 @@ set columns=140
 set softtabstop=4
 set smarttab
 
-let g:tex_flavor = 'latex'
-
 set foldmethod=indent
 set foldlevel=20
 
 call pathogen#infect()
 call pathogen#helptags()
-
-" Recommended for xelatex users who wants SyncTeX support
-let g:tex_nine_config = {
-    \'compiler': 'xelatex'
-\}
 
 let maplocalleader = ","
 
