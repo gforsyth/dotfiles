@@ -97,4 +97,4 @@ fi
 while true ; do
     echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(dropDown) / $(dropUp)"
     sleep 1
-done | dzen2 -dock -x 50 -w 600 -fn '-*-clean-*-*-*-*-9-*-*-*-*-*-*-*' -xs "$1"
+done | dzen2 -dock -x 50 -w 800 -fn '-*-clean-*-*-*-*-9-*-*-*-*-*-*-*' -xs "$1"

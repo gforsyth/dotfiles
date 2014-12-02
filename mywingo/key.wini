@@ -75,7 +75,7 @@
 Mod4-t := Shell "urxvt"
 Mod4-f := Shell "thunar"
 Mod1-F2 := Shell "gmrun"
-Mod4-w := Shell "chromium"
+Mod4-w := Shell "google-chrome-stable"
 
 # You could also use Wingo's Shell command to execute commands on the fly.
 # In all likelihood, you should use a real launcher like `gmrun` or `dmenu`.

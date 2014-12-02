@@ -5,6 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+
+##################################################
+               # shut down obnoxious UIM errors
+export GTK_IM_MODULE="gtk-im-context-simple"
+##################################################
+
 ##################################################
                # prompt settings
 ##################################################
@@ -36,11 +42,12 @@ fi
 alias ls='ls --color=auto'
 alias lock='xscreensaver-command -lock'
 alias bd=". bd -s"
+alias scrot="escrotum -s"
 alias winesteam="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-dwrite"
 ##################################################
 ##################################################
 
-export BROWSER="/usr/bin/chromium"
+export BROWSER="/usr/bin/google-chrome-stable"
 
 #export PATH=$PATH:/home/gil/.gem/ruby/2.1.0/bin
 #export CPATH=/usr/include/libusb-1.0/:/usr/local/include/aiousb

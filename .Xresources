@@ -1,7 +1,7 @@
 Xcursor.theme: /usr/share/icons/OpenZone_Black_Slim 
 Xcursor.size: 22
 urxvt*foreground: white
-URxvt.font: xft:monaco:size=10
+URxvt.font: xft:Linux Libertine Mono:size=10
 urxvt*background: black
 
 dzen2.font:       xft:monaco:size=10 
@@ -10,7 +10,7 @@ dzen2.background: black
 
 
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/chromium
+URxvt.url-launcher: /usr/bin/google-chrome-stable
 URxvt.matcher.button: 1
 
 *color0:  #2E3436
