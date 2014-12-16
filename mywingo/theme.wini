@@ -76,7 +76,7 @@
 $THIN_COLOR := 0x585a5d
 
 [Full]
-font := /usr/share/fonts/TTF/LinBiolinum_RBah.ttf
+font := /usr/share/fontforge/pixmaps/Inconsolata-Regular.ttf
 font_size := 12
 a_font_color := 0xffffff
 i_font_color := 0x000000

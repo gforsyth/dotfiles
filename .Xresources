@@ -1,7 +1,7 @@
 Xcursor.theme: /usr/share/icons/OpenZone_Black_Slim 
 Xcursor.size: 22
 urxvt*foreground: white
-URxvt.font: xft:Linux Libertine Mono:size=10
+URxvt.font: xft:Inconsolata:size=12
 urxvt*background: black
 
 dzen2.font:       xft:monaco:size=10 
