@@ -7,6 +7,7 @@
 feh --bg-center "$(find ~/.backgrounds/|shuf -n1)" &
 xbindkeys
 xrdb -merge ~/.Xresources
+setxkbmap -option 'ctrl:nocaps'
 xsetroot -cursor_name left_ptr
 #xscreensaver -no-splash
 /home/gil/.dotfiles/status.sh 0 &
