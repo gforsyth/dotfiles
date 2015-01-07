@@ -9,9 +9,19 @@ dzen2.foreground: white
 dzen2.background: black
 
 
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,font-size,selection-to-clipboard
 URxvt.url-launcher: /usr/bin/google-chrome-stable
 URxvt.matcher.button: 1
+
+!Key bindings for font size change
+URxvt.keysym.C-Up:  perl:font-size:increase
+URxvt.keysym.C-Down:  perl:font-size:decrease
+URxvt.keysym.C-S-Up:  perl:font-size:incglobal
+URxvt.keysym.C-S-Down:  perl:font-size:decglobal
+
+!Disable default binding for Ctrl+Shift bindings to work
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 *color0:  #2E3436
 *color1:  #a40000
