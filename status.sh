@@ -53,49 +53,17 @@ myDate(){
     echo "$MYDATE || "
 }
 
-dropDown(){
-status=`dropbox status | grep Downloading`
-SYNC_REGEX="([0-9,]+) KB/sec"
-
-[[ $status =~ $SYNC_REGEX ]]
-download_speed="${BASH_REMATCH[1]}"
-if [[ $download_speed != "" ]] ; then
-  echo "$download_speed KB/sec"
-fi
+windowName(){
+    WINDOW=`wingo-cmd 'GetClientName (GetActive)'`
+    echo "$WINDOW || "
 }
-
-dropUp(){
-status=`dropbox status | grep Uploading`
-SYNC_REGEX="([0-9.]+) KB/sec"
-
-[[ $status =~ $SYNC_REGEX ]]
-upload_speed="${BASH_REMATCH[1]}"
-if [[ $upload_speed != "" ]] ; then
-  echo "$upload_speed KB/sec"
-fi
+workspaceName(){
+    WORKSPACE=`python2 ~/.dotfiles/dzen-workspaces.py`
+    echo "$WINDOW"
 }
-
-dropFile(){
-status=`dropbox status | grep Syncing`
-SYNC_REGEX="([0-9.]+) files remaining"
-FILENAME_REGEX='"(.*)"'
-
-[[ $status =~ $SYNC_REGEX ]]
-files_remaining="${BASH_REMATCH[1]}"
-if [[ $files_remaining == "" ]]; then
-
-    [[ $status =~ $FILENAME_REGEX ]]
-    filename="${BASH_REMATCH[1]}"
-    echo $filename
-
-else
-    echo "$files_remaining files"
-fi
-}
-
 
 while true ; do
     #echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(dropDown) / $(dropUp)"
-    echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)"
+    echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(windowName)"
     sleep 1
-done | dzen2 -dock -x 50 -w 800 -fn '-*-clean-*-*-*-*-9-*-*-*-*-*-*-*' -xs "$1"
+done | dzen2 -dock -x 50 -w 900 -ta l -fn '-*-clean-*-*-*-*-9-*-*-*-*-*-*-*' -xs "$1"
