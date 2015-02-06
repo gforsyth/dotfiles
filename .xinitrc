@@ -18,15 +18,19 @@ xsetroot -cursor_name left_ptr
 /home/gil/.dotfiles/status.sh 0 &
 /home/gil/.dotfiles/workspace.sh 0 &
 
+#start dropbox
+dropbox start
 #start up screensaver demon (should probably change this)
-( ( sleep 10 && /usr/bin/xscreensaver -no-splash -display :0.0 ) & )
-xss-lock -- xscreensaver-command -lock &
+#( ( sleep 10 && /usr/bin/xscreensaver -no-splash -display :0.0 ) & )
+#xss-lock -- xscreensaver-command -lock &
 
 #configure uim for japanese input
 export GTK_IM_MODULE='uim'
 export QT_IM_MODULE='uim'
 uim-xim &
 export XMODIFIERS='@im=uim'
+
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 #launch wingo
 exec wingo 
