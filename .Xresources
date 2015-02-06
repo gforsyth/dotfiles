@@ -10,7 +10,7 @@ dzen2.background: black
 
 
 URxvt.perl-ext-common: default,matcher,font-size,selection-to-clipboard
-URxvt.url-launcher: /usr/bin/google-chrome-stable
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 !Key bindings for font size change
