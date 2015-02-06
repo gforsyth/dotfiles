@@ -9,12 +9,21 @@ myVol(){
     MUTEICON="^fg(white) ^i($ICONPATH/mute.xbm)"
     VOLICON="^fg(white) ^i($ICONPATH/spkr_01.xbm)"
     if [ "$MUTED" = "[off]" ]; then
-        echo "$MUTEICON || "
+        echo "$MUTEICON "
     else
-        echo "$VOLICON $PERCENT || "
+        echo "$VOLICON $PERCENT "
     fi
 }
-
+myMusic(){
+    if cmus-remote -Q; then
+        TRACK=`cmus-remote -Q | grep title | sed 's/tag//' | sed 's/title//'`
+        ALBUM=`cmus-remote -Q | grep album | sed 's/tag//' | sed 's/album//'`
+        #echo "$ALBUM - $TRACK ||"
+        echo "$TRACK ||"
+    else
+        echo "|| "
+    fi
+}
 myBat(){
     bat_text="$(acpi -b)"
     if acpi -b | grep -q Charging; then
@@ -61,9 +70,13 @@ workspaceName(){
     WORKSPACE=`python2 ~/.dotfiles/dzen-workspaces.py`
     echo "$WINDOW"
 }
+coretemp(){
+    temps=`echo $(sensors | grep Core | cut -d ':' -f2 | cut -d "(" -f1 | cut -d "+" -f2 | tr '\n' ' ')`
+    echo "$temps || "
+}
 
 while true ; do
     #echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(dropDown) / $(dropUp)"
-    echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(windowName)"
+    echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(coretemp)$(windowName)"
     sleep 1
 done | dzen2 -dock -x 50 -w 900 -ta l -fn '-*-clean-*-*-*-*-9-*-*-*-*-*-*-*' -xs "$1"
