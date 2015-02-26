@@ -10,13 +10,15 @@ filetype indent on
 filetype on
 filetype plugin on
 set noswapfile
-set lines=40
-set columns=140
+set lines=24
+set columns=80
 set softtabstop=4
 set smarttab
 
 set foldmethod=indent
 set foldlevel=20
+
+set clipboard=unnamedplus
 
 call pathogen#infect()
 call pathogen#helptags()
