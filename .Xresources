@@ -8,7 +8,10 @@ dzen2.font:       xft:monaco:size=10
 dzen2.foreground: white
 dzen2.background: black
 
-
+!matcher:clickable URLs
+!font-size: change fontsize on the fly
+!selection-to-clipboard: link urxvt to regular clipboard
+!tabbedex: enable tabs
 URxvt.perl-ext-common: default,matcher,font-size,selection-to-clipboard
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
@@ -18,6 +21,12 @@ URxvt.keysym.C-Up:  perl:font-size:increase
 URxvt.keysym.C-Down:  perl:font-size:decrease
 URxvt.keysym.C-S-Up:  perl:font-size:incglobal
 URxvt.keysym.C-S-Down:  perl:font-size:decglobal
+
+!Tab colorscheme
+URxvt.tabbedex.tabbar-fg: 2
+URxvt.tabbedex.tabbar-bg: 0
+URxvt.tabbedex.tab-fg: 4
+URxvt.tabbedex.tab-bg: 0
 
 !Disable default binding for Ctrl+Shift bindings to work
 URxvt.iso14755: false
