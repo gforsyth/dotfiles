@@ -22,5 +22,4 @@ zstyle ':completion:*' menu select
 alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
-eval $(keychain --eval --agents ssh -Q --quiet id_ed25519)
-eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+eval $(keychain --eval --agents ssh -Q --quiet id_ed25519 id_rsa)
