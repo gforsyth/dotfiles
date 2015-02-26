@@ -173,6 +173,8 @@ Mod1-Shift-Tab := CycleClientPrev "yes" "no" "yes"
 # List all windows and focus/raise the selected client.
 Mod4-space := FocusRaise (SelectClient "Any" "no" "no" "yes")
 
+Mod4-Shift-space := WorkspaceSendClient (GetWorkspace) (FocusRaise (SelectClient "Any" "no" "no" "yes"))
+
 # List all workspaces, and greedily switch to the one selected.
 Mod4-return := WorkspaceGreedy (SelectWorkspace "Prefix")
 
