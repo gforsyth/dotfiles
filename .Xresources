@@ -3,6 +3,7 @@ Xcursor.size: 22
 urxvt*foreground: white
 URxvt.font: xft:Inconsolata:size=12
 urxvt*background: black
+URxvt*termName: rxvt
 
 dzen2.font:       xft:monaco:size=10 
 dzen2.foreground: white
