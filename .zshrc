@@ -22,4 +22,11 @@ zstyle ':completion:*' menu select
 alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
+export PATH=/home/gil/anaconda/bin:$PATH
+
+# PETSC Options
+export PETSC_ARCH=arch-linux2-cxx-opt
+export PETSC_DIR=/opt/petsc
+
 eval $(keychain --eval --agents ssh -Q --quiet id_ed25519 id_rsa)
+source ~/.autoenv/activate.sh
