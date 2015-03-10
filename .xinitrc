@@ -24,6 +24,11 @@ dropbox start
 #( ( sleep 10 && /usr/bin/xscreensaver -no-splash -display :0.0 ) & )
 #xss-lock -- xscreensaver-command -lock &
 
+#synchronizes copy/paste buffers used by X applications
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
+
 #configure uim for japanese input
 export GTK_IM_MODULE='uim'
 export QT_IM_MODULE='uim'
