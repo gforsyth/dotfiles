@@ -25,8 +25,8 @@ unset GREP_OPTIONS
 export PATH=/home/gil/anaconda/bin:$PATH
 
 # PETSC Options
-export PETSC_ARCH=arch-linux2-cxx-opt
-export PETSC_DIR=/opt/petsc
+#export PETSC_ARCH=simple
+#export PETSC_DIR=/home/gil/git/petsc
 
 eval $(keychain --eval --agents ssh -Q --quiet id_ed25519 id_rsa)
-source ~/.autoenv/activate.sh
+source /usr/share/autoenv-git/activate.sh
