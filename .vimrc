@@ -5,6 +5,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 syntax on
+set nu
 
 filetype indent on
 filetype on
