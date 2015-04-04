@@ -79,7 +79,7 @@ coretemp(){
 while true ; do
     case $HOSTNAME in
         (theo) echo "$(myDistro)$(myDate)$(myVol)$(coretemp)$(windowName)";;
-        (*) echo echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(coretemp)$(windowName)";;
+        (*) echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(coretemp)$(windowName)";;
     esac
     sleep 1
 done | dzen2 -dock -x 50 -w 900 -ta l -fn '-*-clean-*-*-*-*-9-*-*-*-*-*-*-*' -xs "$1"
