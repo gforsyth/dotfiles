@@ -151,7 +151,7 @@ Mod1-w := MovePointerRelative 0 0
 Mod1-e := HeadFocus 1
 Mod1-e := MovePointerRelative 0 0
 #Mod1-r := HeadFocus 2
-Mod1-r := MovePointerRelative 0 0
+#Mod1-r := MovePointerRelative 0 0
 
 # Move focus and the current client to a particular monitor.
 Mod1-Shift-w := HeadFocusWithClient 0 (GetActive)
