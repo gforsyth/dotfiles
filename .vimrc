@@ -46,7 +46,7 @@ nmap <F8> :TlistToggle<CR>
 
 " 
 " If filetype is cpp, bind F4 to run g++, run file and remove
-autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('bin/%:r').' && ./'.shellescape('bin/%:r')<CR>
+autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ -std=c++11 '.shellescape('%').' -o '.shellescape('bin/%:r').' && ./'.shellescape('bin/%:r')<CR>
 autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 
 
