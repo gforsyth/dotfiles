@@ -27,11 +27,13 @@ alias FUCK='fuck'
 
 export PATH=$PATH:/home/gil/anaconda/bin
 export EDITOR="vim"
+export BROWSER="chromium"
 # PETSC Options
 export PETSC_ARCH=arch-linux2-c-debug
-export PETSC_DIR=/home/gil/git/petsc
+export PETSC_DIR=/home/gil/petsc/petsc-3.6.0
 
-export TERM=xterm-256color
+
+export TERM=rxvt-unicode-256color
 
 eval $(keychain --eval --agents ssh -Q --quiet id_ed25519)
 keychain --agents ssh -Q --quiet ~/.ssh/id_rsa
