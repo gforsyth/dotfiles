@@ -29,7 +29,7 @@ filetype indent on
 filetype on
 filetype plugin on
 set noswapfile
-set lines=24
+" set lines=54
 set columns=80
 set softtabstop=4
 set smarttab
@@ -38,6 +38,16 @@ set foldmethod=indent
 set foldlevel=20
 
 set clipboard=unnamedplus
+
+set cmdheight=2
+
+" Ignore case when searching
+set ignorecase
+
+" Turn off vim backup stuff -- not really necessary
+set nobackup
+set nowb
+set noswapfile
 
 nnoremap <F5> "=strftime("%F")<CR> 
 inoremap <F5> <C-R>=strftime("%F")<CR> 
