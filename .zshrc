@@ -30,9 +30,6 @@ alias feh='feh -.'
 export PATH=$PATH:/home/gil/anaconda/bin
 export EDITOR="vim"
 export BROWSER="chromium"
-# PETSC Options
-export PETSC_ARCH=arch-linux2-c-debug
-export PETSC_DIR=/home/gil/petsc/petsc-3.6.0
 
 
 export TERM=rxvt-unicode-256color
