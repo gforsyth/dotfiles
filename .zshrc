@@ -24,6 +24,7 @@ unset GREP_OPTIONS
 
 alias fuck='eval $(thefuck $(fc -ln -1)); history -R'
 alias FUCK='fuck'
+alias feh='feh -.'
 
 export PATH=$PATH:/home/gil/anaconda/bin
 export EDITOR="vim"
