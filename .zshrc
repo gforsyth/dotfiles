@@ -26,8 +26,10 @@ alias fuck='eval $(thefuck $(fc -ln -1)); history -R'
 alias FUCK='fuck'
 # make feh always scale images to window size
 alias feh='feh -.'
+alias dropbox='dropbox-cli'
+alias mount='sudo mount -o uid=gil,gid=users'
 
-export PATH=$PATH:/home/gil/anaconda/bin
+export PATH=$PATH:/home/gil/anaconda/bin:/home/gil/.gem/ruby/2.2.0/bin
 export EDITOR="vim"
 export BROWSER="chromium"
 
