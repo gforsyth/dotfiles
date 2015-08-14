@@ -1,5 +1,4 @@
 set nocompatible
-filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -9,6 +8,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'vim-scripts/TeX-9'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 
 "shortcuts for resizing splits
@@ -43,12 +45,19 @@ set clipboard=unnamedplus
 set cmdheight=2
 
 " Ignore case when searching
-set ignorecase
+"set ignorecase
 
 " Turn off vim backup stuff -- not really necessary
 set nobackup
 set nowb
 set noswapfile
+
+" Leader key for plugins
+let mapleader = ""
+" TeX_9 settings
+let g:tex_flavor = 'latex'
+let g:tex_nine_config = {'compiler': 'pdflatex', 'viewer': 'llpp'}
+
 
 nnoremap <F5> "=strftime("%F")<CR> 
 inoremap <F5> <C-R>=strftime("%F")<CR> 
