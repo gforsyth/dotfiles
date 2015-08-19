@@ -74,3 +74,8 @@
 
 ;; disable backup files (that's what git is for)
 (setq make-backup-files nil)
+
+;; powerline
+(require 'powerline-evil)
+(powerline-evil-vim-color-theme)
+(display-time-mode t)
