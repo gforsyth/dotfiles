@@ -66,3 +66,8 @@
 
 ;; Set up git in EMACS
 (require 'git)
+
+;; Add powerline
+(require 'powerline)
+(powerline-evil-vim-color-theme)
+(display-time-mode t)
