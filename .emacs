@@ -68,7 +68,5 @@
 ;; Set up git in EMACS
 (require 'git)
 
-;; Add powerline
-;;(require 'powerline-evil)
-;;(powerline-evil-vim-color-theme)
-;;(display-time-mode t)
+;; disable backup files (that's what git is for)
+(setq make-backup-files nil)
