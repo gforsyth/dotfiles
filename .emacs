@@ -10,6 +10,10 @@
 (require 'evil)
 (evil-mode t)
 
+;; prevent cursor from moving back one position when exiting insert mode
+(setq evil-move-cursor-back nil)
+
+
 (load-theme 'misterioso)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
