@@ -34,7 +34,7 @@
  )
 
 ;; when capturing new notes, place them in notes.org sub orgfile in org-directory
-(setq org-directory "~/Dropbox/emacsnotes/")
+(setq org-directory "~/Dropbox/notes/")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 
