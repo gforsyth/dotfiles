@@ -21,7 +21,7 @@
    (quote
     ((auto-mode . emacs)
      ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . default)))))
+     ("\\.x?html?\\'" . "chromium %s")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,6 +37,7 @@
 ;; appearance shit
 (setq line-number-mode t)
 (require 'linum)
+(linum-mode t)
 
 ;; load python and gnu calc so it can be run inline
 (org-babel-do-load-languages
@@ -68,6 +69,6 @@
 (require 'git)
 
 ;; Add powerline
-(require 'powerline)
-(powerline-evil-vim-color-theme)
-(display-time-mode t)
+;;(require 'powerline-evil)
+;;(powerline-evil-vim-color-theme)
+;;(display-time-mode t)
