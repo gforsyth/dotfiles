@@ -73,7 +73,6 @@
 #
 # N.B. The shell used can be changed in `options.wini`.
 Mod4-t := Shell "urxvt"
-Mod4-f := Shell "thunar"
 Mod1-F2 := Shell "gmrun"
 Mod4-w := Shell "chromium"
 
@@ -86,7 +85,7 @@ Mod4-w := Shell "chromium"
 Mod4-c := Close (GetActive)
 Mod1-Shift-c := Quit
 Mod4-x := ToggleMaximize (GetActive)
-Mod1-f := ToggleFloating (GetActive)
+Mod4-f := ToggleFloating (GetActive)
 Mod1-s := ToggleSticky (GetActive)
 
 # WingoExec will allow you to execute *any* Wingo command.
@@ -200,7 +199,7 @@ Mod1-j := AutoPrev (GetWorkspace)
 Mod1-Shift-k := AutoSwitchNext (GetWorkspace)
 Mod1-Shift-j := AutoSwitchPrev (GetWorkspace)
 Mod1-m := AutoMaster (GetWorkspace)
-Mod1-Shift-return := AutoMakeMaster (GetWorkspace)
+# Mod1-Shift-return := AutoMakeMaster (GetWorkspace)
 Mod1-comma := AutoMastersFewer (GetWorkspace)
 Mod1-period := AutoMastersMore (GetWorkspace)
 
