@@ -7,6 +7,7 @@ antigen bundle git
 antigen bundle docker
 antigen bundle pip
 antigen bundle archlinux
+antigen bundle emacs
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -29,7 +30,7 @@ alias feh='feh -.'
 alias dropbox='dropbox-cli'
 alias mount='sudo mount -o uid=gil,gid=users'
 
-export PATH=$PATH:/home/gil/anaconda/bin:/home/gil/.gem/ruby/2.2.0/bin
+export PATH=/home/gil/anaconda/bin:$PATH
 export EDITOR="vim"
 export BROWSER="chromium"
 
