@@ -20,7 +20,6 @@
 ;; when capturing new notes, place them in notes.org sub orgfile in org-directory
 (setq org-directory "~/Dropbox/notes/")
 (setq org-default-notes-file (concat org-directory "/scratch.org"))
-(define-key global-map "\C-cc" 'org-capture)
 
 ;; set up capture templates -- what do I need?
 ;; TODOs -> TODO.org
@@ -38,6 +37,15 @@
    (org-agenda-files :maxlevel . 2) ; refile to any of these files
     ))
 
+;; org-mode shortcuts from manual
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cc" 'org-capture)
+(define-key global-map "\C-cb" 'org-iswitchb)
+
+;; log time when TODO marked done
+(setq org-log-done 'time)
+
 ;; ipython kernel
 (require 'ob-ipython)
 
@@ -47,7 +55,7 @@
 (global-linum-mode 1)
 
 ;; wrap lines by default
-(visual-line-mode 1)
+(global-visual-line-mode t)
 
 ;; load python and gnu calc so it can be run inline
 (org-babel-do-load-languages
@@ -116,7 +124,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/research.past.and.present.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
+    ("~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/research.past.and.present.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
  '(org-refile-targets
    (quote
     ((nil :maxlevel . 5)
