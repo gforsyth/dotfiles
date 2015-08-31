@@ -82,4 +82,4 @@ while true ; do
         (*) echo "$(myDistro)$(myDate)$(myWireless)$(myVol)$(myBat)$(coretemp)$(windowName)";;
     esac
     sleep 1
-done | dzen2 -dock -x 50 -w 900 -ta l -fn '-*-clean-*-*-*-*-9-*-*-*-*-*-*-*' -xs "$1"
+done | dzen2 -dock -x 50 -w 900 -ta l -fn '-*-clean-*-*-*-*-10-*-*-*-*-*-*-*' -xs "$1"
