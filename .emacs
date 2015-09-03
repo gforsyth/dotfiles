@@ -115,6 +115,16 @@
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)))
 
+;; markdown mode settings
+(autoload 'markdown-mode "markdown-mode"
+       "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; custom file handlers
+(setq org-file-appls '((auto-mode . emacs)
+		       ("\\.pdf\\'" . "llpp %s")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -125,6 +135,13 @@
  '(org-agenda-files
    (quote
     ("~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/research.past.and.present.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
+ '(org-file-apps
+   (quote
+    ((auto-mode . emacs)
+     ("\\.mm\\'" . default)
+     ("\\.x?html?\\'" . default)
+     ("\\.pdf\\'" . "evince %s")
+     ("\\.pdf::\\([0-9]+\\)\\'" . "evince \"%s\" -p %1"))))
  '(org-refile-targets
    (quote
     ((nil :maxlevel . 5)
