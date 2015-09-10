@@ -20,6 +20,9 @@
 
 (load-theme 'misterioso)
 
+;; set default directory to dropbox
+(setq default-directory "/home/gil/Dropbox/notes/")
+
 ;; when capturing new notes, place them in notes.org sub orgfile in org-directory
 (setq org-directory "~/Dropbox/notes/")
 (setq org-default-notes-file (concat org-directory "/scratch.org"))
