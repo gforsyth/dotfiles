@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: SRC_BLOCK
+# key: SRC
+# binding: direct-keybinding
+# --
+#+BEGIN_SRC
+$0
+#+END_SRC
