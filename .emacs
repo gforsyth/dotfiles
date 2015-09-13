@@ -154,7 +154,25 @@
            ("\\paragraph{%s}" . "\\paragraph*{%s}")
            ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-
+;; reftex in orgmode for citing papers
+;; (defun org-mode-reftex-setup ()
+;;   (load-library "reftex")
+;;   (and (buffer-file-name) (file-exists-p (buffer-file-name))
+;;        (progn
+;; 	 ;enable auto-revert-mode to update reftex when bibtex file changes on disk
+;; 	 (global-auto-revert-mode t)
+;; 	 (reftex-parse-all)
+;; ;;	 ;add a custom reftex cite format to insert links
+;; 	 (reftex-set-cite-format
+;; 	  '((?b . "[[bib:%l][%l-bib]]")
+;; 	    (?n . "[[notes:%l][%l-notes]]")
+;; 	    (?p . "[[/home/gil/Dropbox/notes/papers/:%l][%l-paper]]")
+;; 	    (?t . "%t")
+;; 	    (?h . "** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n[[papers:%l][%l-paper]]")))))
+;;   (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
+;;   (define-key org-mode-map (kbd "C-c (") 'org-mode-reftex-search))
+;; 
+;; (add-hook 'org-mode-hook 'org-mode-reftex-setup)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -164,7 +182,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/research.past.and.present.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
+    ("~/Dropbox/notes/todo.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
