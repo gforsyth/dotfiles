@@ -7,6 +7,14 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+;; turn off scroll bar and toolbar
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; disable tabs
+(setq tab-width 4
+      indent-tabs-mode nil)
+
 ;; can't learn vim AND emacs, can I?
 (require 'evil)
 (evil-mode t)
@@ -131,6 +139,16 @@
 ;; custom file handlers
 (setq org-file-appls '((auto-mode . emacs)
 		       ("\\.pdf\\'" . "llpp %s")))
+
+;; i don't like typing out 'yes' or 'no'
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; set up deft (note searching)
+(require 'deft)
+(setq deft-directory "~/Dropbox/notes")
+(setq deft-use-filename-as-title t)
+(setq deft-extension "org")
+(setq deft-text-mode 'org-mode)
 
 ;; fix latex preamble
 (require 'ox-latex)
