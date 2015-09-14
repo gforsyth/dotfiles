@@ -7,7 +7,31 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-;; turn off scroll bar and toolbar
+;; autoinstall packages if not found
+;; (defvar gforsyth/packages '(evil
+;; 			    ob-ipython
+;; 			    linum
+;; 			    helm
+;; 			    deft
+;; 			    yasnippet)
+;;   "Default packages")
+;; 
+;; ;; from aaronbedra.com/emacs.d
+;; (defun gforsyth/packages-installed-p ()
+;;   (loop for pkg in gforsyth/packages
+;;         when (not (package-installed-p pkg)) do (return nil)
+;;         finally (return t)))
+;; 
+;; (unless (gforsyth/packages-installed-p)
+;;   (message "%s" "Refreshing package database...")
+;;   (package-refresh-contents)
+;;   (dolist (pkg gforsyth/packages)
+;;     (when (not (package-installed-p pkg))
+;;       (package-install pkg))))
+ 
+			    
+
+;; Turn off scroll bar and toolbar
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
@@ -88,9 +112,10 @@
 (setq org-return-follows-link t)
 
 ;;(setq org-completion-use-ido t)
-(auto-complete-mode t)
+(require 'auto-complete)
+(global-auto-complete-mode t)
 
-(icomplete-mode 1)
+;(icomplete-mode 1)
 
 (require 'helm)
 (require 'helm-config)
@@ -150,6 +175,9 @@
 (setq deft-extension "org")
 (setq deft-text-mode 'org-mode)
 
+;; autopair braces etc...
+(require 'autopair)
+
 ;; fix latex preamble
 (require 'ox-latex)
 
@@ -200,7 +228,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/todo.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
+    ("~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/todo.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
