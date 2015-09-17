@@ -230,7 +230,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/labnotebook.org")))
+    ("~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/main.org" "~/Dropbox/notes/todo.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/labnotebook.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
