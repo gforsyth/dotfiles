@@ -1,4 +1,12 @@
 $PATH.insert(0,'/home/gil/anaconda/bin')
 
+aliases['feh'] = 'feh -.'
+aliases['dropbox'] = 'dropbox-cli'
+
+$EDITOR="vim"
+$BROWSER="chromium"
+$TERM="rxvt-unicode-256color"
+
+evalx("keychain --eval --agents ssh -Q --quiet id_ed25519") 
 
 
