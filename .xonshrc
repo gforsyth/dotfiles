@@ -7,7 +7,7 @@ $EDITOR="vim"
 $BROWSER="chromium"
 $TERM="rxvt-unicode-256color"
 
-evalx("keychain ~/.ssh/id_ed25519")
+evalx("keychain --quiet ~/.ssh/id_ed25519")
 source-bash ~/.keychain/theo-sh
 
 
