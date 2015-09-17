@@ -46,6 +46,8 @@
 ;; prevent cursor from moving back one position when exiting insert mode
 (setq evil-move-cursor-back nil)
 
+;; automagically reload buffers when they're changed on disk
+(global-auto-revert-mode t)
 
 ;; when you have energy, check to see if this matters
 (setenv "PYTHONPATH" "/home/gil/anaconda/bin/python")
