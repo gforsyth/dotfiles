@@ -1,7 +1,8 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+;;(add-to-list 'load-path "~/.emacs.d/evil")
 
 (require 'init-elpa)
-;; (require 'package)
+;;(require 'package)
 ;; 
 ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 ;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -43,7 +44,8 @@
       indent-tabs-mode nil)
 
 ;; can't learn vim AND emacs, can I?
-(require 'evil)
+(use-package evil
+             :ensure evil)
 (evil-mode t)
 
 ;; prevent cursor from moving back one position when exiting insert mode
@@ -90,11 +92,13 @@
 (setq org-log-done 'time)
 
 ;; ipython kernel
-(require 'ob-ipython)
+(use-package ob-ipython 
+             :ensure ob-ipython)
 
 ;; appearance shit
 ;;(setq line-number-mode t)
-(require 'linum)
+(use-package linum
+             :ensure linum)
 (global-linum-mode 1)
 
 ;; wrap lines by default
@@ -117,19 +121,23 @@
 (setq org-return-follows-link t)
 
 ;;(setq org-completion-use-ido t)
-(require 'auto-complete)
+(use-package auto-complete
+             :ensure auto-complete)
 (global-auto-complete-mode t)
 
 ;(icomplete-mode 1)
 
-(require 'helm)
-(require 'helm-config)
+(use-package helm
+             :ensure helm)
+(use-package helm-config
+             :ensure helm-config)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 ;; Set up git in EMACS
-(require 'git)
+(use-package magit
+             :ensure magit)
 
 ;; disable backup files (that's what git is for)
 (setq make-backup-files nil)
@@ -137,7 +145,8 @@
 (setq auto-save-default nil)
 
 ;; powerline
-(require 'powerline-evil)
+(use-package powerline-evil
+             :ensure powerline-evil)
 (powerline-evil-vim-color-theme)
 (display-time-mode t)
 
@@ -145,7 +154,8 @@
 ;;    (insert (shell-command-to-string "echo -n $(date +%Y-%m-%d)")))
 
 ;; yasnippet for template help
-(require 'yasnippet)
+(use-package yasnippet
+             :ensure yasnippet)
 (yas-global-mode 1)
 
 ;; fix some org-mode + yasnippet conflicts:
@@ -174,17 +184,20 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; set up deft (note searching)
-(require 'deft)
+(use-package deft
+             :ensure deft)
 (setq deft-directory "~/Dropbox/notes")
 (setq deft-use-filename-as-title t)
 (setq deft-extension "org")
 (setq deft-text-mode 'org-mode)
 
 ;; autopair braces etc...
-(require 'autopair)
+(use-package autopair
+             :ensure autopair)
 
 ;; fix latex preamble
-(require 'ox-latex)
+(use-package ox-latex
+             :ensure ox-latex)
 
 (add-to-list 'org-latex-classes
              '("myreport"
