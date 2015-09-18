@@ -1,11 +1,14 @@
-(require 'package)
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-
-(setq package-enable-at-startup nil)
-(package-initialize)
+(require 'init-elpa)
+;; (require 'package)
+;; 
+;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;; (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+;; 
+;; (setq package-enable-at-startup nil)
+;; (package-initialize)
 
 ;; autoinstall packages if not found
 ;; (defvar gforsyth/packages '(evil
