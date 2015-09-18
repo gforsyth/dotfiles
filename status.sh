@@ -10,9 +10,9 @@ myVol(){
     MUTEICON="^fg(white) ^i($ICONPATH/mute.xbm)"
     VOLICON="^fg(white) ^i($ICONPATH/spkr_01.xbm)"
     if [ "$MUTED" = "[off]" ]; then
-        echo "$MUTEICON "
+        echo "$MUTEICON || "
     else
-        echo "$VOLICON $PERCENT "
+        echo "$VOLICON $PERCENT || "
     fi
 }
 myMusic(){
