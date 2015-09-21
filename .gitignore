@@ -1,2 +1,3 @@
 **/tags*
 .vim
+/.emacs.d/ac-comphist.dat

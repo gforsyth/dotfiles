@@ -161,8 +161,7 @@
 
 (use-package helm
              :ensure helm)
-(use-package helm-config
-             :ensure helm-config)
+;; (require 'helm-config)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
@@ -228,8 +227,7 @@
              :ensure autopair)
 
 ;; fix latex preamble
-(use-package ox-latex
-             :ensure ox-latex)
+(use-package ox-latex)
 
 (add-to-list 'org-latex-classes
              '("myreport"
