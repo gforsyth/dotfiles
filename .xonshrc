@@ -1,4 +1,14 @@
 $PATH.insert(0,'/home/gil/anaconda/bin')
+$PATH.append('/usr/local/SU2/bin')
+$BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
+
+completions = ['pacman', 'arch', 'git', 'systemctl', 'ssh', 'sshfs', 'yaourt'] 
+
+for i in completions:
+    try:
+        $BASH_COMPLETIONS.append('/usr/share/bash-completion/completions/{}'.format(i))
+    except:
+        Pass
 
 aliases['feh'] = 'feh -.'
 aliases['dropbox'] = 'dropbox-cli'
@@ -7,7 +17,10 @@ $EDITOR="vim"
 $BROWSER="chromium"
 $TERM="rxvt-unicode-256color"
 
+$SU2_RUN="/usr/local/SU2/bin"
+$SU2_HOME="/home/gil/git/SU2"
+
 evalx("keychain --quiet ~/.ssh/id_ed25519")
 source-bash ~/.keychain/theo-sh
 
-
+source-bash /usr/share/autoenv-git/activate.sh
