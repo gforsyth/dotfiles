@@ -17,8 +17,8 @@
    (nil :maxlevel . 10)             ; refile to headings in the current buffer
    (org-agenda-files :maxlevel . 10) ; refile to any of these files
     ))
-(setq org-refile-allow-creating-parent-nodes (quote confirm)) ; should allow refiling to new file
-
+(setq org-refile-allow-creating-parent-nodes (quote confirm)) ; create new node in existing file in refile
+(setq org-refile-use-outline-path 'file) ; this should allow refiling to a new file
 
 ;; org-mode shortcuts from manual
 (define-key global-map "\C-cl" 'org-store-link)
