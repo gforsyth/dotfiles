@@ -35,20 +35,31 @@
 
 
 
-#Raise volume
-"amixer set Master 5%+"
-    m:0x0 + c:123
-    XF86AudioRaiseVolume 
+"xbindkeys_show"
+   control+shift + q
 
-#Lower volume
-"amixer set Master 5%-"
-    m:0x0 + c:122
-    XF86AudioLowerVolume 
+# set directly keycode (here control + f with my keyboard)
+"xterm"
+   c:41 + m:0x4
 
-#Toggle Mute
-"(amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute"
-    m:0x0 + c:121
-    XF86AudioMute 
+# specify a mouse button
+"xterm"
+   control + b:2
+
+#Volup
+"amixer set Master 10%+"
+    m:0x10 + c:123
+    Mod2 + XF86AudioRaiseVolume 
+
+#VolDown
+"amixer set Master 10%-"
+    m:0x10 + c:122
+    Mod2 + XF86AudioLowerVolume 
+
+#VolMute
+"amixer sset Master toggle"
+    m:0x10 + c:121
+    Mod2 + XF86AudioMute 
 
 #
 # End of xbindkeys configuration
