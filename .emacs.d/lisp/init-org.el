@@ -14,9 +14,11 @@
 
 ;; make other files available as refile targets (I think?))
 (setq org-refile-targets '(
-   (nil :maxlevel . 2)             ; refile to headings in the current buffer
-   (org-agenda-files :maxlevel . 2) ; refile to any of these files
+   (nil :maxlevel . 10)             ; refile to headings in the current buffer
+   (org-agenda-files :maxlevel . 10) ; refile to any of these files
     ))
+(setq org-refile-allow-creating-parent-nodes (quote confirm)) ; should allow refiling to new file
+
 
 ;; org-mode shortcuts from manual
 (define-key global-map "\C-cl" 'org-store-link)
