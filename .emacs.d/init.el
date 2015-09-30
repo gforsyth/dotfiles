@@ -40,7 +40,8 @@
 ;; i don't like typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-
+;; additional mode info
+(add-to-list 'auto-mode-alist '("\\.inl\\'" . c-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -50,7 +51,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/todo.org" "~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/labnotebook.org")))
+    ("~/Dropbox/notes/PetIBM.org" "~/Dropbox/notes/todo.org" "~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/labnotebook.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
