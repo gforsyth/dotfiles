@@ -16,6 +16,7 @@
 (require 'init-line)
 (require 'init-deft)
 (require 'init-markdown)
+(require 'init-org-man)
 
 
 ;; Turn off scroll bar and toolbar
@@ -51,7 +52,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/PetIBM.org" "~/Dropbox/notes/todo.org" "~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/labnotebook.org")))
+    ("~/Dropbox/notes/jupyter.org" "~/Dropbox/notes/PetIBM.org" "~/Dropbox/notes/todo.org" "~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/events.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/labnotebook.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
