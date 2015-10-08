@@ -5,9 +5,7 @@ call vundle#begin()
 "To install, run :PluginInstall, or :PluginUpdate
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'rdnetto/YCM-Generator'
 Plugin 'vim-scripts/TeX-9'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'davidhalter/jedi-vim'
