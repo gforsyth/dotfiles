@@ -30,9 +30,12 @@ alias feh='feh -.'
 alias dropbox='dropbox-cli'
 alias mount='sudo mount -o uid=gil,gid=users'
 
-export PATH=/home/gil/anaconda/bin:$PATH
+case $HOSTNAME in
+    (bad_cat) export PATH=/home/gil/miniconda3/bin:$PATH;;
+esac
+
 export EDITOR="vim"
-export BROWSER="chromium"
+export BROWSER="opera"
 
 
 export TERM=rxvt-unicode-256color
