@@ -1,3 +1,6 @@
+;; make inline latex images larger
+(plist-put org-format-latex-options :scale 1.5)
+
 ;; fix latex preamble
 (use-package ox-latex)
 
