@@ -32,6 +32,7 @@ alias mount='sudo mount -o uid=gil,gid=users'
 
 case $HOSTNAME in
     (bad_cat) export PATH=/home/gil/miniconda3/bin:$PATH;;
+    (theo) export PATH=$PATH:/home/gil/anaconda/bin;;
 esac
 
 export EDITOR="vim"
