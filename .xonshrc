@@ -1,5 +1,8 @@
-$PATH.insert(0,'/home/gil/anaconda/bin')
+if '/home/gil/anaconda/bin' not in $PATH:
+    $PATH.insert(0,'/home/gil/anaconda/bin')
 $PATH.append('/usr/local/SU2/bin')
+
+##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
 
 completions = ['pacman', 'arch', 'git', 'systemctl', 'ssh', 'sshfs', 'yaourt'] 
@@ -10,6 +13,8 @@ for i in completions:
     except:
         Pass
 
+
+##Aliases (yeah... no shit, kid)
 aliases['feh'] = 'feh -.'
 aliases['dropbox'] = 'dropbox-cli'
 
@@ -22,5 +27,3 @@ $SU2_HOME="/home/gil/git/SU2"
 
 evalx("keychain --quiet ~/.ssh/id_ed25519")
 source-bash ~/.keychain/theo-sh
-
-source-bash /usr/share/autoenv-git/activate.sh
