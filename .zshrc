@@ -30,7 +30,7 @@ alias feh='feh -.'
 alias dropbox='dropbox-cli'
 alias mount='sudo mount -o uid=gil,gid=users'
 
-case $HOSTNAME in
+case $HOST in
     (bad_cat) export PATH=/home/gil/miniconda3/bin:$PATH;;
     (theo) export PATH=$PATH:/home/gil/anaconda/bin;;
 esac
