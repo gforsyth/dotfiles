@@ -54,7 +54,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/insectflight.org" "~/notes/checkout.org" "~/notes/numericalmooc.org" "~/notes/personal.org" "~/notes/CFDPython.org" "~/notes/labnotebook.org")))
+    ("~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
