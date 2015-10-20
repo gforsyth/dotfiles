@@ -3,13 +3,13 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
- (filename . "~/Dropbox/notes/PetIBM.org")
- (front-context-string . "* <2015-10-09 Fr")
- (rear-context-string . " even possible?\n")
- (position . 19424))
+ (filename . "~/Dropbox/notes/todo.org")
+ (front-context-string . "** DONE add pacm")
+ (rear-context-string . "28][pull #428]]\n")
+ (position . 3729))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/notes/labnotebook.org")
- (front-context-string . "**** well, that'")
- (rear-context-string . "15-10-09 Fri>]]\n")
- (position . 5742))
+ (front-context-string . "**** PetIBM Velo")
+ (rear-context-string . "lliott Forney]]\n")
+ (position . 8154))
 )

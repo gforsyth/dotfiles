@@ -35,8 +35,8 @@
 
 (load-theme 'misterioso)
 
-;; set default directory to dropbox
-(setq default-directory "/home/gil/Dropbox/notes/")
+;; set default directory to notes
+(setq default-directory "/home/gil/notes/")
 
 ;; i don't like typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -54,7 +54,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/notes/jupyter.org" "~/Dropbox/notes/PetIBM.org" "~/Dropbox/notes/todo.org" "~/Dropbox/notes/insectflight.org" "~/Dropbox/notes/checkout.org" "~/Dropbox/notes/numericalmooc.org" "~/Dropbox/notes/personal.org" "~/Dropbox/notes/CFDPython.org" "~/Dropbox/notes/labnotebook.org")))
+    ("~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/insectflight.org" "~/notes/checkout.org" "~/notes/numericalmooc.org" "~/notes/personal.org" "~/notes/CFDPython.org" "~/notes/labnotebook.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
