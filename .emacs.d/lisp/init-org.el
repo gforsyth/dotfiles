@@ -1,14 +1,14 @@
 ;; when capturing new notes, place them in notes.org sub orgfile in org-directory
-(setq org-directory "~/Dropbox/notes/")
+(setq org-directory "~/notes/")
 (setq org-default-notes-file (concat org-directory "/scratch.org"))
 
 ;; set up capture templates -- what do I need?
 ;; TODOs -> TODO.org
 ;; ideas -> ideas.org
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/notes/TODO.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/notes/TODO.org" "Tasks")
              "* TODO %?\n  %i\n  %a")
-        ("n" "Notebook Entry" entry (file+datetree "~/Dropbox/notes/labnotebook.org")
+        ("n" "Notebook Entry" entry (file+datetree "~/notes/labnotebook.org")
 	 )
 	))
 
