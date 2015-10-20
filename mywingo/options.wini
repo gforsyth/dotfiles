@@ -5,7 +5,7 @@
 [Options]
 # The list of workspaces to set upon startup. Workspaces can be added or
 # removed while Wingo is running.
-workspaces := browser reading zotero notes serverland 
+workspaces := browser emacs serverland 
 
 # The default layout that is used for all workspaces. Currently, the
 # only available layouts are: Floating, Vertical or Horizontal.
