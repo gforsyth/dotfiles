@@ -7,4 +7,6 @@
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
+(global-set-key (kbd "C-M-s") 'magit-status)
+
 (provide 'init-magit)
