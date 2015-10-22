@@ -54,7 +54,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
+    ("~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
@@ -62,11 +62,6 @@
      ("\\.x?html?\\'" . default)
      ("\\.pdf\\'" . "evince %s")
      ("\\.pdf::\\([0-9]+\\)\\'" . "evince \"%s\" -p %1"))))
- '(org-refile-targets
-   (quote
-    ((nil :maxlevel . 5)
-     (org-agenda-files :maxlevel . 5))))
- '(org-refile-use-outline-path (quote file))
  '(org-startup-indented t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
