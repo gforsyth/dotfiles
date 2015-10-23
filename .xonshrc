@@ -1,9 +1,21 @@
+import os
 if '/home/gil/anaconda/bin' not in $PATH:
     $PATH.insert(0,'/home/gil/anaconda/bin')
 #$PATH.append('/usr/local/SU2/bin')
 
 $SHELL_TYPE='prompt_toolkit'
 
+##Completion funtimes
+$BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
+
+completions = ['pacman', 'arch', 'git', 'systemctl', 'ssh', 'sshfs', 'yaourt'] 
+
+for i in completions:
+    comp = '/usr/share/bash-completion/completions/{}'.format(i)
+    if not os.path.isfile(comp):
+        continue
+    $BASH_COMPLETIONS.append(comp)
+        
 ##Aliases (yeah... no shit, kid)
 aliases['feh'] = 'feh -.'
 aliases['dropbox'] = 'dropbox-cli'
