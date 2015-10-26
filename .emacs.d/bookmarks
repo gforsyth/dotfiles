@@ -2,14 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-refile-last-stored"
- (filename . "~/notes/labnotebook.org")
- (front-context-string . "**** Python :pyt")
- (rear-context-string . "uld be great.  \n")
- (position . 13379))
+(("org-capture-last-stored-marker"
+ (filename . "~/notes/todo.org")
+ (front-context-string . "** TODO create n")
+ (rear-context-string . "/conda_execute\n\n")
+ (position . 5596))
+("org-refile-last-stored"
+ (filename . "~/notes/todo.org")
+ (front-context-string . "** TODO add extr")
+ (rear-context-string . "z @ O'Reilly]]\n\n")
+ (position . 5358))
 ("org-capture-last-stored"
- (filename . "~/notes/labnotebook.org")
- (front-context-string . "**** steps to im")
- (rear-context-string . "n as per #277]]\n")
- (position . 12223))
+ (filename . "~/notes/TODO.org")
+ (front-context-string)
+ (rear-context-string)
+ (position . 9))
 )
