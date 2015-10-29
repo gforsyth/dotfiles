@@ -27,7 +27,7 @@ def main():
     for i, choice in enumerate(choices):
         print('{}. {}'.format(i, choice))
 
-    num = input("Choose env: ")
+    num = input("Choose env: ") or '0'
 
     try:
         choice = choices[int(num)]
