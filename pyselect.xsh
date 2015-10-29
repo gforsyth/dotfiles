@@ -1,6 +1,6 @@
 import os
 
-choices = ['/home/gil/anaconda/bin']
+choices = ['/home/gil/anaconda/']
 
 for i in $(ls /home/gil/anaconda/envs).split(sep='\n')[:-1]:
     choices.append('/home/gil/anaconda/envs/{}'.format(i))
