@@ -1,5 +1,16 @@
 $PATH=['/home/gil/anaconda/bin','/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/']
 
+##Completion funtimes
+$BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
+
+completions = ['pacman', 'arch', 'git', 'systemctl', 'ssh', 'sshfs', 'yaourt'] 
+
+for i in completions:
+    comp = '/usr/share/bash-completion/completions/{}'.format(i)
+    if not os.path.isfile(comp):
+        continue
+    $BASH_COMPLETIONS.append(comp)
+        
 ##Aliases (yeah... no shit, kid)
 aliases['feh'] = 'feh -.'
 aliases['dropbox'] = 'dropbox-cli'
