@@ -1,4 +1,13 @@
-$PATH=['/home/gil/anaconda/bin','/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/']
+import os
+
+$PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/']
+
+if os.path.isdir('~/anaconda'):
+    if '/home/gil/anaconda/bin' not in $PATH:
+        $PATH.insert(0,'/home/gil/anaconda/bin')
+elif os.path.isdir('~/miniconda3'):
+    if '/home/gil/miniconda3/bin' not in $PATH:
+        $PATH.insert(0,'/home/gil/miniconda3/bin')
 
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
