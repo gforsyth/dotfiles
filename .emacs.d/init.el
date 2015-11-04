@@ -51,6 +51,7 @@
  ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-generic))
  '(browse-url-generic-program "opera")
+ '(diary-file "~/notes/diary")
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
