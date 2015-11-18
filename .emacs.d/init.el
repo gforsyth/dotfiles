@@ -17,6 +17,7 @@
 (require 'init-deft)
 (require 'init-markdown)
 (require 'init-org-man)
+(require 'init-jedi)
 
 
 ;; Turn off scroll bar and toolbar
@@ -55,7 +56,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
+    ("~/notes/sysadmin/jupyterhub.org" "~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
