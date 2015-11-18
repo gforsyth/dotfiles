@@ -13,8 +13,8 @@
  (rear-context-string . "z @ O'Reilly]]\n\n")
  (position . 5358))
 ("org-capture-last-stored"
- (filename . "~/notes/TODO.org")
- (front-context-string)
- (rear-context-string)
- (position . 9))
+ (filename . "~/notes/labnotebook.org")
+ (front-context-string . "**** Printing co")
+ (rear-context-string . "15-11-09 Monday\n")
+ (position . 21156))
 )
