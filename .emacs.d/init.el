@@ -20,6 +20,9 @@
 (require 'init-jedi)
 (require 'init-cal)
 
+;; enable ido
+(require 'ido)
+(ido-mode t)
 
 ;; Turn off scroll bar and toolbar
 (tool-bar-mode -1)
@@ -57,7 +60,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/notes/sysadmin/jupyterhub.org" "~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
+    ("~/notes/labnotebook.org" "~/notes/sysadmin/jupyterhub.org" "~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)

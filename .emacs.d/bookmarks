@@ -14,7 +14,7 @@
  (position . 5358))
 ("org-capture-last-stored"
  (filename . "~/notes/labnotebook.org")
- (front-context-string . "**** Printing co")
- (rear-context-string . "15-11-09 Monday\n")
- (position . 21156))
+ (front-context-string . "**** Super lexin")
+ (rear-context-string . ".precmd(line)]]\n")
+ (position . 24172))
 )
