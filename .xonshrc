@@ -32,7 +32,7 @@ aliases['feh'] = 'feh -.'
 aliases['dropbox'] = 'dropbox-cli'
 
 $EDITOR="vim"
-$BROWSER="chromium"
+$BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 
 evalx("keychain --quiet ~/.ssh/id_ed25519")
