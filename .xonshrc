@@ -13,6 +13,8 @@ $SHELL_TYPE='prompt_toolkit'
 
 #Enable AUTO_CD
 $AUTO_CD=True
+#Enable vim_mode
+$VI_MODE=True
 
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
