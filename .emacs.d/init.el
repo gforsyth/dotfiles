@@ -18,6 +18,7 @@
 (require 'init-markdown)
 (require 'init-org-man)
 (require 'init-jedi)
+(require 'init-cal)
 
 
 ;; Turn off scroll bar and toolbar
