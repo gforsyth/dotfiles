@@ -60,7 +60,7 @@
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/notes/labnotebook.org" "~/notes/sysadmin/jupyterhub.org" "~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
+    ("~/notes/xonsh.org" "~/notes/labnotebook.org" "~/notes/sysadmin/jupyterhub.org" "~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
