@@ -23,12 +23,6 @@ URxvt.keysym.C-Down:  perl:font-size:decrease
 URxvt.keysym.C-S-Up:  perl:font-size:incglobal
 URxvt.keysym.C-S-Down:  perl:font-size:decglobal
 
-!Tab colorscheme
-URxvt.tabbedex.tabbar-fg: 2
-URxvt.tabbedex.tabbar-bg: 0
-URxvt.tabbedex.tab-fg: 4
-URxvt.tabbedex.tab-bg: 0
-
 !Disable default binding for Ctrl+Shift bindings to work
 URxvt.iso14755: false
 URxvt.iso14755_52: false
