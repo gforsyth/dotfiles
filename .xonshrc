@@ -1,11 +1,13 @@
 import os
+import socket
 
 $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/']
+$HOST=socket.gethostname()
 
-if os.path.isdir('/home/gil/anaconda'):
+if $HOST=='theo':
     if '/home/gil/anaconda/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/anaconda/bin')
-elif os.path.isdir('/home/gil/miniconda3'):
+elif $HOST=='badcat': 
     if '/home/gil/miniconda3/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/miniconda3/bin')
 
