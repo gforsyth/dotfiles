@@ -17,6 +17,8 @@ $SHELL_TYPE='prompt_toolkit'
 $AUTO_CD=True
 #Enable vim_mode
 $VI_MODE=True
+#History forever
+$XONSH_HISTORY_SIZE=(10000000, 'commands')
 
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
@@ -30,7 +32,7 @@ for i in completions:
     $BASH_COMPLETIONS.append(comp)
         
 ##Aliases (yeah... no shit, kid)
-aliases['feh'] = 'feh -.'
+aliases['feh'] = 'feh -. --magick-timeout 1'
 aliases['dropbox'] = 'dropbox-cli'
 
 $EDITOR="vim"
