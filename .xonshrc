@@ -23,13 +23,15 @@ $XONSH_HISTORY_SIZE=(10000000, 'commands')
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
 
-completions = ['pacman', 'arch', 'git', 'systemctl', 'ssh', 'sshfs', 'yaourt'] 
+completions = ['pacman', 'arch', 'git', 'systemctl']
 
 for i in completions:
     comp = '/usr/share/bash-completion/completions/{}'.format(i)
     if not os.path.isfile(comp):
         continue
-    $BASH_COMPLETIONS.append(comp)
+
+    if not comp in $BASH_COMPLETIONS:
+	$BASH_COMPLETIONS.append(comp)
         
 ##Aliases (yeah... no shit, kid)
 aliases['feh'] = 'feh -. --magick-timeout 1'
