@@ -55,12 +55,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-generic))
- '(browse-url-generic-program "opera")
+ '(browse-url-generic-program "firefox")
  '(diary-file "~/notes/diary")
  '(inhibit-startup-screen t)
  '(org-agenda-files
    (quote
-    ("~/notes/xonsh.org" "~/notes/labnotebook.org" "~/notes/sysadmin/jupyterhub.org" "~/notes/jupyter.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
+    ("~/notes/git.org" "~/notes/jupyter.org" "~/notes/math/derivations.org" "~/notes/xonsh.org" "~/notes/labnotebook.org" "~/notes/sysadmin/jupyterhub.org" "~/notes/PetIBM.org" "~/notes/todo.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
