@@ -1,15 +1,22 @@
 import os
 import socket
+import builtins
 
 $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/']
 $HOST=socket.gethostname()
 
+evalx("keychain --quiet ~/.ssh/id_ed25519")
+
 if $HOST=='theo':
     if '/home/gil/anaconda/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/anaconda/bin')
-elif $HOST=='badcat': 
+
+	source-bash ~/.keychain/theo-sh
+elif $HOST=='bad_cat': 
     if '/home/gil/miniconda3/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/miniconda3/bin')
+
+	source-bash ~/.keychain/bad_cat-sh
 
 $SHELL_TYPE='prompt_toolkit'
 
@@ -41,5 +48,3 @@ $EDITOR="vim"
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 
-evalx("keychain --quiet ~/.ssh/id_ed25519")
-source-bash ~/.keychain/theo-sh
