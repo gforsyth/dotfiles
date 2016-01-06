@@ -10,13 +10,12 @@ if $HOST=='theo':
     if '/home/gil/anaconda/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/anaconda/bin')
 
-	source-bash ~/.keychain/theo-sh
 elif $HOST=='bad_cat': 
     if '/home/gil/miniconda3/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/miniconda3/bin')
 
 evalx("keychain --quiet ~/.ssh/id_ed25519")
-with open('/home/gil/.keychain/bad_cat-sh','r') as f:
+with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
 	data = f.read()
 	data = data.split()
 
