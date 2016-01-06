@@ -8,13 +8,10 @@
  (rear-context-string . "/conda_execute\n\n")
  (position . 5596))
 ("org-refile-last-stored"
- (filename . "~/notes/todo.org")
- (front-context-string . "** TODO add extr")
- (rear-context-string . "z @ O'Reilly]]\n\n")
- (position . 5358))
+ (filename . "~/notes/xonsh.org")
+ (front-context-string . "*** Exiting an a")
+ (rear-context-string . "own()\n#+END_SRC\n")
+ (position . 4103))
 ("org-capture-last-stored"
  (filename . "~/notes/labnotebook.org")
- (front-context-string . "**** Xonsh compl")
- (rear-context-string . "be triggered?]]\n")
- (position . 39943))
 )

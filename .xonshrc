@@ -1,22 +1,34 @@
 import os
 import socket
+import builtins
 
 $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/']
 $HOST=socket.gethostname()
 
+
 if $HOST=='theo':
     if '/home/gil/anaconda/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/anaconda/bin')
-elif $HOST=='badcat': 
+
+	source-bash ~/.keychain/theo-sh
+elif $HOST=='bad_cat': 
     if '/home/gil/miniconda3/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/miniconda3/bin')
+
+evalx("keychain --quiet ~/.ssh/id_ed25519")
+with open('/home/gil/.keychain/bad_cat-sh','r') as f:
+	data = f.read()
+	data = data.split()
+
+$SSH_AUTH_SOCK = data[0].split('=')[1][:-1]
+$SSH_AGENT_PID = data[3].split('=')[1][:-1]
 
 $SHELL_TYPE='prompt_toolkit'
 
 #Enable AUTO_CD
 $AUTO_CD=True
 #Enable vim_mode
-$VI_MODE=True
+#$VI_MODE=True
 #History forever
 $XONSH_HISTORY_SIZE=(10000000, 'commands')
 
@@ -41,5 +53,3 @@ $EDITOR="vim"
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 
-evalx("keychain --quiet ~/.ssh/id_ed25519")
-source-bash ~/.keychain/theo-sh
