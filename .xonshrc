@@ -29,7 +29,7 @@ $AUTO_CD=True
 #Enable vim_mode
 #$VI_MODE=True
 #History forever
-$XONSH_HISTORY_SIZE=(10000000, 'commands')
+$XONSH_HISTORY_SIZE=(8128, 'commands')
 
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
