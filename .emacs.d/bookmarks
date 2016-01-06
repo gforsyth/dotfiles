@@ -14,7 +14,7 @@
  (position . 5358))
 ("org-capture-last-stored"
  (filename . "~/notes/labnotebook.org")
- (front-context-string . "**** Installing ")
- (rear-context-string . "15-12-14 Monday\n")
- (position . 32112))
+ (front-context-string . "**** Xonsh compl")
+ (rear-context-string . "be triggered?]]\n")
+ (position . 39943))
 )
