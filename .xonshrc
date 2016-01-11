@@ -52,3 +52,6 @@ $EDITOR="vim"
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 
+#Encoding
+$LANG="en_US.UTF-8"
+$LC_ALL="en_US.UTF-8"
