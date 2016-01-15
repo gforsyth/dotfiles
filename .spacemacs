@@ -31,6 +31,8 @@ values."
      org
      python
      deft
+     latex
+     deft
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -249,7 +251,30 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  ;;------------------------------------------------------------
+  ;;----------------------LATEX---------------------------------
+  ;;------------------------------------------------------------
+  ;;latex full-doc previews
+  (add-hook 'doc-view-minor-mode-hook 'auto-revert-mode)
 
+  ;;------------------------------------------------------------
+  ;;----------------------BABEL---------------------------------
+  ;;------------------------------------------------------------
+  ;; load python and gnu calc so it can be run inline
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (python . t)
+     (calc . t)
+;;     (ipython . t)
+     )
+   )
+
+  ;;------------------------------------------------------------
+  ;;----------------------org-mode------------------------------
+  ;;------------------------------------------------------------
+  ;; disable evaluation security (just run the damn thing)
+  (setq org-confirm-babel-evaluate nil)
   ;; when capturing new notes, place them in notes.org sub orgfile in org-directory
   (setq org-directory "~/notes/")
 
@@ -268,9 +293,16 @@ layers configuration. You are free to put any user code."
                              (nil :maxlevel . 10)             ; refile to headings in the current buffer
                              (org-agenda-files :maxlevel . 10) ; refile to any of these files
                              ))
-
+  ;;------------------------------------------------------------
+  ;;----------------------display-stuff-------------------------
+  ;;------------------------------------------------------------
   ;; turn on visual-line-mode in text modes only
   (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+  ;;-------------------------------------------------------------
+  ;;----------------------deft (note searching)------------------
+  ;;-------------------------------------------------------------
+  (setq deft-directory "~/notes")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
