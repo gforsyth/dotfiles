@@ -50,6 +50,7 @@ values."
    '(
      ;; Remove exec-path-from-shell since it fucks up xonsh (or vice versa)
      exec-path-from-shell
+     evil-matchit
      )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
