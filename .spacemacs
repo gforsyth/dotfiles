@@ -36,7 +36,7 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     spell-checking
      ;; syntax-checking
      ;; version-control
      )
@@ -256,7 +256,26 @@ layers configuration. You are free to put any user code."
   ;;------------------------------------------------------------
   ;;latex full-doc previews
   (add-hook 'doc-view-minor-mode-hook 'auto-revert-mode)
-
+  (unless (boundp 'org-latex-classes)
+    (setq org-latex-classes nil))
+  (add-to-list 'org-latex-classes
+                '("myreport"
+                  "\\documentclass[a4paper,10pt]{report}
+  \\usepackage[utf8]{inputenc}
+  \\usepackage{amsmath}
+  \\usepackage{amsfonts}
+  \\usepackage{amssymb}
+  \\usepackage{hyperref}
+  \\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+  \\usepackage{fontspec}
+  \\setmainfont{Linux Biolinum}
+  [NO-DEFAULT-PACKAGES]
+  [NO-PACKAGES]"
+  ("\\section{%s}" . "\\section*{%s}")
+  ("\\subsection{%s}" . "\\subsection*{%s}")
+  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+  ("\\paragraph{%s}" . "\\paragraph*{%s}")
+  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   ;;------------------------------------------------------------
   ;;----------------------BABEL---------------------------------
   ;;------------------------------------------------------------
