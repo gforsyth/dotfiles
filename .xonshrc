@@ -42,11 +42,13 @@ for i in completions:
         continue
 
     if not comp in $BASH_COMPLETIONS:
-	$BASH_COMPLETIONS.append(comp)
+		$BASH_COMPLETIONS.append(comp)
         
 ##Aliases (yeah... no shit, kid)
 aliases['feh'] = 'feh -. --magick-timeout 1'
 aliases['dropbox'] = 'dropbox-cli'
+aliases['grep'] = 'grep -i --color=always'
+aliases['mkdir'] = 'mkdir -p'
 
 $EDITOR="vim"
 $BROWSER="firefox"

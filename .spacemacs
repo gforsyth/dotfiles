@@ -32,7 +32,6 @@ values."
      python
      deft
      latex
-     deft
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -237,7 +236,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'trailing
+   dotspacemacs-whitespace-cleanup 'nil
    ))
 
 
@@ -372,7 +371,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org"))))
+    ("~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
