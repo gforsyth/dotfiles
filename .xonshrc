@@ -49,6 +49,7 @@ aliases['feh'] = 'feh -. --magick-timeout 1'
 aliases['dropbox'] = 'dropbox-cli'
 aliases['grep'] = 'grep -i --color=always'
 aliases['mkdir'] = 'mkdir -p'
+aliases['music'] = 'mps'
 
 $EDITOR="vim"
 $BROWSER="firefox"
