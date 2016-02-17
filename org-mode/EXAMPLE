@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: EXAMPLE_BLOCK
+# key: EX
+# binding: direct-keybinding
+# --
+#+BEGIN_EXAMPLE
+$0
+#+END_EXAMPLE
