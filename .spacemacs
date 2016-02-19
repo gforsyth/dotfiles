@@ -112,7 +112,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Fira Mono"
                                :size 15
                                :weight normal
                                :width normal
@@ -204,7 +204,7 @@ values."
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 90
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen. (default t)
@@ -301,7 +301,7 @@ layers configuration. You are free to put any user code."
   ;; TODOs -> TODO.org
   ;; ideas -> ideas.org
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline "~/notes/TODO.org" "Tasks")
+        '(("t" "Todo" entry (file+headline "~/notes/todo.org" "Tasks")
            "* TODO %?\n  %i\n  %a")
           ("n" "Notebook Entry" entry (file+datetree "~/notes/labnotebook.org")
            )
