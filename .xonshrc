@@ -52,6 +52,11 @@ aliases['mkdir'] = 'mkdir -p'
 aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
 
+##git aliases
+aliases['gs'] = 'git status' #collides with ghostscript but who cares?
+aliases['ga'] = 'git add' 
+aliases['gd'] = 'git diff' 
+
 $EDITOR="vim"
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
