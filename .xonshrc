@@ -50,6 +50,7 @@ aliases['dropbox'] = 'dropbox-cli'
 aliases['grep'] = 'grep -i --color=always'
 aliases['mkdir'] = 'mkdir -p'
 aliases['music'] = 'mps'
+aliases['dd'] = 'dcfldd'
 
 $EDITOR="vim"
 $BROWSER="firefox"
@@ -58,3 +59,7 @@ $TERM="rxvt-unicode-256color"
 #Encoding
 $LANG="en_US.UTF-8"
 $LC_ALL="en_US.UTF-8"
+
+#default colorscheme
+$XONSH_COLOR_STYLE='lovelace'
+
