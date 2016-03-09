@@ -51,12 +51,14 @@ aliases['grep'] = 'grep -i --color=always'
 aliases['mkdir'] = 'mkdir -p'
 aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
+aliases['rm'] = 'rm -I'
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
 aliases['ga'] = 'git add' 
 aliases['gd'] = 'git diff' 
-aliases['gc'] = 'git checkout' 
+aliases['gch'] = 'git checkout' 
+aliases['gc'] = 'git commit' 
 
 $EDITOR="vim"
 $BROWSER="firefox"
