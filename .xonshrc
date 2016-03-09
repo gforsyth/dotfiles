@@ -56,6 +56,7 @@ aliases['dd'] = 'dcfldd'
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
 aliases['ga'] = 'git add' 
 aliases['gd'] = 'git diff' 
+aliases['gc'] = 'git checkout' 
 
 $EDITOR="vim"
 $BROWSER="firefox"
