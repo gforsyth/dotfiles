@@ -2,7 +2,7 @@ import os
 import socket
 import builtins
 
-$PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/']
+$PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 $HOST=socket.gethostname()
 
 
