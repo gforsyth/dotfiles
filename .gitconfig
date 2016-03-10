@@ -1,9 +1,23 @@
 [user]
 	email = gilforsyth@gmail.com
 	name = Gil Forsyth
+[core]
+	safecrlf = true
+	autocrlf = input
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	status = status -uno
+[credential]
+	helper = cache --timeout=3600
 [diff]
 	tool = vimdiff
-[push]
-	default = matching
+[difftool]
+	prompt = false
+# for $deity's sake, check that anything we're getting is complete and sane on a regular basis
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
+[receive]
+	fsckObjects = true 
