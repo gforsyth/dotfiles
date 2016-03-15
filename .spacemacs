@@ -112,7 +112,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Mono"
+   dotspacemacs-default-font '("Inconsolata"
                                :size 15
                                :weight normal
                                :width normal
@@ -353,6 +353,11 @@ layers configuration. You are free to put any user code."
   ;;------------------------------------------------------------
   ;; turn on visual-line-mode in text modes only
   (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+  ;; scale images by default to 400 pixels width
+  ;;=> if there is a #+ATTR.*: width="200", resize to 200,
+  ;;otherwise resize to 400
+  (setq org-image-actual-width '(400))
 
   ;; scale inline latex up a bit
   (plist-put org-format-latex-options :scale 1.5)
