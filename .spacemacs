@@ -43,7 +43,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+      ob-ipython
+      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
@@ -285,7 +288,7 @@ layers configuration. You are free to put any user code."
    '(
      (python . t)
      (calc . t)
-;;     (ipython . t)
+     (ipython . t)
      )
    )
 
