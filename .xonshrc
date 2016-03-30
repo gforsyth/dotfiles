@@ -9,6 +9,7 @@ $HOST=socket.gethostname()
 if $HOST=='theo':
     if '/home/gil/anaconda/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/anaconda/bin')
+        $PATH.append('/opt/cuda/bin')
 
 elif $HOST=='bad_cat': 
     if '/home/gil/miniconda3/bin' not in $PATH:
@@ -51,7 +52,6 @@ aliases['grep'] = 'grep -i --color=always'
 aliases['mkdir'] = 'mkdir -p'
 aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
-aliases['rm'] = 'rm -I'
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
