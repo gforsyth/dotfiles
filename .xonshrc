@@ -10,10 +10,12 @@ if $HOST=='theo':
     if '/home/gil/anaconda/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/anaconda/bin')
         $PATH.append('/opt/cuda/bin')
+    $WORKON_HOME='/home/gil/anaconda/envs'
 
 elif $HOST=='bad_cat': 
     if '/home/gil/miniconda3/bin' not in $PATH:
         $PATH.insert(0,'/home/gil/miniconda3/bin')
+    $WORKON_HOME='/home/gil/miniconda3/envs'
 
 evalx("keychain --quiet ~/.ssh/id_ed25519")
 with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
@@ -29,8 +31,6 @@ $SHELL_TYPE='prompt_toolkit'
 $AUTO_CD=True
 #Enable vim_mode
 #$VI_MODE=True
-#History forever
-$XONSH_HISTORY_SIZE=(8128, 'commands')
 
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
