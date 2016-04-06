@@ -35,7 +35,7 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
+ ;;    spell-checking
      ;; syntax-checking
      ;; version-control
      )
@@ -115,7 +115,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
+   dotspacemacs-default-font '("Source Code Pro"
                                :size 15
                                :weight normal
                                :width normal
@@ -293,6 +293,12 @@ layers configuration. You are free to put any user code."
    )
 
   ;;------------------------------------------------------------
+  ;;-------------------Conda Envs-------------------------------
+  ;;------------------------------------------------------------
+;;  (setenv "WORKON_HOME" "~/anaconda/envs")
+;; set in xonsh to handle different host conda installs...
+  (pyvenv-mode 1)
+  ;;------------------------------------------------------------
   ;;----------------------org-mode------------------------------
   ;;------------------------------------------------------------
   ;; disable evaluation security (just run the damn thing)
@@ -315,6 +321,7 @@ layers configuration. You are free to put any user code."
                              (nil :maxlevel . 10)             ; refile to headings in the current buffer
                              (org-agenda-files :maxlevel . 10) ; refile to any of these files
                              ))
+  (setq org-refile-use-outline-path t)
   ;;------------------------------------------------------------
   ;;----------------------org-man-search------------------------
   ;;------------------------------------------------------------
@@ -369,7 +376,7 @@ layers configuration. You are free to put any user code."
   ;;-------------------------------------------------------------
   (setq deft-directory "~/notes")
   )
-
+(add-hook 'after-init-hook 'global-company-mode)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
