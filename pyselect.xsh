@@ -1,7 +1,9 @@
 import os
 
+#$WORKON_HOME points to ~/(anaconda|miniconda3)/env)
 env_dir = $WORKON_HOME
 conda_dir = $WORKON_HOME.rsplit('/',1)[0]
+base_name = $WORKON_HOME.rsplit('/',2)[1]
 
 def PATH_ADJUST(python, pos=0):
     """ Insert a bin path into existing $PATH at given postion.
@@ -15,7 +17,7 @@ def display_env_in_prompt(pythonpath):
     left of $PROMPT to cue that the env is active
     """
     env_name = pythonpath.rsplit('/',1)[1]
-    if env_name == 'anaconda':
+    if env_name == base_name:
         $PROMPT = ('{BOLD_GREEN}{user}@{hostname}{BOLD_BLUE} '
                            '{cwd}{branch_color}{curr_branch} '
                           '{BOLD_BLUE}{prompt_end}{NO_COLOR} ')
