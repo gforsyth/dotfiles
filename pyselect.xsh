@@ -1,5 +1,7 @@
 import os
 
+env_dir = $WORKON_HOME
+conda_dir = $WORKON_HOME.rsplit('/',1)[0]
 
 def PATH_ADJUST(python, pos=0):
     """ Insert a bin path into existing $PATH at given postion.
@@ -32,9 +34,9 @@ def update_conda_alias(pythonpath):
     aliases['ci'] = 'conda install -n {}'.format(env_name)
 
 def main():
-    choices = ['/home/gil/anaconda']
-    for i in $(ls /home/gil/anaconda/envs).split(sep='\n')[:-1]:
-        choices.append('/home/gil/anaconda/envs/{}'.format(i))
+    choices = [conda_dir]
+    for i in $(ls @(env_dir)).split(sep='\n')[:-1]:
+        choices.append(env_dir + '/{}'.format(i))
 
     for i, choice in enumerate(choices):
         print('{}. {}'.format(i, choice))
