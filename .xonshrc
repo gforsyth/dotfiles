@@ -52,6 +52,7 @@ aliases['grep'] = 'grep -i --color=always'
 aliases['mkdir'] = 'mkdir -p'
 aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
+aliases['pyselect'] = 'source pyselect'
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
