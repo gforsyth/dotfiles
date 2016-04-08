@@ -53,6 +53,7 @@ aliases['mkdir'] = 'mkdir -p'
 aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
 aliases['pyselect'] = 'source pyselect'
+aliases['ping'] = 'ping -4'
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
