@@ -17,7 +17,8 @@ class EnvValidator(Validator):
             choices.append('{}'.format(i))
 
         if text not in choices:
-            raise ValidationError(message='Invalid environment', cursor_position=0)
+            raise ValidationError(message='Invalid environment', 
+                                  cursor_position=len(text))
 
 
 def PATH_ADJUST(python, pos=0, insert=False):
