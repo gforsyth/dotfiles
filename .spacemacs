@@ -307,7 +307,7 @@ layers configuration. You are free to put any user code."
   (setq org-directory "~/notes/")
 
   ;; set up capture templates -- what do I need?
-  ;; TODOs -> TODO.org
+  ;; TODOs -> todo.org
   ;; ideas -> ideas.org
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "~/notes/todo.org" "Tasks")
