@@ -25,6 +25,7 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
+     c-c++
      emacs-lisp
      git
      markdown
@@ -254,6 +255,15 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+
+  ;;----------------Stop pinging random countries--------------
+  ;;Weird bug in which trying to autocomplete something that looks even remotely
+  ;;like a valid URL emacs hangs in the minibuffer and tries to ping it.
+  ;;e.g. ~uda.array.vi<TAB>~ (aiming to expand to ~view~) leads to an attempt to
+  ;;ping the U.S. Virgin Islands.  God this is weird.
+  (setq ffap-machine-p-known 'reject)
+
+
   ;;------------------------------------------------------------
   ;;----------------------LATEX---------------------------------
   ;;------------------------------------------------------------
