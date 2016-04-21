@@ -51,12 +51,11 @@ def display_env_in_prompt(pythonpath):
 
 def update_conda_alias(pythonpath):
     """
-    Updates the alias 'ci' which usually points to `conda install` to
-    `conda install -n <env>` so that when an env is activated it will install
-    to the env in question.
+    Updates the CONDA_DEFAULT_ENV ENVVAR so `conda install` knows 
+	which env to install to
     """
     env_name = pythonpath.rsplit('/',1)[1]
-    aliases['ci'] = 'conda install -n {}'.format(env_name)
+    $CONDA_DEFAULT_ENV=env_name
 
 def main():
     choices = [conda_dir]
