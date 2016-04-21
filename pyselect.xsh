@@ -55,7 +55,10 @@ def update_conda_alias(pythonpath):
 	which env to install to
     """
     env_name = pythonpath.rsplit('/',1)[1]
-    $CONDA_DEFAULT_ENV=env_name
+    if env_name == base_name:
+        del $CONDA_DEFAULT_ENV
+    else:
+        $CONDA_DEFAULT_ENV=env_name
 
 def main():
     choices = [conda_dir]
