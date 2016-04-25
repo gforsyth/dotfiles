@@ -8,6 +8,13 @@
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	status = status -uno
+	branches = branch -a
+	tags = tag
+	stashes = stash list
+	unstage = reset -q HEAD --
+	discard = checkout --
+	uncommit = reset --mixed HEAD~
+	amend = commit --amend
 [credential]
 	helper = cache --timeout=3600
 [diff]
