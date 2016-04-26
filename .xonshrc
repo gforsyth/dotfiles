@@ -54,13 +54,14 @@ aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
 aliases['pyselect'] = 'source pyselect'
 aliases['ping'] = 'ping -4'
+aliases['cp'] = 'rsync -ah'
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
 aliases['ga'] = 'git add' 
 aliases['gd'] = 'git diff' 
 aliases['gch'] = 'git checkout' 
-aliases['gc'] = 'git commit' 
+aliases['gc'] = 'git commit -v' 
 
 $EDITOR="vim"
 $BROWSER="firefox"
