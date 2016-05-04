@@ -2,35 +2,38 @@ import os
 import socket
 import builtins
 
-$PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 $HOST=socket.gethostname()
 
+#by default $PATH is set to ['/usr/bin']
+if len($PATH) == 1:
+    $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 
-if $HOST=='theo':
-    if '/home/gil/anaconda/bin' not in $PATH:
-        $PATH.insert(0,'/home/gil/anaconda/bin')
-        $PATH.append('/opt/cuda/bin')
-    $WORKON_HOME='/home/gil/anaconda/envs'
+    if $HOST=='theo':
+        if '/home/gil/anaconda/bin' not in $PATH:
+            $PATH.insert(0,'/home/gil/anaconda/bin')
+            $PATH.append('/opt/cuda/bin')
+        $WORKON_HOME='/home/gil/anaconda/envs'
 
-elif $HOST=='bad_cat': 
-    if '/home/gil/miniconda3/bin' not in $PATH:
-        $PATH.insert(0,'/home/gil/miniconda3/bin')
-    $WORKON_HOME='/home/gil/miniconda3/envs'
+    elif $HOST=='bad_cat': 
+        if '/home/gil/miniconda3/bin' not in $PATH:
+            $PATH.insert(0,'/home/gil/miniconda3/bin')
+        $WORKON_HOME='/home/gil/miniconda3/envs'
 
-evalx("keychain --quiet ~/.ssh/id_ed25519")
-with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
-	data = f.read()
-	data = data.split()
+if not $SSH_AUTH_SOCK:
+    evalx("keychain --quiet ~/.ssh/id_ed25519")
+    with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
+        data = f.read()
+        data = data.split()
 
-$SSH_AUTH_SOCK = data[0].split('=')[1][:-1]
-$SSH_AGENT_PID = data[3].split('=')[1][:-1]
+    $SSH_AUTH_SOCK = data[0].split('=')[1][:-1]
+    $SSH_AGENT_PID = data[3].split('=')[1][:-1]
 
 $SHELL_TYPE='prompt_toolkit'
 
 #Enable AUTO_CD
 $AUTO_CD=True
 #Enable vim_mode
-#$VI_MODE=True
+$VI_MODE=True
 
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
@@ -74,3 +77,6 @@ $LC_ALL="en_US.UTF-8"
 #default colorscheme
 $XONSH_COLOR_STYLE='lovelace'
 
+del builtins
+del os
+del socket
