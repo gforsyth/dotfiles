@@ -396,7 +396,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org"))))
+    ("~/notes/scipy2016.org" "~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
