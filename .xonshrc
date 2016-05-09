@@ -4,8 +4,9 @@ import builtins
 
 $HOST=socket.gethostname()
 
-#by default $PATH is set to ['/usr/bin']
-if len($PATH) == 1:
+# conda env switcher sets $CONDA_DEFAULT_ENV
+# preserve current path if that is set
+if 'CONDA_DEFAULT_ENV' not in ${...}:
     $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 
     if $HOST=='theo':
@@ -19,7 +20,7 @@ if len($PATH) == 1:
             $PATH.insert(0,'/home/gil/miniconda3/bin')
         $WORKON_HOME='/home/gil/miniconda3/envs'
 
-if not $SSH_AUTH_SOCK:
+if 'SSH_AUTH_SOCK' not in ${...}:
     evalx("keychain --quiet ~/.ssh/id_ed25519")
     with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
         data = f.read()
