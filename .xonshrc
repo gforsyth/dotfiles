@@ -59,6 +59,7 @@ aliases['dd'] = 'dcfldd'
 aliases['pyselect'] = 'source pyselect'
 aliases['ping'] = 'ping -4'
 aliases['cp'] = 'rsync -ah'
+aliases['lookup'] = '/usr/bin/dict' #collision with Python dict
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
