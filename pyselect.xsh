@@ -77,3 +77,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+    del os
+    del WordCompleter
+    del Validator
+    del ValidationError
+    del prompt
