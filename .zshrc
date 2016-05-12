@@ -44,7 +44,4 @@ export TERM=rxvt-unicode-256color
 eval $(keychain --eval --agents ssh -Q --quiet id_ed25519)
 keychain --agents ssh -Q --quiet ~/.ssh/id_rsa
 
-source /usr/share/autoenv-git/activate.sh
-
-source /usr/share/zsh/plugins/bd.zsh
 
