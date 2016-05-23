@@ -1,11 +1,11 @@
 Xcursor.theme: /usr/share/icons/OpenZone_Black_Slim 
 Xcursor.size: 22
 urxvt*foreground: white
-URxvt.font: xft:Inconsolata:size=12,style=Regular, xft:Symbola:size=12,style=Regular
+URxvt.font: xft:mononoki:size=12,style=Regular, xft:Symbola:size=12,style=Regular
 urxvt*background: black
 URxvt*termName: rxvt
 
-dzen2.font:       xft:monaco:size=10 
+dzen2.font:       xft:mononoki:size=10
 dzen2.foreground: white
 dzen2.background: black
 
