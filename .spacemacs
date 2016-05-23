@@ -30,7 +30,8 @@ values."
      git
      markdown
      org
-     python
+     (python :variables
+             python-test-runner 'pytest)
      deft
      latex
      ;; (shell :variables
@@ -116,7 +117,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
+   dotspacemacs-default-font '("mononoki"
                                :size 18
                                :weight normal
                                :width normal
