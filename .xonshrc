@@ -6,7 +6,7 @@ $HOST=socket.gethostname()
 
 # conda env switcher sets $CONDA_DEFAULT_ENV
 # preserve current path if that is set
-if 'CONDA_DEFAULT_ENV' not in ${...}:
+if 'CONDA_DEFAULT_ENV' not in builtins.__xonsh_env__:
     $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 
     if $HOST=='theo':
@@ -20,7 +20,7 @@ if 'CONDA_DEFAULT_ENV' not in ${...}:
             $PATH.insert(0,'/home/gil/miniconda3/bin')
         $WORKON_HOME='/home/gil/miniconda3/envs'
 
-if 'SSH_AUTH_SOCK' not in ${...}:
+if 'SSH_AUTH_SOCK' not in builtins.__xonsh_env__:
     evalx("keychain --quiet ~/.ssh/id_ed25519")
     with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
         data = f.read()
@@ -39,7 +39,7 @@ $VI_MODE=True
 ##Completion funtimes
 $BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
 
-completions = ['pacman', 'arch', 'git', 'systemctl']
+completions = ['arch', 'git', 'systemctl']
 
 for i in completions:
     comp = '/usr/share/bash-completion/completions/{}'.format(i)
@@ -77,9 +77,10 @@ $LANG="en_US.UTF-8"
 $LC_ALL="en_US.UTF-8"
 
 #default colorscheme
-$XONSH_COLOR_STYLE='lovelace'
+$XONSH_COLOR_STYLE='algol_nu'
 
 $DYNAMIC_CWD_WIDTH='20%'
-del builtins
+
 del os
 del socket
+del builtins
