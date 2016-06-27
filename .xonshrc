@@ -79,7 +79,11 @@ $LC_ALL="en_US.UTF-8"
 #default colorscheme
 $XONSH_COLOR_STYLE='algol_nu'
 
+#keep the prompt short
 $DYNAMIC_CWD_WIDTH='20%'
+
+#xontrib loading
+xontrib load pacman_tabcomplete
 
 del os
 del socket
