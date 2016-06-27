@@ -79,6 +79,7 @@ $LC_ALL="en_US.UTF-8"
 #default colorscheme
 $XONSH_COLOR_STYLE='lovelace'
 
+$DYNAMIC_CWD_WIDTH='20%'
 del builtins
 del os
 del socket
