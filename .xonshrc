@@ -1,6 +1,5 @@
 import os
 import socket
-import builtins
 
 $HOST=socket.gethostname()
 
@@ -58,8 +57,8 @@ aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
 aliases['pyselect'] = 'source pyselect'
 aliases['ping'] = 'ping -4'
-aliases['cp'] = 'rsync -ah'
 aliases['lookup'] = '/usr/bin/dict' #collision with Python dict
+aliases['vpn'] = ['sudo', 'openconnect', 'go.vpn.gwu.edu']
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
@@ -84,7 +83,7 @@ $DYNAMIC_CWD_WIDTH='20%'
 
 #xontrib loading
 xontrib load pacman_tabcomplete
+xontrib load xonda
 
 del os
 del socket
-del builtins
