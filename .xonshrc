@@ -5,7 +5,7 @@ $HOST=socket.gethostname()
 
 # conda env switcher sets $CONDA_DEFAULT_ENV
 # preserve current path if that is set
-if 'CONDA_DEFAULT_ENV' not in builtins.__xonsh_env__:
+if 'CONDA_DEFAULT_ENV' not in __xonsh_env__:
     $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 
     if $HOST=='theo':
@@ -19,7 +19,7 @@ if 'CONDA_DEFAULT_ENV' not in builtins.__xonsh_env__:
             $PATH.insert(0,'/home/gil/miniconda3/bin')
         $WORKON_HOME='/home/gil/miniconda3/envs'
 
-if 'SSH_AUTH_SOCK' not in builtins.__xonsh_env__:
+if 'SSH_AUTH_SOCK' not in __xonsh_env__:
     evalx("keychain --quiet ~/.ssh/id_ed25519")
     with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
         data = f.read()
