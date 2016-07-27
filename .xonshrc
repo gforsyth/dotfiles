@@ -47,8 +47,16 @@ for i in completions:
 
     if not comp in $BASH_COMPLETIONS:
 		$BASH_COMPLETIONS.append(comp)
+
+##Helper functions
+
+def _lock_screen(args, stdin=None):
+    scrot /tmp/screen.png
+    convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
+    i3lock -d -i /tmp/screen.png
         
 ##Aliases (yeah... no shit, kid)
+aliases['lock'] = _lock_screen
 aliases['feh'] = 'feh -. --magick-timeout 1'
 aliases['dropbox'] = 'dropbox-cli'
 aliases['grep'] = 'grep -i --color=always'
