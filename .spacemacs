@@ -370,6 +370,15 @@ layers configuration. You are free to put any user code."
       (error "Cannot create link to this man page")))
 
   ;;------------------------------------------------------------
+  ;;--------------------make ` -> ~ in org----------------------
+  ;;------------------------------------------------------------
+  (defun swap-tilda-backtick ()
+    (interactive)
+    (insert "~"))
+
+  (define-key org-mode-map (kbd "`") 'swap-tilda-backtick)
+
+  ;;------------------------------------------------------------
   ;;----------------------display-stuff-------------------------
   ;;------------------------------------------------------------
   ;; turn on visual-line-mode in text modes only
