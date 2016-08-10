@@ -75,9 +75,13 @@ aliases['gd'] = 'git diff'
 aliases['gch'] = 'git checkout' 
 aliases['gc'] = 'git commit -v' 
 
-$EDITOR="vim"
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
+
+#EMACS stuff
+$ALTERNATE_EDITOR='emacs'
+$EDITOR='emacsclient'
+$VISUAL='emacsclient'
 
 #Encoding
 $LANG="en_US.UTF-8"
