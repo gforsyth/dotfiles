@@ -75,6 +75,10 @@ aliases['gd'] = 'git diff'
 aliases['gch'] = 'git checkout' 
 aliases['gc'] = 'git commit -v' 
 
+##tryout aliases
+aliases['pyi'] = ['python', 'setup.py', 'install']
+aliases['pyd'] = ['python', 'setup.py', 'develop']
+
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 
