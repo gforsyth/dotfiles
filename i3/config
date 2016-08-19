@@ -34,7 +34,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec roxterm
 
 # start quickswitch.py
 bindsym $mod+space exec quickswitch.py
@@ -49,7 +49,7 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 #start terminal
-bindsym $mod+t exec urxvt
+bindsym $mod+t exec roxterm
 
 # change focus
 bindsym $mod+j focus down
