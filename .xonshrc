@@ -82,11 +82,6 @@ aliases['pyd'] = ['python', 'setup.py', 'develop']
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 
-#EMACS stuff
-$ALTERNATE_EDITOR='emacs'
-$EDITOR='emacsclient'
-$VISUAL='emacsclient'
-
 #Encoding
 $LANG="en_US.UTF-8"
 $LC_ALL="en_US.UTF-8"
@@ -100,6 +95,9 @@ $DYNAMIC_CWD_WIDTH='20%'
 #xontrib loading
 xontrib load pacman_tabcomplete
 xontrib load xonda
+
+#silliness
+$FORMATTER_DICT['prompt_end'] = '\N{SPIRAL SHELL} '
 
 del os
 del socket
