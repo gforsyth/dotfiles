@@ -35,19 +35,6 @@ $AUTO_CD=True
 #Enable vim_mode
 $VI_MODE=True
 
-##Completion funtimes
-$BASH_COMPLETIONS[0]='/usr/share/bash-completion/bash_completion'
-
-completions = ['arch', 'git', 'systemctl']
-
-for i in completions:
-    comp = '/usr/share/bash-completion/completions/{}'.format(i)
-    if not os.path.isfile(comp):
-        continue
-
-    if not comp in $BASH_COMPLETIONS:
-		$BASH_COMPLETIONS.append(comp)
-
 ##Helper functions
 
 def _lock_screen(args, stdin=None):
@@ -93,7 +80,6 @@ $XONSH_COLOR_STYLE='algol_nu'
 $DYNAMIC_CWD_WIDTH='20%'
 
 #xontrib loading
-xontrib load pacman_tabcomplete
 xontrib load xonda
 
 #silliness
