@@ -1,0 +1,4 @@
+ln -s i3 ~/.i3
+ln -s org-mode ~/.emacs.d/elpa/yasnippet-****/org-mode
+ln -s roxterm.sourceforge.net ~/.config/roxterm.sourceforge.net
+ln -s dunst ~/.config/dunst
