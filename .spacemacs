@@ -291,6 +291,15 @@ layers configuration. You are free to put any user code."
   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
   ("\\paragraph{%s}" . "\\paragraph*{%s}")
   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  ;; RefTeX stuff
+
+  (setq reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource"))
+  '(reftex-use-external-file-finders t)
+  ; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  ; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
+  (setq reftex-plug-into-AUCTeX t)
   ;;------------------------------------------------------------
   ;;----------------------BABEL---------------------------------
   ;;------------------------------------------------------------
@@ -407,7 +416,8 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/notes/scipy2016.org" "~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org"))))
+    ("~/notes/scipy2016.org" "~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org")))
+ '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
