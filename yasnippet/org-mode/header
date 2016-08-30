@@ -11,3 +11,4 @@
 #+OPTIONS: texht:t
 #+LATEX_CLASS: ${1:myreport}
 #+TODO: TODO TOREAD | DONE READ
+#+BIBLIOGRAPHY: ${2:library} plain
