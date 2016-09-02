@@ -48,6 +48,7 @@ values."
    dotspacemacs-additional-packages
    '(
       ob-ipython
+      org-ref
       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
@@ -269,6 +270,13 @@ layers configuration. You are free to put any user code."
   ;;------------------------------------------------------------
   ;;----------------------LATEX---------------------------------
   ;;------------------------------------------------------------
+  ;;awesome org-mode bib ref thing
+  (require 'org-ref)
+
+  ;; set default latex engine to be xelatex
+  (setq TeX-engine 'xetex)
+  (setq TeX-PDF-mode t)
+
   ;;latex full-doc previews
   (add-hook 'doc-view-minor-mode-hook 'auto-revert-mode)
   (unless (boundp 'org-latex-classes)
@@ -300,6 +308,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
   ; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
   (setq reftex-plug-into-AUCTeX t)
+
   ;;------------------------------------------------------------
   ;;----------------------BABEL---------------------------------
   ;;------------------------------------------------------------
@@ -397,7 +406,7 @@ layers configuration. You are free to put any user code."
   ;; scale images by default to 400 pixels width
   ;;=> if there is a #+ATTR.*: width="200", resize to 200,
   ;;otherwise resize to 400
-  (setq org-image-actual-width '(400))
+;;  (setq org-image-actual-width '(400))
 
   ;; scale inline latex up a bit
   (plist-put org-format-latex-options :scale 1.5)
@@ -416,7 +425,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-    ("~/notes/scipy2016.org" "~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org")))
+    ("~/notes/dqe/dqe.org" "~/notes/scipy2016.org" "~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org")))
  '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
