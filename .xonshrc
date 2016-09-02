@@ -55,6 +55,9 @@ aliases['ping'] = 'ping -4'
 aliases['lookup'] = '/usr/bin/dict' #collision with Python dict
 aliases['vpn'] = ['sudo', 'openconnect', 'go.vpn.gwu.edu']
 
+##dont go boom aliases
+aliases['rm'] = 'rm -I'
+
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
 aliases['ga'] = 'git add' 
