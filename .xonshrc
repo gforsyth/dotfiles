@@ -58,6 +58,10 @@ aliases['vpn'] = ['sudo', 'openconnect', 'go.vpn.gwu.edu']
 ##dont go boom aliases
 aliases['rm'] = 'rm -I'
 
+##advcp aliases for progress bars
+aliases['cp'] = 'acp -g'
+aliases['mv'] = 'amv -g'
+
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
 aliases['ga'] = 'git add' 
