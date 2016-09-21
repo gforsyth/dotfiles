@@ -352,6 +352,14 @@ layers configuration. You are free to put any user code."
                              (org-agenda-files :maxlevel . 10) ; refile to any of these files
                              ))
   (setq org-refile-use-outline-path t)
+  ;; disable some evil mode stuff when using artist-mode to draw boxes
+  (defun artist-mode-toggle-emacs-state ()
+    (if artist-mode
+        (evil-emacs-state)
+      (evil-exit-emacs-state)))
+
+  (unless (eq dotspacemacs-editing-style 'emacs)
+    (add-hook 'artist-mode-hook #'artist-mode-toggle-emacs-state))
   ;;------------------------------------------------------------
   ;;----------------------org-man-search------------------------
   ;;------------------------------------------------------------
