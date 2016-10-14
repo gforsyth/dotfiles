@@ -1,5 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: IPython_with_block.block
+# name: console
 # key: co
 # binding: direct-keybinding
 # --
