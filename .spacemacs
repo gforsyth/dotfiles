@@ -34,6 +34,7 @@ values."
              python-test-runner 'pytest)
      deft
      latex
+     ivy
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -434,6 +435,9 @@ layers configuration. You are free to put any user code."
  '(org-agenda-files
    (quote
     ("~/notes/dqe/dqe.org" "~/notes/scipy2016.org" "~/notes/labnotebook.org" "~/notes/jupyter.org" "~/notes/git.org" "~/notes/commandline.org" "~/notes/PetIBM.org" "~/notes/todo.org" "~/notes/xonsh.org")))
+ '(package-selected-packages
+   (quote
+    (wgrep smex ivy-hydra counsel-projectile counsel swiper yapfify uuidgen py-isort org-projectile org-download live-py-mode link-hint git-link eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump column-enforce-mode flymake-python-pyflakes exec-path-from-shell ws-butler window-numbering volatile-highlights vi-tilde-fringe toc-org spaceline powerline smooth-scrolling smeargle restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-yapf popwin pip-requirements persp-mode pcre2el paradox spinner page-break-lines orgit org-repo-todo org-ref key-chord hydra ivy helm-bibtex biblio parsebib biblio-core org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets open-junk-file ob-ipython dash-functional neotree move-text mmm-mode markdown-toc markdown-mode magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flx-ido flx fill-column-indicator fancy-battery expand-region evil-visualstar evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-mc evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav disaster deft define-word cython-mode company-statistics company-quickhelp pos-tip company-c-headers company-auctex company-anaconda company cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed auctex-latexmk auctex anaconda-mode pythonic f dash s aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme)))
  '(safe-local-variable-values (quote ((TeX-command-extra-options . "-shell-escape")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
