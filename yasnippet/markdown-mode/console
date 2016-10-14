@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: IPython_with_block.block
+# key: co
+# binding: direct-keybinding
+# --
+\`\`\`${1:console}
+$0
+\`\`\`
