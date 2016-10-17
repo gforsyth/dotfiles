@@ -82,7 +82,7 @@ $LANG="en_US.UTF-8"
 $LC_ALL="en_US.UTF-8"
 
 #default colorscheme
-$XONSH_COLOR_STYLE='algol_nu'
+$XONSH_COLOR_STYLE='paraiso-dark'
 
 #keep the prompt short
 $DYNAMIC_CWD_WIDTH = '20%'
