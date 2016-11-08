@@ -82,7 +82,7 @@ $LANG="en_US.UTF-8"
 $LC_ALL="en_US.UTF-8"
 
 #default colorscheme
-$XONSH_COLOR_STYLE='paraiso-dark'
+$XONSH_COLOR_STYLE='default'
 
 #keep the prompt short
 $DYNAMIC_CWD_WIDTH = '20%'
@@ -95,7 +95,7 @@ $COMPLETIONS_CONFIRM = True
 xontrib load xonda
 
 #silliness
-$FORMATTER_DICT['prompt_end'] = '\N{SPIRAL SHELL} '
+$PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
 
 del os
 del socket
