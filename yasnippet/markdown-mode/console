@@ -1,8 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: console
-# key: co
+# name: threeticks
+# key: ba
 # binding: direct-keybinding
 # --
-\`\`\`${1:console}
+\`\`\`${1:bash}
 $0
 \`\`\`
