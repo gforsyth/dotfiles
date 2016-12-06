@@ -76,6 +76,7 @@ aliases['pyd'] = ['python', 'setup.py', 'develop']
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 $EDITOR='vim'
+$SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
 
 #Encoding
 $LANG="en_US.UTF-8"
