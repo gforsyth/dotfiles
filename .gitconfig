@@ -2,7 +2,7 @@
 	email = gilforsyth@gmail.com
 	name = Gil Forsyth
 [core]
-	safecrlf = true
+	safecrlf = false
 	autocrlf = input
 [alias]
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
