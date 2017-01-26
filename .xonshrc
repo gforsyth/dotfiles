@@ -9,10 +9,10 @@ if 'CONDA_DEFAULT_ENV' not in __xonsh_env__:
     $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 
     if $HOST=='theo':
-        if '/home/gil/anaconda/bin' not in $PATH:
-            $PATH.insert(0,'/home/gil/anaconda/bin')
+        if '/home/gil/miniconda3/bin' not in $PATH:
+            $PATH.insert(0,'/home/gil/miniconda3/bin')
             $PATH.append('/opt/cuda/bin')
-        $WORKON_HOME='/home/gil/anaconda/envs'
+        $WORKON_HOME='/home/gil/miniconda3/envs'
 
     elif $HOST=='bad_cat': 
         if '/home/gil/miniconda3/bin' not in $PATH:
