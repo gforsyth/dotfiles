@@ -16,3 +16,4 @@ autocutsel -selection PRIMARY -fork &
 
 #launch i3
 exec i3 
+xrandr --output DVI-D-0 --auto --left-of VGA-0
