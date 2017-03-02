@@ -1,7 +1,4 @@
 import os
-import socket
-
-$HOST=socket.gethostname()
 
 # conda env switcher sets $CONDA_DEFAULT_ENV
 # preserve current path if that is set
@@ -14,7 +11,7 @@ if 'CONDA_DEFAULT_ENV' not in __xonsh_env__:
             $PATH.append('/opt/cuda/bin')
         $WORKON_HOME='/home/gil/miniconda3/envs'
 
-    elif $HOST=='bad_cat': 
+    elif $HOST=='bad_cat':
         if '/home/gil/miniconda3/bin' not in $PATH:
             $PATH.insert(0,'/home/gil/miniconda3/bin')
         $WORKON_HOME='/home/gil/miniconda3/envs'
@@ -49,7 +46,7 @@ def _mkcd(args, stdin=None):
         cd @(args[0])
     else:
         return
-        
+
 ##Aliases (yeah... no shit, kid)
 aliases['mkcd'] = _mkcd
 aliases['lock'] = _lock_screen
@@ -73,10 +70,10 @@ aliases['mv'] = 'amv -g'
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
-aliases['ga'] = 'git add' 
-aliases['gd'] = 'git diff' 
-aliases['gch'] = 'git checkout' 
-aliases['gc'] = 'git commit -v' 
+aliases['ga'] = 'git add'
+aliases['gd'] = 'git diff'
+aliases['gch'] = 'git checkout'
+aliases['gc'] = 'git commit -v'
 
 ##tryout aliases
 aliases['pyi'] = ['python', 'setup.py', 'install']
@@ -112,4 +109,3 @@ $PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
 $PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
 
 del os
-del socket
