@@ -42,8 +42,16 @@ def _lock_screen(args, stdin=None):
     convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
     i3lock -i /tmp/screen.png
     pkill keepass
+
+def _mkcd(args, stdin=None):
+    if len(args) == 1:
+        mkdir -p @(args[0])
+        cd @(args[0])
+    else:
+        return
         
 ##Aliases (yeah... no shit, kid)
+aliases['mkcd'] = _mkcd
 aliases['lock'] = _lock_screen
 aliases['feh'] = 'feh -. --magick-timeout 1'
 aliases['dropbox'] = 'dropbox-cli'
@@ -73,6 +81,9 @@ aliases['gc'] = 'git commit -v'
 ##tryout aliases
 aliases['pyi'] = ['python', 'setup.py', 'install']
 aliases['pyd'] = ['python', 'setup.py', 'develop']
+
+##use emacsclient -c
+aliases['emacs'] = ['emacsclient', '-c']
 
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
