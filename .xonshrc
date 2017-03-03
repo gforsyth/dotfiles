@@ -83,11 +83,20 @@ aliases['pyi'] = ['python', 'setup.py', 'install']
 aliases['pyd'] = ['python', 'setup.py', 'develop']
 
 ##use emacsclient -c
-aliases['emacs'] = ['emacsclient', '-c']
+def _emacs(args, stdin=None):
+    if len(args) > 0:
+        emacsclient -nw @(*args)
+    else:
+        emacsclient -c
+
+aliases['emacs'] = _emacs
+
+# make everyone hate you
+aliases['vim'] = _emacs
 
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
-$EDITOR='vim'
+$EDITOR='/usr/bin/vim'
 $SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
 
 #Encoding
