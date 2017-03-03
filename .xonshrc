@@ -1,4 +1,7 @@
-import os
+import os.path
+import socket
+
+$HOST = socket.gethostname()
 
 # conda env switcher sets $CONDA_DEFAULT_ENV
 # preserve current path if that is set
