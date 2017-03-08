@@ -85,7 +85,7 @@ aliases['pyd'] = ['python', 'setup.py', 'develop']
 ##use emacsclient -c
 def _emacs(args, stdin=None):
     if len(args) > 0:
-        emacsclient -nw @(*args)
+        emacsclient -t @(*args)
     else:
         emacsclient -c
 
@@ -120,4 +120,5 @@ xontrib load xonda
 $PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
 $PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
 
-del os
+del os.path
+del socket
