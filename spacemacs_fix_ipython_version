@@ -1,1 +1,0 @@
-sed -i 's/\\\\n\$/\\\\^M\\\\n\$/' /home/gil/.emacs.d/layers/+lang/python/funcs.el 
