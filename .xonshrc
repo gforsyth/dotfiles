@@ -120,5 +120,5 @@ xontrib load xonda
 $PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
 $PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
 
-del os.path
+del os
 del socket
