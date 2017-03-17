@@ -91,9 +91,6 @@ def _emacs(args, stdin=None):
 
 aliases['emacs'] = _emacs
 
-# make everyone hate you
-aliases['vim'] = _emacs
-
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 $EDITOR='/usr/bin/vim'
