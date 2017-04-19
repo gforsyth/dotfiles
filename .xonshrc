@@ -112,6 +112,8 @@ $COMPLETIONS_CONFIRM = True
 
 #xontrib loading
 xontrib load xonda
+xontrib load autoxsh
+xontrib load bashisms
 
 #silliness
 $PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
@@ -119,3 +121,4 @@ $PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
 
 del os
 del socket
+
