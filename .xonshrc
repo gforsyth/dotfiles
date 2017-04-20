@@ -21,12 +21,12 @@ if 'CONDA_DEFAULT_ENV' not in __xonsh_env__:
 
 if 'SSH_AUTH_SOCK' not in __xonsh_env__:
     evalx("keychain --quiet ~/.ssh/id_ed25519")
-    with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
-        data = f.read()
-        data = data.split()
+with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
+    data = f.read()
+    data = data.split()
 
-    $SSH_AUTH_SOCK = data[0].split('=')[1][:-1]
-    $SSH_AGENT_PID = data[3].split('=')[1][:-1]
+$SSH_AUTH_SOCK = data[0].split('=')[1][:-1]
+$SSH_AGENT_PID = data[3].split('=')[1][:-1]
 
 $SHELL_TYPE='prompt_toolkit'
 
