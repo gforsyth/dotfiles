@@ -109,10 +109,10 @@ $DYNAMIC_CWD_WIDTH = '20%'
 #ptk display stuff
 $COMPLETIONS_BRACKETS = False
 $COMPLETIONS_CONFIRM = True
+$AUTO_SUGGEST_IN_COMPLETIONS = False
 
 #xontrib loading
 xontrib load xonda
-xontrib load autoxsh
 xontrib load bashisms
 
 #silliness
@@ -121,4 +121,3 @@ $PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
 
 del os
 del socket
-
