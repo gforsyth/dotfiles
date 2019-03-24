@@ -139,7 +139,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("mononoki"
-                               :size 18
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -361,6 +361,11 @@ layers configuration. You are free to put any user code."
 ;;  (setenv "WORKON_HOME" "~/anaconda/envs")
 ;; set in xonsh to handle different host conda installs...
   (pyvenv-mode 1)
+  ;; if anaconda mode is broken because of dev stuff, don't consistently bother me anyway
+  (with-eval-after-load 'anaconda-mode
+    (remove-hook 'anaconda-mode-response-read-fail-hook
+                 'anaconda-mode-show-unreadable-response))
+
   ;;------------------------------------------------------------
   ;;----------------------org-mode------------------------------
   ;;------------------------------------------------------------
