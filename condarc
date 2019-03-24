@@ -1,0 +1,12 @@
+channels:
+  - conda-forge
+  - defaults
+
+channel_priority: strict
+
+create_default_packages:
+  - pip
+  - ipython
+  - blas=*=openblas
+
+sat_solver: pycryptosat
