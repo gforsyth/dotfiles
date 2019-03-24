@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore")
+
 import os.path
 import socket
 
@@ -5,7 +8,7 @@ $HOST = socket.gethostname()
 
 # conda env switcher sets $CONDA_DEFAULT_ENV
 # preserve current path if that is set
-if 'CONDA_DEFAULT_ENV' not in __xonsh_env__:
+if 'CONDA_DEFAULT_ENV' not in __xonsh__.env:
     $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 
     if $HOST=='theo':
@@ -14,12 +17,12 @@ if 'CONDA_DEFAULT_ENV' not in __xonsh_env__:
             $PATH.append('/opt/cuda/bin')
         $WORKON_HOME='/home/gil/miniconda3/envs'
 
-    elif $HOST=='bad_cat':
+    elif $HOST=='badcat':
         if '/home/gil/miniconda3/bin' not in $PATH:
             $PATH.insert(0,'/home/gil/miniconda3/bin')
         $WORKON_HOME='/home/gil/miniconda3/envs'
 
-if 'SSH_AUTH_SOCK' not in __xonsh_env__:
+if 'SSH_AUTH_SOCK' not in __xonsh__.env:
     evalx("keychain --quiet ~/.ssh/id_ed25519")
 with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
     data = f.read()
@@ -53,7 +56,7 @@ def _mkcd(args, stdin=None):
 ##Aliases (yeah... no shit, kid)
 aliases['mkcd'] = _mkcd
 aliases['lock'] = _lock_screen
-aliases['feh'] = 'feh -. --magick-timeout 1'
+aliases['feh'] = 'feh -. --conversion-timeout 1'
 aliases['dropbox'] = 'dropbox-cli'
 aliases['grep'] = 'grep -i --color=always'
 aliases['mkdir'] = 'mkdir -p'
@@ -113,11 +116,12 @@ $AUTO_SUGGEST_IN_COMPLETIONS = False
 
 #xontrib loading
 xontrib load xonda
-xontrib load bashisms
 
 #silliness
-$PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
+#$PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
 $PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
 
 del os
 del socket
+
+source ~/github.com/gforsyth/dotfiles/git.xsh
