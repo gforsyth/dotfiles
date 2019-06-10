@@ -1,19 +1,42 @@
-#background shuffler
-feh --bg-center "$(find ~/.backgrounds/|shuf -n1)" &
-#merge in style
-xrdb -merge ~/.Xresources
-#remap capslock to extra ctrl
-setxkbmap -option 'ctrl:nocaps'
-#fix cursor pointing wrong way
-xsetroot -cursor_name left_ptr
+#!/bin/sh
 
-#start dropbox
-dropbox-cli start
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
+#background shuffler
+feh --bg-center "$(find ~/Dropbox/.backgrounds/|shuf -n1)" &
 
 #synchronizes copy/paste buffers used by X applications
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
+#autocutsel -fork &
+#autocutsel -selection PRIMARY -fork &
 
-#launch i3
-exec i3 
-xrandr --output DVI-D-0 --auto --left-of VGA-0
+exec i3
