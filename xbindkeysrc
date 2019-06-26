@@ -40,30 +40,22 @@
     m:0x10 + c:123
     Mod2 + XF86AudioRaiseVolume 
 
-#Volup-Theo
-"amixer set Master 5%+"
-    m:0x10 + c:69
-    Mod2 + F3 
-
 #VolDown
 "amixer set Master 5%-"
     m:0x10 + c:122
     Mod2 + XF86AudioLowerVolume 
-
-#VolDown-Theo
-"amixer set Master 5%-"
-    m:0x10 + c:68
-    Mod2 + F2 
 
 #VolMute
 "amixer sset Master toggle"
     m:0x10 + c:121
     Mod2 + XF86AudioMute 
 
-#VolMute-Theo
-"amixer sset Master toggle"
-    m:0x10 + c:67
-    Mod2 + F1 
+#Brightness Up
+"xbacklight -inc 10"
+    XF86MonBrightnessUp
 
+#Brightness Down
+"xbacklight -dec 10"
+    XF86MonBrightnessDown
 #
 # End of xbindkeys configuration
