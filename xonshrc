@@ -5,31 +5,7 @@ import os.path
 import socket
 
 $HOST = socket.gethostname()
-
-# conda env switcher sets $CONDA_DEFAULT_ENV
-# preserve current path if that is set
-if 'CONDA_DEFAULT_ENV' not in __xonsh__.env:
-    $PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
-
-    if $HOST=='theo':
-        if '/home/gil/miniconda3/bin' not in $PATH:
-            $PATH.insert(0,'/home/gil/miniconda3/bin')
-            $PATH.append('/opt/cuda/bin')
-        $WORKON_HOME='/home/gil/miniconda3/envs'
-
-    elif $HOST=='badcat':
-        if '/home/gil/miniconda3/bin' not in $PATH:
-            $PATH.insert(0,'/home/gil/miniconda3/bin')
-        $WORKON_HOME='/home/gil/miniconda3/envs'
-
-if 'SSH_AUTH_SOCK' not in __xonsh__.env:
-    evalx("keychain --quiet ~/.ssh/id_ed25519")
-with open(os.path.expanduser('~') + '/.keychain/' + $HOST + '-sh','r') as f:
-    data = f.read()
-    data = data.split()
-
-$SSH_AUTH_SOCK = data[0].split('=')[1][:-1]
-$SSH_AGENT_PID = data[3].split('=')[1][:-1]
+$PATH=['/opt/miniconda3/bin/', '/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
 
 $SHELL_TYPE='prompt_toolkit'
 
@@ -62,17 +38,14 @@ aliases['grep'] = 'grep -i --color=always'
 aliases['mkdir'] = 'mkdir -p'
 aliases['music'] = 'mps'
 aliases['dd'] = 'dcfldd'
-aliases['pyselect'] = 'source pyselect'
-aliases['ping'] = 'ping -4'
 aliases['lookup'] = '/usr/bin/dict' #collision with Python dict
-aliases['vpn'] = ['sudo', 'openconnect', 'go.vpn.gwu.edu']
 
 ##dont go boom aliases
 aliases['rm'] = 'rm -I'
 
 ##advcp aliases for progress bars
-aliases['cp'] = 'acp -g'
-aliases['mv'] = 'amv -g'
+#aliases['cp'] = 'acp -g'
+#aliases['mv'] = 'amv -g'
 
 ##git aliases
 aliases['gs'] = 'git status' #collides with ghostscript but who cares?
@@ -114,6 +87,9 @@ $COMPLETIONS_BRACKETS = False
 $COMPLETIONS_CONFIRM = True
 $AUTO_SUGGEST_IN_COMPLETIONS = False
 
+#always send xclip stuff to the system clipboard
+aliases["xclip"] = ["xclip", "-sel", "clip"]
+
 #xontrib loading
 xontrib load xonda
 
@@ -125,3 +101,4 @@ del os
 del socket
 
 source ~/github.com/gforsyth/dotfiles/git.xsh
+source ~/github.com/gforsyth/dotfiles/gpgssh.xsh
