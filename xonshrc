@@ -62,15 +62,6 @@ aliases['gc'] = 'git commit -v'
 aliases['pyi'] = ['python', 'setup.py', 'install']
 aliases['pyd'] = ['python', 'setup.py', 'develop']
 
-##use emacsclient -c
-def _emacs(args, stdin=None):
-    if len(args) > 0:
-        emacsclient -t @(*args)
-    else:
-        emacsclient -c
-
-aliases['emacs'] = _emacs
-
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
 $EDITOR='/usr/bin/vim'
