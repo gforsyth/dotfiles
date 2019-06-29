@@ -11,8 +11,12 @@ $SHELL_TYPE='prompt_toolkit'
 
 #Enable AUTO_CD
 $AUTO_CD=True
+
 #Enable vim_mode
 $VI_MODE=True
+
+# for emacs environment switching
+$WORKON_HOME="/opt/miniconda3/envs"
 
 ##Helper functions
 
@@ -96,6 +100,8 @@ xontrib load xonda
 #silliness
 #$PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
 $PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
+
+$MULTILINE_PROMPT="°º¤ø,¸¸,ø¤º°`"
 
 del os
 del socket
