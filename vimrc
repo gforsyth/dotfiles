@@ -1,9 +1,10 @@
-set nocompatible
+set nocompatible    " required for Vundle
+filetype off        " required for Vundle
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin("~/.vimrc/bundle")
 "To install, run :PluginInstall, or :PluginUpdate
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/TeX-9'
