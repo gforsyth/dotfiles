@@ -1,0 +1,14 @@
+[Unit]
+Description=User suspend actions
+Before=sleep.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStartPre= -/usr/bin/lockimage
+ExecStart=/usr/bin/i3lock -i /tmp/screen.png
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target

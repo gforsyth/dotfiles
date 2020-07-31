@@ -1,0 +1,11 @@
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=%I
+Type=simple
+ExecStart=rm /tmp/screen.png
+
+[Install]
+WantedBy=suspend.target
