@@ -1,4 +1,5 @@
 URxvt.font: xft:mononoki:size=11,style=Regular,xft:Symbola:size=8
+!URxvt.font: xft:3270NarrowNerdFontComplete:size=8,style=Regular
 URxvt.termName: rxvt
 
 !fix crappy kerning
@@ -9,7 +10,7 @@ URxvt.letterSpace: 1
 !selection-to-clipboard: link urxvt to regular clipboard
 !tabbedex: enable tabs
 URxvt.perl-ext-common: default,matcher,font-size,selection-to-clipboard
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/vivaldi-stable
 URxvt.matcher.button: 1
 
 !Key bindings for font size change
@@ -22,41 +23,88 @@ URxvt.keysym.C-S-Down:  perl:font-size:decglobal
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-#define base00 #1d1f21
-#define base01 #B84242
-#define base02 #373b41
-#define base03 #969896
-#define base04 #b4b7b4
-#define base05 #c5c8c6
-#define base06 #e0e0e0
-#define base07 #ffffff
-#define base08 #CC342B
-#define base09 #F96A38
-#define base0A #FBA922
-#define base0B #198844
-#define base0C #3971ED
-#define base0D #3971ED
-#define base0E #A36AC7
-#define base0F #3971ED
+!#define base00 #1d1f21
+!#define base01 #B84242
+!#define base02 #373b41
+!#define base03 #969896
+!#define base04 #b4b7b4
+!#define base05 #c5c8c6
+!#define base06 #e0e0e0
+!#define base07 #ffffff
+!#define base08 #CC342B
+!#define base09 #F96A38
+!#define base0A #FBA922
+!#define base0B #198844
+!#define base0C #3971ED
+!#define base0D #3971ED
+!#define base0E #A36AC7
+!#define base0F #3971ED
+!
+!*.foreground:   base05
+!*.background:   base00
+!*.cursorColor:  base05
+!
+!*.color0:       base00
+!*.color1:       base08
+!*.color2:       base0B
+!*.color3:       base0A
+!*.color4:       base0D
+!*.color5:       base0E
+!*.color6:       base0C
+!*.color7:       base05
+!
+!*.color8:       base03
+!*.color9:       base09
+!*.color10:      base01
+!*.color11:      base02
+!*.color12:      base04
+!*.color13:      base06
+!*.color14:      base0F
+!*.color15:      base07
+!! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
-*.foreground:   base05
-*.background:   base00
-*.cursorColor:  base05
+! Project:    Nord XResources
+! Version:    0.1.0
+! Repository: https://github.com/arcticicestudio/nord-xresources
+! License:    MIT
 
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
 
-*.color8:       base03
-*.color9:       base09
-*.color10:      base01
-*.color11:      base02
-*.color12:      base04
-*.color13:      base06
-*.color14:      base0F
-*.color15:      base07
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
