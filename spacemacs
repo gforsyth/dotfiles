@@ -31,21 +31,22 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(
-     javascript
-     csv
-     auto-completion
-     c-c++
+   '(javascript
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+     ;; <M-m f e R> (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+     helm
+     ;; auto-completion
+     ;; better-defaults
      emacs-lisp
      git
      markdown
      org
+     org-roam
      (python :variables
              python-test-runner 'pytest)
-     deft
-     latex
-     ivy
-     html
      yaml
      )
    ;; List of additional packages that will be installed without being
@@ -55,8 +56,9 @@ values."
    dotspacemacs-additional-packages
    '(
       ob-ipython
-      org-ref
-      keychain-environment
+;;      org-ref
+;;      keychain-environment
+      pinentry
       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -111,7 +113,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'nil
+   dotspacemacs-startup-banner 'official
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -139,7 +141,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("mononoki"
-                               :size 14
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -157,7 +159,7 @@ values."
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
    dotspacemacs-major-mode-leader-key ","
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
-   ;; (default "C-M-m)
+   ;; (default "C-M-m")
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
    ;; These variables control whether separate commands are bound in the GUI to
    ;; the key pairs C-i, TAB and C-m, RET.
@@ -196,10 +198,6 @@ values."
    dotspacemacs-auto-save-file-location 'cache
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
-   ;; If non nil then `ido' replaces `helm' for some commands. For now only
-   ;; `find-files' (SPC f f), `find-spacemacs-file' (SPC f e s), and
-   ;; `find-contrib-file' (SPC f e c) are replaced. (default nil)
-   dotspacemacs-use-ido nil
    ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
    dotspacemacs-helm-resize nil
    ;; if non nil, the helm header is hidden when there is only one source.
@@ -208,9 +206,14 @@ values."
    ;; define the position to display `helm', options are `bottom', `top',
    ;; `left', or `right'. (default 'bottom)
    dotspacemacs-helm-position 'bottom
+   ;; Controls fuzzy matching in helm. If set to `always', force fuzzy matching
+   ;; in all non-asynchronous sources. If set to `source', preserve individual
+   ;; source settings. Else, disable fuzzy matching in all sources.
+   ;; (default 'always)
+   dotspacemacs-helm-use-fuzzy 'always
    ;; If non nil the paste micro-state is enabled. When enabled pressing `p`
    ;; several times cycle between the kill ring content. (default nil)
-   dotspacemacs-enable-paste-micro-state nil
+   dotspacemacs-enable-paste-transient-state nil
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
    dotspacemacs-which-key-delay 0.4
@@ -241,24 +244,45 @@ values."
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 90
+   ;; If non nil show the titles of transient states. (default t)
+   dotspacemacs-show-transient-state-title t
+   ;; If non nil show the color guide hint for transient state keys. (default t)
+   dotspacemacs-show-transient-state-color-guide t
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
    dotspacemacs-mode-line-unicode-symbols t
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
-   ;; scrolling overrides the default behavior of Emacs which recenters the
-   ;; point when it reaches the top or bottom of the screen. (default t)
+   ;; scrolling overrides the default behavior of Emacs which recenters point
+   ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
-   ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
-   ;; derivatives. If set to `relative', also turns on relative line numbers.
+   ;; Control line numbers activation.
+   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
+   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
+   ;; This variable can also be set to a property list for finer control:
+   ;; '(:relative nil
+   ;;   :disabled-for-modes dired-mode
+   ;;                       doc-view-mode
+   ;;                       markdown-mode
+   ;;                       org-mode
+   ;;                       pdf-view-mode
+   ;;                       text-mode
+   ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
+   ;; Code folding method. Possible values are `evil' and `origami'.
+   ;; (default 'evil)
+   dotspacemacs-folding-method 'evil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
+   ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
+   ;; over any automatically added closing parenthesis, bracket, quote, etc…
+   ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
+   dotspacemacs-smart-closing-parenthesis nil
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
    dotspacemacs-highlight-delimiters 'all
-   ;; If non nil advises quit functions to keep server open when quitting.
+   ;; If non nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
    dotspacemacs-persistent-server nil
    ;; List of search tool executable names. Spacemacs uses the first installed
@@ -274,15 +298,17 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'nil
+   dotspacemacs-whitespace-cleanup nil
    ))
 
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
-It is called immediately after `dotspacemacs/init'.  You are free to put almost
-any user code here.  The exception is org related code, which should be placed
-in `dotspacemacs/user-config'."
+It is called immediately after `dotspacemacs/init', before layer configuration
+executes.
+ This function is mostly useful for variables that need to be set
+before packages are loaded. If you are unsure, you should try in setting them in
+`dotspacemacs/user-config' first."
   )
 
 (defun dotspacemacs/user-config ()
@@ -304,43 +330,43 @@ layers configuration. You are free to put any user code."
   ;;----------------------LATEX---------------------------------
   ;;------------------------------------------------------------
   ;;awesome org-mode bib ref thing
-  (require 'org-ref)
+  ;;(require 'org-ref)
 
   ;; set default latex engine to be xelatex
-  (setq TeX-engine 'xetex)
-  (setq TeX-PDF-mode t)
+  ;;(setq TeX-engine 'xetex)
+  ;;(setq TeX-PDF-mode t)
 
   ;;latex full-doc previews
-  (add-hook 'doc-view-minor-mode-hook 'auto-revert-mode)
-  (unless (boundp 'org-latex-classes)
-    (setq org-latex-classes nil))
-  (add-to-list 'org-latex-classes
-                '("myreport"
-                  "\\documentclass[a4paper,10pt]{report}
-  \\usepackage[utf8]{inputenc}
-  \\usepackage{amsmath}
-  \\usepackage{amsfonts}
-  \\usepackage{amssymb}
-  \\usepackage{hyperref}
-  \\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
-  \\usepackage{fontspec}
-  \\setmainfont{Linux Biolinum}
-  [NO-DEFAULT-PACKAGES]
-  [NO-PACKAGES]"
-  ("\\section{%s}" . "\\section*{%s}")
-  ("\\subsection{%s}" . "\\subsection*{%s}")
-  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-  ("\\paragraph{%s}" . "\\paragraph*{%s}")
-  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  ;;(add-hook 'doc-view-minor-mode-hook 'auto-revert-mode)
+  ;;(unless (boundp 'org-latex-classes)
+  ;;  (setq org-latex-classes nil))
+  ;;(add-to-list 'org-latex-classes
+  ;;              '("myreport"
+  ;;                "\\documentclass[a4paper,10pt]{report}
+  ;;\\usepackage[utf8]{inputenc}
+  ;;\\usepackage{amsmath}
+  ;;\\usepackage{amsfonts}
+  ;;\\usepackage{amssymb}
+  ;;\\usepackage{hyperref}
+  ;;\\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+  ;;\\usepackage{fontspec}
+  ;;\\setmainfont{Linux Biolinum}
+  ;;[NO-DEFAULT-PACKAGES]
+  ;;[NO-PACKAGES]"
+  ;;("\\section{%s}" . "\\section*{%s}")
+  ;;("\\subsection{%s}" . "\\subsection*{%s}")
+  ;;("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+  ;;("\\paragraph{%s}" . "\\paragraph*{%s}")
+  ;;("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-  ;; RefTeX stuff
+  ;;;; RefTeX stuff
 
-  (setq reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource"))
-  '(reftex-use-external-file-finders t)
-  ; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
-  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-  ; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
-  (setq reftex-plug-into-AUCTeX t)
+  ;;(setq reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource"))
+  ;;'(reftex-use-external-file-finders t)
+  ;;; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
+  ;;(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  ;;; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
+  ;;(setq reftex-plug-into-AUCTeX t)
 
   ;;------------------------------------------------------------
   ;;----------------------BABEL---------------------------------
@@ -358,8 +384,6 @@ layers configuration. You are free to put any user code."
   ;;------------------------------------------------------------
   ;;-------------------Conda Envs-------------------------------
   ;;------------------------------------------------------------
-;;  (setenv "WORKON_HOME" "~/anaconda/envs")
-;; set in xonsh to handle different host conda installs...
   (pyvenv-mode 1)
   ;; if anaconda mode is broken because of dev stuff, don't consistently bother me anyway
   (with-eval-after-load 'anaconda-mode
@@ -435,6 +459,13 @@ layers configuration. You are free to put any user code."
       (error "Cannot create link to this man page")))
 
   ;;------------------------------------------------------------
+  ;;--------------------magit gpg stuff-------------------------
+  ;;------------------------------------------------------------
+  (setq epa-pinentry-mode 'loopback)
+  (pinentry-start)
+
+
+  ;;------------------------------------------------------------
   ;;--------------------make ` -> ~ in org----------------------
   ;;------------------------------------------------------------
   (defun swap-tilda-backtick ()
@@ -479,10 +510,37 @@ layers configuration. You are free to put any user code."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (edit-indirect yaml-mode wgrep web-mode web-beautify tagedit smex slim-mode scss-mode sass-mode pug-mode org-ref pdf-tools key-chord helm-bibtex biblio parsebib biblio-core tablist ob-ipython livid-mode skewer-mode simple-httpd keychain-environment json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc ivy-hydra haml-mode fuzzy emmet-mode disaster deft csv-mode counsel-projectile counsel swiper ivy company-web web-completion-data company-tern tern company-statistics company-c-headers company-auctex company-anaconda company coffee-mode cmake-mode clang-format auto-yasnippet yasnippet auctex ac-ispell auto-complete yapfify ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline smeargle restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word cython-mode column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (helm-css-scss helm helm-core spinner iedit anzu evil undo-tree powerline smartparens request org-category-capture alert log4e gntp org-plus-contrib markdown-mode magit-popup magit hydra lv dash-functional parent-mode gitignore-mode flx transient git-commit with-editor goto-chg projectile pkg-info epl bind-map bind-key packed async pythonic f dash s avy popup ob-ipython auctex-latexmk pinentry edit-indirect yaml-mode wgrep web-mode web-beautify tagedit smex slim-mode scss-mode sass-mode pug-mode org-ref pdf-tools key-chord helm-bibtex biblio parsebib biblio-core tablist livid-mode skewer-mode simple-httpd keychain-environment json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc ivy-hydra haml-mode fuzzy emmet-mode disaster deft csv-mode counsel-projectile counsel swiper ivy company-web web-completion-data company-tern tern company-statistics company-c-headers company-auctex company-anaconda company coffee-mode cmake-mode clang-format auto-yasnippet yasnippet auctex ac-ispell auto-complete yapfify ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline smeargle restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word cython-mode column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common
+   ((t
+     (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection
+   ((t
+     (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (tide typescript-mode prettier-js nodejs-repl import-js grizzl impatient-mode helm-gtags ggtags dap-mode posframe lsp-treemacs bui lsp-mode counsel-gtags add-node-modules-path helm-css-scss helm helm-core spinner iedit anzu evil undo-tree powerline smartparens request org-category-capture alert log4e gntp org-plus-contrib markdown-mode magit-popup magit hydra lv dash-functional parent-mode gitignore-mode flx transient git-commit with-editor goto-chg projectile pkg-info epl bind-map bind-key packed async pythonic f dash s avy popup ob-ipython auctex-latexmk pinentry edit-indirect yaml-mode wgrep web-mode web-beautify tagedit smex slim-mode scss-mode sass-mode pug-mode org-ref pdf-tools key-chord helm-bibtex biblio parsebib biblio-core tablist livid-mode skewer-mode simple-httpd keychain-environment json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc ivy-hydra haml-mode fuzzy emmet-mode disaster deft csv-mode counsel-projectile counsel swiper ivy company-web web-completion-data company-tern tern company-statistics company-c-headers company-auctex company-anaconda company coffee-mode cmake-mode clang-format auto-yasnippet yasnippet auctex ac-ispell auto-complete yapfify ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline smeargle restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word cython-mode column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
