@@ -5,9 +5,9 @@ import os.path
 import socket
 
 $HOST = socket.gethostname()
-$PATH=['/usr/bin','/usr/local/bin', '/usr/bin/vendor_perl/', '/usr/bin/core_perl/']
+$PATH=["/usr/bin","/usr/local/bin", "/usr/bin/vendor_perl/", "/usr/bin/core_perl/"]
 
-$SHELL_TYPE='prompt_toolkit'
+$SHELL_TYPE="prompt_toolkit"
 
 #Enable AUTO_CD
 $AUTO_CD=True
@@ -24,7 +24,6 @@ def _lock_screen(args, stdin=None):
     scrot /tmp/screen.png
     convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
     i3lock -i /tmp/screen.png
-    pkill keepass
 
 def _mkcd(args, stdin=None):
     if len(args) == 1:
@@ -33,39 +32,42 @@ def _mkcd(args, stdin=None):
     else:
         return
 
+## Alias clear explicitly to avoid miniconda interference
+aliases["clear"] = "/usr/bin/clear"
+
 ##Aliases (yeah... no shit, kid)
-aliases['mkcd'] = _mkcd
-aliases['lock'] = _lock_screen
-aliases['feh'] = 'feh -. --conversion-timeout 1'
-aliases['dropbox'] = 'dropbox-cli'
-aliases['grep'] = 'grep -i --color=always'
-aliases['mkdir'] = 'mkdir -p'
-aliases['music'] = 'mps'
-aliases['dd'] = 'dcfldd'
-aliases['lookup'] = '/usr/bin/dict' #collision with Python dict
+aliases["mkcd"] = _mkcd
+aliases["lock"] = _lock_screen
+aliases["feh"] = "feh -. --conversion-timeout 1"
+aliases["dropbox"] = "dropbox-cli"
+aliases["grep"] = "grep -i --color=always"
+aliases["mkdir"] = "mkdir -p"
+aliases["music"] = "mps"
+aliases["dd"] = "dcfldd"
+aliases["lookup"] = "/usr/bin/dict" #collision with Python dict
 
 ## Rust utils
-aliases['cat'] = 'bat'
-aliases['ls'] = 'exa'
-aliases['tree'] = 'exa -T'
+aliases["cat"] = "bat"
+aliases["ls"] = "exa"
+aliases["tree"] = "exa -T"
 
 ##dont go boom aliases
-aliases['rm'] = 'rm -I'
+aliases["rm"] = "rm -I"
 
 ##advcp aliases for progress bars
-#aliases['cp'] = 'acp -g'
-#aliases['mv'] = 'amv -g'
+#aliases["cp"] = "acp -g"
+#aliases["mv"] = "amv -g"
 
 ##git aliases
-aliases['gs'] = 'git status' #collides with ghostscript but who cares?
-aliases['ga'] = 'git add'
-aliases['gd'] = 'git diff'
-aliases['gch'] = 'git checkout'
-aliases['gc'] = 'git commit -v'
+aliases["gs"] = "git status" #collides with ghostscript but who cares?
+aliases["ga"] = "git add"
+aliases["gd"] = "git diff"
+aliases["gch"] = "git checkout"
+aliases["gc"] = "git commit -v"
 
 $BROWSER="firefox"
 $TERM="rxvt-unicode-256color"
-$EDITOR='/usr/bin/vim'
+$EDITOR="/usr/bin/vim"
 $SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
 
 #Encoding
@@ -73,10 +75,10 @@ $LANG="en_US.UTF-8"
 $LC_ALL="en_US.UTF-8"
 
 #default colorscheme
-$XONSH_COLOR_STYLE='default'
+$XONSH_COLOR_STYLE="default"
 
 #keep the prompt short
-$DYNAMIC_CWD_WIDTH = '20%'
+$DYNAMIC_CWD_WIDTH = "20%"
 
 #ptk display stuff
 $COMPLETIONS_BRACKETS = False
@@ -88,10 +90,15 @@ aliases["xclip"] = ["xclip", "-sel", "clip"]
 
 aliases["bd"] = "cd .."
 
+aliases["borg"] = ["borg", "--remote-path=borg1"]
+
 #silliness
-#$PROMPT_FIELDS['prompt_end'] = '\N{SPIRAL SHELL} '
+#$PROMPT_FIELDS["prompt_end"] = "\N{SPIRAL SHELL} "
 #xontrib load prompt_bar
-$PROMPT = $PROMPT.replace('BOLD_GREEN', 'BOLD_WHITE')
+$PROMPT = $PROMPT.replace("BOLD_GREEN", "BOLD_WHITE")
+
+# Updated ls with icons
+xontrib load xlsd
 
 $MULTILINE_PROMPT="°º¤ø,¸¸,ø¤º°`"
 
@@ -104,7 +111,7 @@ source ~/github.com/gforsyth/dotfiles/kubernetes.xsh
 
 
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# !! Contents within this block are managed by "conda init" !!
 import sys as _sys
 from types import ModuleType as _ModuleType
 _mod = _ModuleType("xontrib.conda",
