@@ -10,7 +10,7 @@ URxvt.letterSpace: 1
 !selection-to-clipboard: link urxvt to regular clipboard
 !tabbedex: enable tabs
 URxvt.perl-ext-common: default,matcher,font-size,selection-to-clipboard
-URxvt.url-launcher: /usr/bin/vivaldi-stable
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 !Key bindings for font size change
@@ -22,6 +22,12 @@ URxvt.keysym.C-S-Down:  perl:font-size:decglobal
 !Disable default binding for Ctrl+Shift bindings to work
 URxvt.iso14755: false
 URxvt.iso14755_52: false
+
+!Increase scrollback buffer
+URxvt.saveLines: 200000
+
+!Set explicit cursor size
+Xcursor.size: 16
 
 !#define base00 #1d1f21
 !#define base01 #B84242
