@@ -1,4 +1,4 @@
-URxvt.font: xft:mononoki:size=11,style=Regular,xft:Symbola:size=8
+URxvt.font: xft:mononoki:size=11,style=Regular,Noto Color Emoji:size=8
 !URxvt.font: xft:3270NarrowNerdFontComplete:size=8,style=Regular
 URxvt.termName: rxvt
 
