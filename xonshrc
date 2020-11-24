@@ -35,6 +35,9 @@ def _mkcd(args, stdin=None):
 ## Alias clear explicitly to avoid miniconda interference
 aliases["clear"] = "/usr/bin/clear"
 
+## For kitty only, add alias to display images in terminal
+aliases["icat"] = "kitty +kitten icat"
+
 ##Aliases (yeah... no shit, kid)
 aliases["mkcd"] = _mkcd
 aliases["lock"] = _lock_screen
@@ -45,6 +48,7 @@ aliases["mkdir"] = "mkdir -p"
 aliases["music"] = "mps"
 aliases["dd"] = "dcfldd"
 aliases["lookup"] = "/usr/bin/dict" #collision with Python dict
+aliases["xo"] = "xdg-open"
 
 ## Rust utils
 aliases["cat"] = "bat"
@@ -93,7 +97,7 @@ aliases["bd"] = "cd .."
 aliases["borg"] = ["borg", "--remote-path=borg1"]
 
 #silliness
-#$PROMPT_FIELDS["prompt_end"] = "\N{SPIRAL SHELL} "
+$PROMPT_FIELDS["prompt_end"] = "\N{SPIRAL SHELL} "
 #xontrib load prompt_bar
 $PROMPT = $PROMPT.replace("BOLD_GREEN", "BOLD_WHITE")
 
@@ -105,9 +109,10 @@ $MULTILINE_PROMPT="°º¤ø,¸¸,ø¤º°`"
 del os
 del socket
 
-source ~/github.com/gforsyth/dotfiles/git.xsh
-source ~/github.com/gforsyth/dotfiles/gpgssh.xsh
-source ~/github.com/gforsyth/dotfiles/kubernetes.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/git.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/gpgssh.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/kubernetes.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/aliases.xsh
 
 
 # >>> conda initialize >>>
