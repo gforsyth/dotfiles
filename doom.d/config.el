@@ -7,3 +7,7 @@
   :init
   (setq conda-anaconda-home (expand-file-name "/opt/miniconda3"))
   )
+
+(setq doom-theme 'doom-city-lights)
+
+(setq shell-file-name "xonsh")
