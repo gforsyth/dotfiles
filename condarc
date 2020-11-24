@@ -4,5 +4,3 @@ channels:
 
 create_default_packages:
   - pip
-  - ipython
-  - blas=*=openblas
