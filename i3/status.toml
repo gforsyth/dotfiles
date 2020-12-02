@@ -1,0 +1,42 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+
+[[block]]
+block = "net"
+device = "wireless"
+ssid = true
+signal_strength = true
+speed_up = false
+speed_down = false
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
+block = "bluetooth"
+mac = "00:1B:66:88:12:79"
+label = "HD1 M2"
+
+[[block]]
+block = "bluetooth"
+mac = "E4:22:A5:90:13:B2"
+label = "PLT Focus"
+
+[[block]]
+block = "bluetooth"
+mac = "C9:5C:FD:04:31:D3"
+label = "Tribit"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %Y/%m/%d %R"
