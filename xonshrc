@@ -52,7 +52,6 @@ aliases["xo"] = "xdg-open"
 
 ## Rust utils
 aliases["cat"] = "bat"
-aliases["ls"] = "exa"
 aliases["tree"] = "exa -T"
 
 ##dont go boom aliases
@@ -101,9 +100,6 @@ $PROMPT_FIELDS["prompt_end"] = "\N{SPIRAL SHELL} "
 #xontrib load prompt_bar
 $PROMPT = $PROMPT.replace("BOLD_GREEN", "BOLD_WHITE")
 
-# Updated ls with icons
-xontrib load xlsd
-
 $MULTILINE_PROMPT="°º¤ø,¸¸,ø¤º°`"
 
 del os
@@ -113,6 +109,7 @@ source ~/github.com/gforsyth/dotfiles/xonsh/git.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/gpgssh.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/kubernetes.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/aliases.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/borg.xsh
 
 
 # >>> conda initialize >>>
