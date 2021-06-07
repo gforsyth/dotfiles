@@ -8,33 +8,36 @@ device = "intel_backlight"
 [[block]]
 block = "net"
 device = "wireless"
-ssid = true
-signal_strength = true
-speed_up = false
-speed_down = false
+format = "{ssid} {signal_strength} {ip} {graph_down}"
 
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}% {time}"
+format = "{percentage}"
 
 [[block]]
 block = "bluetooth"
 mac = "00:1B:66:88:12:79"
 label = "HD1 M2"
+hide_disconnected = true
 
 [[block]]
 block = "bluetooth"
 mac = "E4:22:A5:90:13:B2"
 label = "PLT Focus"
+hide_disconnected = true
 
 [[block]]
 block = "bluetooth"
 mac = "C9:5C:FD:04:31:D3"
 label = "Tribit"
+hide_disconnected = true
 
 [[block]]
 block = "sound"
+format = "{output_name} {volume}"
+[block.mappings]
+"alsa_output.pci-0000_00_1f.3.analog-stereo" = "🔈"
 
 [[block]]
 block = "time"
