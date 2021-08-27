@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-from xonsh.built_ins import _change_working_directory
+from xonsh.dirstack import _change_working_directory
 
 __all__ = ()
 
