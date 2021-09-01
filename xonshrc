@@ -105,7 +105,7 @@ $MULTILINE_PROMPT="°º¤ø,¸¸,ø¤º°`"
 del os
 del socket
 
-source ~/github.com/gforsyth/dotfiles/xonsh/git.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/xonshgit.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/gpgssh.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/kubernetes.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/aliases.xsh
