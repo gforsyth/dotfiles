@@ -38,7 +38,7 @@ def _clone_or_cd(args):
 
 
 def _list_repos():
-    p = Path('~/github.com').expanduser()
+    p = p"~/github.com".expanduser()
 
     return ['/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir()]
 
