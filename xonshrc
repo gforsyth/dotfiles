@@ -43,7 +43,6 @@ aliases["mkcd"] = _mkcd
 aliases["lock"] = _lock_screen
 aliases["feh"] = "feh -. --conversion-timeout 1"
 aliases["dropbox"] = "dropbox-cli"
-aliases["grep"] = "grep -i --color=always"
 aliases["mkdir"] = "mkdir -p"
 aliases["music"] = "mps"
 aliases["dd"] = "dcfldd"
@@ -69,7 +68,6 @@ aliases["gch"] = "git checkout"
 aliases["gc"] = "git commit -v"
 
 $BROWSER="firefox"
-$TERM="rxvt-unicode-256color"
 $EDITOR="/usr/bin/vim"
 $SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
 
