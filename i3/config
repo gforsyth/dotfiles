@@ -172,3 +172,8 @@ bar {
 	position top
     status_command i3status-rs /home/gil/.config/i3/status.toml
 }
+
+# start some stuff
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+exec --no-startup-id blueman-applet
