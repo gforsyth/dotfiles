@@ -25,6 +25,7 @@ format = "{output_name} {volume}"
 [block.mappings]
 "alsa_output.pci-0000_00_1f.3.analog-stereo" = "🔈"
 "bluez_output.00_1B_66_88_12_79.a2dp-sink" = "🎧"
+"bluez_output.E4_22_A5_90_13_B2.a2dp-sink" = "🎧🎤"
 
 [[block]]
 block = "time"
