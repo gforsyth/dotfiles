@@ -32,6 +32,13 @@ def _mkcd(args, stdin=None):
     else:
         return
 
+def _sysz():
+    with ${...}.swap({"SHELL": "/usr/bin/bash"}):
+        sysz
+
+# Need to reset $SHELL for sysz to work
+aliases["sysz"] = _sysz
+
 ## Alias clear explicitly to avoid miniconda interference
 aliases["clear"] = "/usr/bin/clear"
 
