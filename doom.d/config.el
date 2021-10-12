@@ -18,6 +18,11 @@
   (add-to-list 'org-capture-templates
              '("b" "Bill" entry (file+olp+datetree "~/mnt/bills/bills.org" "Bills")
                "* %? %a "))
+  ;; swap tilda for backtick in org mode
+  (defun swap-tilda-backtick ()
+    (interactive)
+    (insert "~"))
+  (define-key org-mode-map (kbd "`") 'swap-tilda-backtick)
 
 (add-to-list 'display-buffer-alist
              '("\\.pdf\\(<[^>]+>\\)?$"
@@ -25,3 +30,13 @@
                (side . right)
                (window-width . 400)
                )))
+
+;; Disable flycheck noise since it's obnoxious
+(use-package! flycheck
+  :config
+  (setq-default flycheck-disabled-checkers '(python-mypy python-pylint python-pycompile python-pyright )))
+
+;; Fix smartparens behavior with python f-strings
+(after! smartparens
+  (sp-local-pair '(python-mode) "f\"" "\"")
+  (sp-local-pair '(python-mode) "f'" "'"))
