@@ -114,10 +114,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# force windows to named workspaces
-assign [class="Emacs"] $ws1
-assign [class="Firefox"] $ws2
-
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -205,3 +201,11 @@ exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 
 # float the vlc share window so it doesn't tile
 for_window [window_role="vlc-video"] floating enable move down 100px;
+
+# force windows to named workspaces
+assign [class="Emacs"] $ws1
+assign [class="firefox"] $ws2
+assign [class="psst-gui"] "spotify"
+
+exec emacs
+exec firefox
