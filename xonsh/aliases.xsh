@@ -4,4 +4,4 @@ def _borglist():
    
 aliases["borglist"] = _borglist
 
-aliases["htop"] = "bpytop"
+aliases["htop"] = "btop"
