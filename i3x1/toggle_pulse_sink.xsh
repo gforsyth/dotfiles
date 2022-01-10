@@ -1,6 +1,8 @@
 #!/usr/bin/env xonsh
+import time
 
 import itertools
+
 
 MY_SINKS = [
     "bluez_sink.00_1B_66_B1_12_6C.a2dp_sink",
@@ -16,7 +18,9 @@ sinks = itertools.cycle(SINKS)
 
 cur_sink = $(pactl get-default-sink).strip()
 
-while True:
+TIC = time.time()
+
+while True and time.time() - TIC < 2:
     if cur_sink == next(sinks):
         break
 
