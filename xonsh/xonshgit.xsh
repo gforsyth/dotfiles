@@ -40,7 +40,7 @@ def _clone_or_cd(args):
 def _list_repos():
     p = p"~/github.com".expanduser()
 
-    return ['/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir()]
+    yield from ('/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir())
 
 
 
@@ -48,10 +48,10 @@ def _list_repos():
 def _complete_git(context):
     if (context.command.args and context.command.args[0].value == "g" and context.command.arg_index == 1):
         if context.command.prefix:
-            return {RichCompletion(match, description="hi") for match in _list_repos()
+            yield from {RichCompletion(match, description="hi") for match in _list_repos()
                         if match.startswith(context.command.prefix)}
         else:
-            return {RichCompletion(repo) for repo in _list_repos()}
+            yield from {RichCompletion(repo) for repo in _list_repos()}
 
 
 aliases['g'] = _clone_or_cd
