@@ -1,8 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: Python.Block
-# key: py
-# binding: direct-keybinding
-# --
-#+BEGIN_SRC python :results ${1:output}
-$0
-#+END_SRC
