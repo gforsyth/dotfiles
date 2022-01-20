@@ -186,8 +186,6 @@ bar {
 }
 
 # start some stuff
-# external monitor
-exec --no-startup-id /home/gil/.config/i3/monitor.sh
 # network manager
 exec --no-startup-id nm-applet
 # notify daemon
@@ -209,7 +207,13 @@ for_window [window_role="vlc-video"] floating enable move down 100px;
 # force windows to named workspaces
 assign [class="(?i)Emacs"] number 1
 assign [class="(?i)firefox"] number 2
+assign [class="(?i)Zotero"] number 8
+assign [class="(?i)Element"] number 9
 assign [class="Slack"] number 10
 
 exec emacs
 exec firefox
+exec zotero
+exec element-desktop
+exec slack
+
