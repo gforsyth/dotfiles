@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+scrot ~/screenshots/%b%d::%H%M%S.png -s
+
