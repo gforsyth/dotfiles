@@ -1,8 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: IPython_with_block.block
-# key: ipyplot
-# binding: direct-keybinding
-# --
-#+BEGIN_SRC ipython :session ${1:session} :file ${2:$$(let ((temporary-file-directory "./")) (make-temp-file "py" nil ".png"))} }:exports ${3:both} :results ${4:output}
-$0
-#+END_SRC

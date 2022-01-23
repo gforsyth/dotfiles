@@ -1,8 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: threeticks
-# key: ba
-# binding: direct-keybinding
-# --
-\`\`\`${1:bash}
-$0
-\`\`\`

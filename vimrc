@@ -1,17 +1,3 @@
-set nocompatible    " required for Vundle
-filetype off        " required for Vundle
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin("~/.vimrc/bundle")
-"To install, run :PluginInstall, or :PluginUpdate
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-scripts/TeX-9'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'davidhalter/jedi-vim'
-call vundle#end()
-
 "shortcuts for resizing splits
 map <C-l> 5<C-w>>
 map <C-h> 5<C-w><
@@ -51,21 +37,4 @@ set nobackup
 set nowb
 set noswapfile
 
-" Leader key for plugins
-let mapleader = ""
-" TeX_9 settings
-let g:tex_flavor = 'latex'
-let g:tex_nine_config = {'compiler': 'pdflatex', 'viewer': 'llpp'}
-
-
-nnoremap <F5> "=strftime("%F")<CR> 
-inoremap <F5> <C-R>=strftime("%F")<CR> 
-
-" Map TagList toggle to F8 and set default window width
-nmap <F8> :TlistToggle<CR>
-let Tlist_WinWidth=50
-" 
-" If filetype is cpp, bind F4 to run g++, run file and remove
-autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ -std=c++11 '.shellescape('%').' -o '.shellescape('bin/%:r').' && ./'.shellescape('bin/%:r')<CR>
-autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile

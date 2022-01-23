@@ -2,6 +2,7 @@ import re
 from pathlib import Path
 
 from xonsh.dirstack import _change_working_directory
+from xonsh.completers.tools import *
 
 __all__ = ()
 
@@ -9,7 +10,6 @@ GIT_REGEX = re.compile("(github.com)?[/|:]?([A-Za-z-_0-9]+)/([A-Za-z-_0-9]+)")
 
 def _clone_or_cd(args):
     url = args[0]
-
     match = re.findall(GIT_REGEX, url)
     base, org, repo = match[0]
 
@@ -40,19 +40,18 @@ def _clone_or_cd(args):
 def _list_repos():
     p = p"~/github.com".expanduser()
 
-    return ['/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir()]
+    yield from ('/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir())
 
 
-def _complete_git(prefix, line, start, end, ctx):
-    args = line.split(" ")
-    if len(args) == 0 or args[0] != "g":
-        return None
-    elif len(args) == 2:
-        possible = set([match for match in _list_repos() if match.startswith(args[1])])
-    else:
-        possible = _list_repos()
 
-    return possible
+@contextual_completer
+def _complete_git(context):
+    if (context.command.args and context.command.args[0].value == "g" and context.command.arg_index == 1):
+        if context.command.prefix:
+            yield from {RichCompletion(match, description="hi") for match in _list_repos()
+                        if match.startswith(context.command.prefix)}
+        else:
+            yield from {RichCompletion(repo) for repo in _list_repos()}
 
 
 aliases['g'] = _clone_or_cd

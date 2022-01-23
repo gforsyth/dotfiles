@@ -1,8 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: IPython.block
-# key: ipy
-# binding: direct-keybinding
-# --
-#+BEGIN_SRC ipython :session ${1:session} :exports ${2:both} :results ${3:output}
-$0
-#+END_SRC
