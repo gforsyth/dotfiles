@@ -1,7 +1,7 @@
 ##Helper functions
 
 def _lock_screen(args, stdin=None):
-    scrot /tmp/screen.png
+    scrot -o /tmp/screen.png
     convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
     i3lock -i /tmp/screen.png
 
