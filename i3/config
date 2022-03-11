@@ -190,6 +190,15 @@ exec --no-startup-id /usr/bin/i3wsr
 # float the vlc share window so it doesn't tile
 for_window [window_role="vlc-video"] floating enable move down 100px;
 
+# map XF86Display to toggle external monitor
+bindsym XF86Display exec toggle_external_monitor
+# disable airplane key that kills wifi
+bindsym XF86WLAN exec echo null > /dev/null
+# map volume keys
+bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+bindsym XF86AudioMute exec amixer sset 'Master' toggle
+
 # force windows to named workspaces
 assign [class="(?i)Emacs"] number 1
 assign [class="(?i)firefox"] number 2

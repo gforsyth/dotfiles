@@ -1,0 +1,8 @@
+#!/usr/bin/env xonsh
+
+active_monitors = int($(xrandr --listactivemonitors | grep Monitors).split()[-1])
+
+if active_monitors == 1:
+    xrandr --output eDP1 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI1 --mode 1920x1200 --pos 0x0 --rotate normal
+if active_monitors == 2:
+    xrandr --output eDP1 --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI1 --off
