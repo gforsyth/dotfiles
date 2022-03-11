@@ -4,8 +4,9 @@ import re
 import pytest
 
 from xonsh.imphooks import XonshImportHook
+from xonsh.execer import Execer
 
-sys.meta_path.append(XonshImportHook())
+sys.meta_path.append(XonshImportHook(Execer()))
 
 import xonshgit
 
