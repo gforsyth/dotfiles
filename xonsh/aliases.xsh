@@ -53,3 +53,6 @@ aliases["ga"] = "git add"
 aliases["gd"] = "git diff"
 aliases["gch"] = "git checkout"
 aliases["gc"] = "git commit -v"
+
+#python
+aliases["pip"] = "python -m pip"
