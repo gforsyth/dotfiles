@@ -33,11 +33,6 @@ $XONSH_COLOR_STYLE="default"
 #keep the prompt short
 $DYNAMIC_CWD_WIDTH = "20%"
 
-#always send xclip stuff to the system clipboard
-aliases["xclip"] = ["xclip", "-sel", "clip"]
-
-aliases["bd"] = "cd .."
-
 #silliness
 $PROMPT_FIELDS["prompt_end"] = "\N{SPIRAL SHELL} "
 #xontrib load prompt_bar

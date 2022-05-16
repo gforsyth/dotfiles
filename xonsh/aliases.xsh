@@ -16,6 +16,17 @@ def _sysz():
     with ${...}.swap({"SHELL": "/usr/bin/bash"}):
         sysz
 
+def _ver(args, stdin=None):
+    """Helper for grabbing version of python library in local env"""
+    pkg, *_ = args
+    python -c @(f"import {pkg}; print({pkg}.__version__)")
+
+def _loc(args, stdin=None):
+    """Helper for grabbing file location of python library in local env"""
+    pkg, *_ = args
+    python -c @(f"import {pkg}; print({pkg}.__file__)")
+    
+
 # Need to reset $SHELL for sysz to work
 aliases["sysz"] = _sysz
 
@@ -36,9 +47,17 @@ aliases["lookup"] = "/usr/bin/dict" #collision with Python dict
 aliases["xo"] = "xdg-open"
 aliases["htop"] = "btop"
 
+# always send xclip stuff to the system clipboard
+aliases["xclip"] = ["xclip", "-sel", "clip"]
+
+## conveniences
+aliases["bd"] = "cd .."
+
+
 ## Rust utils
 aliases["cat"] = "bat"
 aliases["tree"] = "exa -T"
+aliases["ls"] = "exa"
 
 ##dont go boom aliases
 aliases["rm"] = "rm -I"
@@ -56,3 +75,8 @@ aliases["gc"] = "git commit -v"
 
 #python
 aliases["pip"] = "python -m pip"
+aliases["ver"] = _ver
+aliases["loc"] = _loc
+
+#mtg
+aliases["mtg"] = ["wine",  "/home/gil/.wine/drive_c/Program Files/Wizards of the Coast/MTGA/MTGA.exe"]
