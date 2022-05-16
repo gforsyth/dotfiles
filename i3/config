@@ -166,26 +166,42 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    output HDMI1
     font pango:DroidSansMono Nerd Font
     position top
     status_command i3status-rs /home/gil/.config/i3/status.toml
+    colors {
+        separator #666666
+        statusline #ffffff
+    }
+}
+
+bar {
+    output eDP1
+    font pango:DroidSansMono Nerd Font
+    position top
+    status_command i3status-rs /home/gil/.config/i3/status_small.toml
+    colors {
+        separator #666666
+        statusline #ffffff
+    }
 }
 
 # start some stuff
 # network manager
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 # notify daemon
-exec --no-startup-id dunst
+exec_always --no-startup-id dunst
 # Fix for blueman applet to display blueman manager
-exec --no-startup-id dbus-update-activation-environment DISPLAY
+exec_always --no-startup-id dbus-update-activation-environment DISPLAY
 # bluetooth applet
-exec --no-startup-id blueman-applet
+exec_always --no-startup-id blueman-applet
 
 # remap caps lock to ctrl
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 
 # auto workspace renamer
-exec --no-startup-id /usr/bin/i3wsr
+exec_always --no-startup-id /usr/bin/i3wsr
 
 # float the vlc share window so it doesn't tile
 for_window [window_role="vlc-video"] floating enable move down 100px;
@@ -203,12 +219,12 @@ bindsym XF86AudioMute exec amixer sset 'Master' toggle
 assign [class="(?i)Emacs"] number 1
 assign [class="(?i)firefox"] number 2
 assign [class="(?i)Zotero"] number 8
-assign [class="(?i)Element"] number 9
+assign [class="(?i)nheko"] number 9
 assign [class="Slack"] number 10
 
 exec emacs
 exec firefox
 exec zotero
-exec element-desktop
+exec nheko
 exec slack
 
