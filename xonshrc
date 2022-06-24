@@ -5,7 +5,7 @@ import os.path
 import socket
 
 $HOST = socket.gethostname()
-$PATH=["/usr/bin","/usr/local/bin", "/usr/bin/vendor_perl/", "/usr/bin/core_perl/"]
+$PATH=["/home/gil/.local/bin", "/usr/bin","/usr/local/bin", "/usr/bin/vendor_perl/", "/usr/bin/core_perl/"]
 
 $SHELL_TYPE="prompt_toolkit"
 
@@ -46,10 +46,10 @@ del socket
 source ~/github.com/gforsyth/dotfiles/xonsh/xonshgit.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/gpgssh.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/kubernetes.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/arch.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/aliases.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/borg.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/xompletions.xsh
-source ~/github.com/gforsyth/dotfiles/xonsh/arch.xsh
 
 
 # >>> conda initialize >>>

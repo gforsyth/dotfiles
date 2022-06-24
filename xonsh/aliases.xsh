@@ -80,3 +80,9 @@ aliases["loc"] = _loc
 
 #mtg
 aliases["mtg"] = ["wine",  "/home/gil/.wine/drive_c/Program Files/Wizards of the Coast/MTGA/MTGA.exe"]
+
+def _calibre():
+    with cleanpath():
+        /usr/bin/calibre
+
+aliases["calibre"] = _calibre

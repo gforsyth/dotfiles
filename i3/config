@@ -222,7 +222,6 @@ assign [class="(?i)Zotero"] number 8
 assign [class="(?i)nheko"] number 9
 assign [class="Slack"] number 10
 
-exec emacs
 exec firefox
 exec zotero
 exec nheko
