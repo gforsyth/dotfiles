@@ -18,7 +18,6 @@ filetype on
 filetype plugin on
 set noswapfile
 " set lines=54
-set columns=80
 set softtabstop=4
 set smarttab
 
