@@ -196,6 +196,8 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id dbus-update-activation-environment DISPLAY
 # bluetooth applet
 exec_always --no-startup-id blueman-applet
+# polkit agent (probably only for gparted)
+exec_always --no-startup-id lxpolkit
 
 # remap caps lock to ctrl
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
@@ -208,6 +210,7 @@ for_window [window_role="vlc-video"] floating enable move down 100px;
 
 # map XF86Display to toggle external monitor
 bindsym XF86Display exec toggle_external_monitor
+bindsym F7 exec toggle_external_monitor
 # disable airplane key that kills wifi
 bindsym XF86WLAN exec echo null > /dev/null
 # map volume keys
@@ -218,11 +221,12 @@ bindsym XF86AudioMute exec amixer sset 'Master' toggle
 # force windows to named workspaces
 assign [class="(?i)Emacs"] number 1
 assign [class="(?i)firefox"] number 2
+assign [class="PrusaSlicer"] number 5
 assign [class="(?i)Zotero"] number 8
 assign [class="(?i)nheko"] number 9
 assign [class="Slack"] number 10
 
-exec firefox
+exec emacs
 exec zotero
 exec nheko
 exec slack
