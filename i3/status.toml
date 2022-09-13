@@ -28,6 +28,7 @@ format = "{output_name} {volume}"
 "bluez_output.E4_22_A5_90_13_B2.a2dp-sink" = "🎧"
 "bluez_output.E4_22_A5_90_13_B2.headset-head-unit" = "🎧🎤"
 "bluez_sink.58_FC_C6_4B_8C_06.a2dp_sink" = "👂💊"
+"bluez_sink.58_FC_C6_4B_8C_06.handsfree_head_unit" = "👂💊🎤"
 
 [[block]]
 block = "time"

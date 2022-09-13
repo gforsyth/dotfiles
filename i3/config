@@ -217,6 +217,8 @@ bindsym XF86WLAN exec echo null > /dev/null
 bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindsym XF86AudioMute exec amixer sset 'Master' toggle
+# Map PrintScreen to flameshot
+bindsym Print exec flameshot gui --path /home/gil/screenshots
 
 # force windows to named workspaces
 assign [class="(?i)Emacs"] number 1

@@ -9,6 +9,7 @@ MY_SINKS = [
     "alsa_output.usb-Plantronics_Plantronics_BT600_e006012246d2dc419f7423a54ca2cb6f-00.analog-stereo",
     "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__sink",
     "bluez_sink.58_FC_C6_4B_8C_06.a2dp_sink",
+    "bluez_sink.58_FC_C6_4B_8C_06.handsfree_head_unit",
 ]
 
 AVAILABLE_SINKS = $(pactl list sinks short | cut -f2).strip().split()
