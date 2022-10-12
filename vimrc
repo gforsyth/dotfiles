@@ -17,7 +17,6 @@ filetype indent on
 filetype on
 filetype plugin on
 set noswapfile
-" set lines=54
 set softtabstop=4
 set smarttab
 

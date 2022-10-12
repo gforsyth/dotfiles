@@ -312,7 +312,6 @@ completers = [
     "strings",
     "stty",
     "su",
-    "sudo",
     "sum",
     "supervisord",
     "svg-term",
