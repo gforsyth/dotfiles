@@ -85,13 +85,27 @@ def _get_default_branch(remote="upstream"):
     return $(git remote show @(remote) | grep "HEAD branch").strip().rsplit(": ")[1]
 
 def _pull_default():
-    git pull upstream @(_get_default_branch())
+    remotes = $(git remote show).strip().split()
+    if "upstream" in remotes:
+        git pull upstream @(_get_default_branch())
+    elif "origin" in remotes:
+        git pull origin @(_get_default_branch(remote="origin"))
+    else:
+        raise ValueError("bad remote")
 
 def _checkout_default():
     git checkout @(_get_default_branch())
 
-aliases["gpu"] = _pull_default
+def _rebase_default():
+    git rebase @(_get_default_branch()) -S
+
+def _update_and_rebase():
+    gcm and gpm and git checkout - and grm
+
+aliases["gpm"] = _pull_default
 aliases["gcm"] = _checkout_default
+aliases["grm"] = _rebase_default
+aliases["guar"] = _update_and_rebase
 
 #python
 aliases["pip"] = "python -m pip"
