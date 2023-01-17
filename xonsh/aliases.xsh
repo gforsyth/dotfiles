@@ -80,6 +80,8 @@ aliases["ga"] = "git add"
 aliases["gd"] = "git diff"
 aliases["gco"] = "git checkout"
 aliases["gc"] = "git commit -v"
+aliases["grc"] = "git rebase --continue"
+aliases["gpf"] = "git push --force-with-lease"
 
 def _get_default_branch(remote="upstream"):
     return $(git remote show @(remote) | grep "HEAD branch").strip().rsplit(": ")[1]
@@ -112,9 +114,6 @@ aliases["pip"] = "python -m pip"
 aliases["ver"] = _ver
 aliases["loc"] = _loc
 
-#mtg
-aliases["mtg"] = ["wine",  "/home/gil/.wine/drive_c/Program Files/Wizards of the Coast/MTGA/MTGA.exe"]
-
 def _calibre():
     with cleanpath():
         /usr/bin/calibre
@@ -122,8 +121,14 @@ def _calibre():
 aliases["calibre"] = _calibre
 # conda/mamba
 abbrevs["ca"] = "conda activate"
+abbrevs["sagi"] = "sudo apt install"
+abbrevs["sagr"] = "sudo apt remove"
+# nix
+abbrevs["nixi"] = "nix profile install 'nixpkgs#<edit>'"
 
 def _validate_substrait_yaml(args):
     ajv validate -s text/simple_extensions_schema.yaml --strict=true --spec=draft2020 -d @(args[0])
 
 aliases["validate"] = _validate_substrait_yaml
+
+aliases["pa"] = "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
