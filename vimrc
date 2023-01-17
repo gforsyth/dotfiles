@@ -36,8 +36,8 @@ set nobackup
 set nowb
 set noswapfile
 
-au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
-
+" vim on Linux
+autocmd BufNewFile,BufRead /dev/shm/gopass* setlocal noswapfile nobackup noundofile viminfo=""
 
 if exists('$TMUX')
     " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
