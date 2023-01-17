@@ -1,8 +1,23 @@
 [theme]
-name = "nord-dark"
+name = "solarized-dark"
 
 [icons]
-name = "awesome5"
+name = "awesome"
+
+[[block]]
+block = "taskwarrior"
+interval = 60
+format = "{count} open tasks ({filter_name})"
+format_singular = "{count} open task ({filter_name})"
+format_everything_done = "nothing to do!"
+warning_threshold = 10
+critical_threshold = 20
+[[block.filters]]
+name = "today"
+filter = "+PENDING +OVERDUE or +DUETODAY"
+[[block.filters]]
+name = "work"
+filter = "project:work +PENDING"
 
 [[block]]
 block = "github"
@@ -11,14 +26,9 @@ on_click = "firefox https://github.com/notifications"
 
 [[block]]
 block = "net"
-device = "wlan0"
+device = "wifi0"
 format = "{ssid} {signal_strength} {speed_down;K*b} {speed_up;K*b}"
 interval = 5
-
-[[block]]
-block = "battery"
-interval = 10
-format = "{percentage}"
 
 [[block]]
 block = "sound"
@@ -29,7 +39,11 @@ on_click = "toggle_pulse_sink"
 "alsa_output.usb-Plantronics_Plantronics_BT600_e006012246d2dc419f7423a54ca2cb6f-00.analog-stereo" = "🎧🎤"
 "bluez_sink.00_1B_66_B1_12_6C.a2dp_sink" = "🎧"
 "bluez_sink.58_FC_C6_4B_8C_06.a2dp_sink" = "👂💊"
-"bluez_sink.58_FC_C6_4B_8C_06.handsfree_head_unit" = "👂💊🎤"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}"
 
 [[block]]
 block = "time"

@@ -36,9 +36,6 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+t exec kitty
 
-# Take a screenshot
-bindsym Control_L+$mod+F2 exec scrot -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screenshots'
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -166,7 +163,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    output HDMI1
+    output HDMI-1
     font pango:DroidSansMono Nerd Font
     position top
     status_command i3status-rs /home/gil/.config/i3/status.toml
@@ -177,7 +174,7 @@ bar {
 }
 
 bar {
-    output eDP1
+    output eDP-1
     font pango:DroidSansMono Nerd Font
     position top
     status_command i3status-rs /home/gil/.config/i3/status_small.toml
@@ -190,14 +187,14 @@ bar {
 # start some stuff
 # network manager
 exec_always --no-startup-id nm-applet
-# notify daemon
+## notify daemon
 exec_always --no-startup-id dunst
-# Fix for blueman applet to display blueman manager
-exec_always --no-startup-id dbus-update-activation-environment DISPLAY
-# bluetooth applet
-exec_always --no-startup-id blueman-applet
-# polkit agent (probably only for gparted)
-exec_always --no-startup-id lxpolkit
+## Fix for blueman applet to display blueman manager
+#exec_always --no-startup-id dbus-update-activation-environment DISPLAY
+## bluetooth applet
+#exec_always --no-startup-id blueman-applet
+## polkit agent (probably only for gparted)
+#exec_always --no-startup-id lxpolkit
 
 # remap caps lock to ctrl
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
@@ -219,6 +216,8 @@ bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindsym XF86AudioMute exec amixer sset 'Master' toggle
 # Map PrintScreen to flameshot
 bindsym Print exec flameshot gui --path /home/gil/screenshots
+# Map Scroll Lock to suspend
+bindsym Scroll_Lock exec systemctl suspend
 
 # force windows to named workspaces
 assign [class="(?i)Emacs"] number 1
@@ -232,4 +231,3 @@ exec emacs
 exec zotero
 exec nheko
 exec slack
-
