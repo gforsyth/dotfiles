@@ -22,3 +22,13 @@ gpg --recv-keys $KEYID
 Need to delete contents of `$HOME/.gnupg/private-keys-v1.d/` that correspond to
 keygrips of keys, then run `gpg --card-status` to associate with new hardware
 key
+
+# Stuff to install on machines (via mamba or nix)
+
+* diskonaut
+* i3_balance_workspace (this is on pypi)
+* fzf
+* carapace
+* feh
+* flameshot
+* gopass
