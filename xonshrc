@@ -5,7 +5,7 @@ import os.path
 import socket
 
 $HOST = socket.gethostname()
-$PATH=["/home/gil/.local/bin", "/usr/bin","/usr/local/bin", "/usr/bin/vendor_perl/", "/usr/bin/core_perl/"]
+$PATH=["/home/gil/.local/bin", "/home/gil/.emacs.d/bin/", "/usr/bin","/usr/local/bin", "/usr/bin/vendor_perl/", "/usr/bin/core_perl/"]
 
 $SHELL_TYPE="prompt_toolkit"
 
