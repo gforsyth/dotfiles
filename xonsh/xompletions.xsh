@@ -3,6 +3,9 @@ import builtins
 from xonsh.completers._aliases import _add_one_completer
 from xonsh.completers.tools import *
 
+# tab completion from argparse
+xontrib load argcomplete
+
 
 $COMPLETIONS_BRACKETS = False
 $COMPLETIONS_CONFIRM = True
@@ -126,6 +129,7 @@ completers = [
     "gcloud",
     "gftp",
     "gimp",
+    "git",
     "glab",
     "gnome-keyring-daemon",
     "gnome-keyring",
