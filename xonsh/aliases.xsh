@@ -125,6 +125,8 @@ abbrevs["sagi"] = "sudo apt install"
 abbrevs["sagr"] = "sudo apt remove"
 # nix
 abbrevs["nixi"] = "nix profile install 'nixpkgs#<edit>'"
+# gh
+abbrevs["pr"] = "gh pr checkout <edit>"
 
 def _validate_substrait_yaml(args):
     ajv validate -s text/simple_extensions_schema.yaml --strict=true --spec=draft2020 -d @(args[0])
