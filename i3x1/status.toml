@@ -22,7 +22,7 @@ filter = "project:work +PENDING"
 [[block]]
 block = "github"
 format = "A:{author} | C:{comment} | M:{mention} | R:{review_requested}"
-on_click = "firefox https://github.com/notifications"
+on_click = "xdg-open https://github.com/notifications"
 
 [[block]]
 block = "net"
