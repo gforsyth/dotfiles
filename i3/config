@@ -176,10 +176,10 @@ bar {
 
 bar {
     output eDP-1
-    tray_output HDMI-1
+    tray_output eDP-1
     font pango:DroidSansMono Nerd Font
     position top
-    status_command i3status-rs /home/gil/.config/i3/status.toml
+    status_command i3status-rs /home/gil/.config/i3/status_small.toml
     colors {
         separator #666666
         statusline #ffffff
