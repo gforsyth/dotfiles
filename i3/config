@@ -164,7 +164,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     output HDMI-1
-    tray_output HDMI-1
+    tray_output primary
     font pango:DroidSansMono Nerd Font
     position top
     status_command i3status-rs /home/gil/.config/i3/status.toml
@@ -176,7 +176,7 @@ bar {
 
 bar {
     output eDP-1
-    tray_output eDP-1
+    tray_output primary
     font pango:DroidSansMono Nerd Font
     position top
     status_command i3status-rs /home/gil/.config/i3/status_small.toml
