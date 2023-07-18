@@ -199,10 +199,10 @@ exec_always --no-startup-id dunst
 #exec_always --no-startup-id lxpolkit
 
 # remap caps lock to ctrl
-exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/setxkblog
 
 # auto workspace renamer
-exec_always --no-startup-id /usr/bin/i3wsr
+exec_always --no-startup-id /usr/bin/i3wsr &> /tmp/i3wsrout
 
 # float the vlc share window so it doesn't tile
 for_window [window_role="vlc-video"] floating enable move down 100px;
