@@ -1,0 +1,1 @@
+gopass ls --flat | grep totp | rofi -dmenu | xargs --no-run-if-empty gopass totp -o -c
