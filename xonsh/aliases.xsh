@@ -79,9 +79,9 @@ aliases["gs"] = "git status" #collides with ghostscript but who cares?
 aliases["ga"] = "git add"
 aliases["gd"] = "git diff"
 aliases["gco"] = "git checkout"
-aliases["gc"] = "git commit -v"
 aliases["grc"] = "git rebase --continue"
 aliases["gpf"] = "git push --force-with-lease"
+abbrevs["gcp"] = "git cherry-pick "
 
 def _get_default_branch(remote="upstream"):
     return $(git remote show @(remote) | grep "HEAD branch").strip().rsplit(": ")[1]
@@ -119,16 +119,50 @@ def _calibre():
         /usr/bin/calibre
 
 aliases["calibre"] = _calibre
-# conda/mamba
+# conda/mamba/pip
 abbrevs["ca"] = "conda activate"
+abbrevs["pipi"] = "pip install '<edit>[]'"
+# apt
 abbrevs["sagi"] = "sudo apt install"
 abbrevs["sagr"] = "sudo apt remove"
 # nix
 abbrevs["npi"] = "nix profile install 'nixpkgs#<edit>'"
-aliases["npl"] = "nix profile list"
+abbrevs["npl"] = "nix profile list"
 abbrevs["npr"] = "nix profile remove <edit>"
+abbrevs["nixb"] = "nix build \"<edit>\" --fallback --keep-going --print-build-logs"
 # gh
 abbrevs["prc"] = "gh pr checkout <edit>"
+# nmcli
+abbrevs["list_wireless"] = "nmcli device wifi0 list"
+abbrevs["new_wireless"] = "nmcli device wifi0 connect <edit> "
+# vlcsharescreen
+abbrevs["vlcshare"] = "cvlc --no-video-deco --no-embedded-video --screen-fps=15 --screen-left=0 --screen-width=1920 --screen-height=1080 screen://"
+
+#pyarrow funtimes
+abbrevs["arrowcmake"] = r"""cmake -DCMAKE_INSTALL_PREFIX=$ARROW_HOME \
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DARROW_BUILD_TESTS=ON \
+      -DARROW_COMPUTE=ON \
+      -DARROW_CSV=ON \
+      -DARROW_DATASET=ON \
+      -DARROW_FILESYSTEM=ON \
+      -DARROW_HDFS=ON \
+      -DARROW_JSON=ON \
+      -DARROW_PARQUET=ON \
+      -DARROW_WITH_BROTLI=ON \
+      -DARROW_WITH_BZ2=ON \
+      -DARROW_WITH_LZ4=ON \
+      -DARROW_WITH_SNAPPY=ON \
+      -DARROW_WITH_ZLIB=ON \
+      -DARROW_WITH_ZSTD=ON \
+      -DPARQUET_REQUIRE_ENCRYPTION=ON \
+      <edit>
+      ..
+"""
+
+#druid is terrible
+abbrevs["nodruid"] = "docker compose stop druid-broker druid-coordinator druid-historical druid-middlemanager druid-zookeeper druid druid-postgres"
 
 def _validate_substrait_yaml(args):
     ajv validate -s text/simple_extensions_schema.yaml --strict=true --spec=draft2020 -d @(args[0])
