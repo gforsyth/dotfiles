@@ -55,6 +55,9 @@ aliases["xclip"] = ["xclip", "-sel", "clip"]
 
 ## conveniences
 aliases["bd"] = "cd .."
+aliases["bd.."] = "bd and bd"
+aliases["bd..."] = "bd and bd and bd"
+aliases["bd...."] = "bd.. and bd.."
 
 ## sudo
 if !(which doas):
