@@ -1,14 +1,14 @@
 [theme]
-name = "gruvbox-dark"
+theme = "gruvbox-dark"
 [theme.overrides]
 
 [icons]
-name = "awesome"
+icons = "awesome5"
 
-#[[block]]
-#block = "focused_window"
-#max_width = 50
-#show_marks = "visible"
+[[block]]
+block = "net"
+device = "wireless"
+format = "{$ssid} {$signal_strength}"
 
 [[block]]
 block = "backlight"
@@ -17,11 +17,11 @@ device = "intel_backlight"
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}"
+format = " $percentage "
 
 [[block]]
 block = "sound"
-format = "{output_name} {volume}"
+format = " $output_name{ $volume|} "
 [block.mappings]
 "alsa_output.pci-0000_00_1f.3.analog-stereo" = "🔈"
 "bluez_output.00_1B_66_88_12_79.a2dp-sink" = "🎧"
@@ -33,9 +33,4 @@ format = "{output_name} {volume}"
 [[block]]
 block = "time"
 interval = 60
-format = "%a %Y/%m/%d %R"
-
-[[block]]
-block = "net"
-device = "wireless"
-format = "{ssid} {signal_strength}"
+format = "$timestamp.datetime(f:'%a %Y/%m/%d %R')"
