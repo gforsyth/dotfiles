@@ -396,10 +396,7 @@ def _carapace_lazy(context):
         builtins.__xonsh__.completers = builtins.__xonsh__.completers.copy()
         exec(
             compile(
-                subprocess.run(
-                    ["carapace", context.command.args[0].value, "xonsh"],
-                    stdout=subprocess.PIPE,
-                ).stdout.decode("utf-8"),
+                $(carapace @(context.command.args[0].value) xonsh),
                 "",
                 "exec",
             )
