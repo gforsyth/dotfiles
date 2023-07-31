@@ -393,7 +393,6 @@ def _carapace_lazy(context):
         and context.command.arg_index > 0
         and context.command.args[0].value in completers
     ):
-        builtins.__xonsh__.completers = builtins.__xonsh__.completers.copy()
         exec(
             compile(
                 $(carapace @(context.command.args[0].value) xonsh),
@@ -401,7 +400,7 @@ def _carapace_lazy(context):
                 "exec",
             )
         )
-        return builtins.__xonsh__.completers[context.command.args[0].value](context)
+        return XSH.completers[context.command.args[0].value](context)
 
 
 _add_one_completer("carapace_lazy", _carapace_lazy, "start")
