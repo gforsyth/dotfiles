@@ -1,5 +1,5 @@
 [user]
-	email = gilforsyth@gmail.com
+	email = gil@forsyth.dev
 	name = Gil Forsyth
 [core]
 	safecrlf = false
@@ -27,3 +27,5 @@
 	fsckobjects = true
 [receive]
 	fsckObjects = true 
+[rerere]
+	enabled = true
