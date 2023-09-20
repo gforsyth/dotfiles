@@ -17,7 +17,7 @@ del socket
 if $DISTRO == "ubuntu":
     $PATH = [
         "/home/gil/.local/bin",
-        "/home/gil/.emacs.d/bin",
+        "/home/gil/.config/emacs/bin",
         "/home/gil/.cargo/bin",
         "/usr/local/bin",
         "/usr/bin",
