@@ -183,7 +183,7 @@ bar {
     tray_output primary
     font pango:DroidSansM Nerd Font Mono
     position top
-    status_command /home/gil/.cargo/bin/i3status-rs /home/gil/.config/i3/status.toml
+    status_command /usr/bin/py3status
     colors {
         separator #666666
         statusline #ffffff
