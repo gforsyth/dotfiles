@@ -19,7 +19,7 @@ MY_SINKS = [
     "bluez_sink.58_FC_C6_4B_8C_06.handsfree_head_unit",
 ]
 
-if "XPS" in $HOST:
+if "stravaig" in $HOST:
     MY_SINKS = [
         "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__sink",
         "bluez_output.58_FC_C6_4B_8C_06.a2dp-sink",
