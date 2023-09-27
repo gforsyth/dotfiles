@@ -64,16 +64,7 @@ $LC_ALL="en_US.UTF-8"
 #default colorscheme
 $XONSH_COLOR_STYLE="default"
 
-#keep the prompt short
-$DYNAMIC_CWD_WIDTH = "20%"
-
-#silliness
-$PROMPT_FIELDS["prompt_end"] = "\N{SPIRAL SHELL} "
-#xontrib load prompt_bar
-$PROMPT = $PROMPT.replace("BOLD_GREEN", "BOLD_WHITE")
-
-$MULTILINE_PROMPT="°º¤ø,¸¸,ø¤º°`"
-
+source ~/github.com/gforsyth/dotfiles/xonsh/prompt.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/xonshgit.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/gpgssh.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/kubernetes.xsh
