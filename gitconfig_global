@@ -29,3 +29,5 @@
 	fsckObjects = true 
 [rerere]
 	enabled = true
+[github]
+	user = gforsyth
