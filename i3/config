@@ -183,6 +183,7 @@ bar {
     tray_output primary
     font pango:DroidSansM Nerd Font Mono
     position top
+    separator_symbol 
     status_command /usr/bin/py3status
     colors {
         separator #666666
