@@ -194,27 +194,13 @@ bar {
     }
 }
 
-
-# start some stuff
-# network manager
-exec_always --no-startup-id nm-applet
-## notify daemon
-exec_always --no-startup-id dunst
-## Fix for blueman applet to display blueman manager
-#exec_always --no-startup-id dbus-update-activation-environment DISPLAY
-## bluetooth applet
-#exec_always --no-startup-id blueman-applet
-## polkit agent (probably only for gparted)
-#exec_always --no-startup-id lxpolkit
-
-# remap caps lock to ctrl
-exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/setxkblog
-
-# auto workspace renamer
-exec_always --no-startup-id /usr/bin/i3wsr &> /tmp/i3wsrout
-
-# float the vlc share window so it doesn't tile
-for_window [window_role="vlc-video"] floating enable move down 100px;
+# force windows to named workspaces
+assign [class="(?i)Emacs"] number 1
+assign [class="(?i)firefox"] number 2
+assign [class="PrusaSlicer"] number 5
+assign [class="(?i)Zotero"] number 8
+assign [class="(?i)nheko"] number 9
+assign [class="Slack"] number 10
 
 # map XF86Display to toggle external monitor
 bindsym XF86Display exec toggle_external_monitor
@@ -230,13 +216,25 @@ bindsym Print exec flameshot gui --path /home/gil/screenshots
 # Map Scroll Lock to suspend
 bindsym Scroll_Lock exec systemctl suspend
 
-# force windows to named workspaces
-assign [class="(?i)Emacs"] number 1
-assign [class="(?i)firefox"] number 2
-assign [class="PrusaSlicer"] number 5
-assign [class="(?i)Zotero"] number 8
-assign [class="(?i)nheko"] number 9
-assign [class="Slack"] number 10
+
+# float the vlc share window so it doesn't tile
+for_window [window_role="vlc-video"] floating enable move down 100px;
+
+# start some stuff
+# network manager
+exec_always --no-startup-id nm-applet
+## notify daemon
+exec_always --no-startup-id dunst
+## Fix for blueman applet to display blueman manager
+#exec_always --no-startup-id dbus-update-activation-environment DISPLAY
+## bluetooth applet
+#exec_always --no-startup-id blueman-applet
+
+# remap caps lock to ctrl
+exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/setxkblog
+
+# auto workspace renamer
+exec_always --no-startup-id /home/gil/.nix-profile/bin/i3wsr
 
 exec emacs
 exec zotero
