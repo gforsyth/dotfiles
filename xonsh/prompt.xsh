@@ -10,12 +10,13 @@ if $XONSH_INTERACTIVE:
     #powerline2
     xontrib load powerline2
 
-if $XONSH_INTERACTIVE:
-    @events.on_post_rc
-    def _load_powerline():
-        pl_set_mode squares
+    pl_set_mode squares
 
-        # powerline2 color setup
-        $PL_COLORS["who"] = ("YELLOW", "BLACK")
-        $PL_COLORS["venv"] = ("YELLOW", "BLACK")
-        $PL_COLORS["time"] = ("BLACK", "#000000")
+    # powerline2 color setup
+    $PL_COLORS["who"] = ("YELLOW", "#333333")
+    $PL_COLORS["venv"] = ("YELLOW", "BLACK")
+    $PL_COLORS["time"] = ("BLACK", "#000000")
+
+    $PL_TOOLBAR="virtualenv>who>short_cwd>branch"
+
+    pl_build_prompt
