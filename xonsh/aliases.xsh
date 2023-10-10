@@ -128,6 +128,7 @@ abbrevs["pipi"] = "pip install '<edit>[]'"
 # apt
 abbrevs["sagi"] = "sudo apt install"
 abbrevs["sagr"] = "sudo apt remove"
+abbrevs["acs"] = "apt-cache search"
 # nix
 abbrevs["npi"] = "nix profile install 'nixpkgs#<edit>'"
 abbrevs["npl"] = "nix profile list"
