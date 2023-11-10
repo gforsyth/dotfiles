@@ -179,7 +179,23 @@ bar {
 }
 
 bar {
-    output eDP-1
+    output HDMI-1
+    tray_output primary
+    font pango:DroidSansM Nerd Font Mono
+    position top
+    status_command /usr/bin/py3status
+    colors {
+        separator #666666
+        statusline #ffffff
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+}
+
+bar {
+    output eDP1
     font pango:DroidSansM Nerd Font Mono
     position top
     status_command /usr/bin/py3status
