@@ -1,5 +1,5 @@
 import warnings
-#warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore")
 
 import socket
 try:
@@ -36,6 +36,7 @@ elif $DISTRO == "arch":
 
 $SHELL_TYPE="prompt_toolkit"
 
+$XONSH_HISTORY_FILE="/home/gil/.local/share/xonsh/xonsh-history.sqlite"
 $XONSH_HISTORY_BACKEND="sqlite"
 $XONSH_HISTORY_SIZE=1_000_000
 
