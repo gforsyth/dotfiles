@@ -48,11 +48,6 @@ $AUTO_CD=True
 #Enable vim_mode
 $VI_MODE=True
 
-# for emacs environment switching
-if "badcat" in $HOST:
-    $WORKON_HOME="/opt/miniconda3/envs"
-
-
 $BROWSER="firefox"
 $EDITOR="/usr/bin/vim"
 $SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
@@ -78,8 +73,9 @@ source ~/github.com/gforsyth/dotfiles/xonsh/nix.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/fzf.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/github.xsh
 
+source ~/github.com/gforsyth/secrets/rmfakecloud.xsh
 
-CONDA_PATH = "/opt/miniconda3/bin/conda" if $DISTRO == "arch" else "/home/gil/mambaforge/bin/conda"
+CONDA_PATH = "/home/gil/mambaforge/bin/conda"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by "conda init" !!
