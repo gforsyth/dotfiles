@@ -1,0 +1,15 @@
+[Unit]
+Description=User suspend actions
+Before=sleep.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStartPre= scrot /tmp/screen.png; convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
+
+ExecStart=/usr/bin/i3lock -i /tmp/screen.png
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
