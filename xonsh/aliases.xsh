@@ -87,10 +87,11 @@ aliases["gpf"] = "git push --force-with-lease"
 abbrevs["gcp"] = "git cherry-pick "
 
 def _get_default_branch(remote="upstream"):
-    if remote := !(git remote show @(remote)):
-        remote = $(echo @(remote.output) | grep "HEAD branch")
-        return remote.strip().rsplit(": ")[1]
-    return "main"
+    try:
+        remote = $(git remote show @(remote) | grep "HEAD branch").strip().rsplit(": ")[1]
+        return remote
+    except:
+        return "main"
 
 def _pull_default():
     remotes = $(git remote show).strip().split()
