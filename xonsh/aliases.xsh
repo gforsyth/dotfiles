@@ -177,3 +177,5 @@ def _validate_substrait_yaml(args):
 aliases["validate"] = _validate_substrait_yaml
 
 aliases["pa"] = "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
+
+aliases["set_snowflake"] = _set_snowflake
