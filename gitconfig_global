@@ -31,3 +31,5 @@
 	enabled = true
 [github]
 	user = gforsyth
+[branch]
+    sort = -committerdate
