@@ -84,7 +84,10 @@ aliases["gd"] = "git diff"
 aliases["gco"] = "git checkout"
 aliases["grc"] = "git rebase --continue"
 aliases["gpf"] = "git push --force-with-lease"
+aliases["gpF"] = "git push --force"
 abbrevs["gcp"] = "git cherry-pick "
+aliases["gcm"] = "git checkout main"
+aliases["grm"] = "git rebase main"
 
 def _get_default_branch(remote="upstream"):
     try:
@@ -112,8 +115,6 @@ def _update_and_rebase():
     gcm and gpm and git checkout - and grm
 
 aliases["gpm"] = _pull_default
-aliases["gcm"] = _checkout_default
-aliases["grm"] = _rebase_default
 aliases["guar"] = _update_and_rebase
 
 #python
