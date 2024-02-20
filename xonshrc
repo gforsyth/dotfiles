@@ -76,6 +76,7 @@ source ~/github.com/gforsyth/dotfiles/xonsh/xompletions.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/borg.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/nix.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/fzf.xsh
+source ~/github.com/gforsyth/dotfiles/xonsh/github.xsh
 
 
 CONDA_PATH = "/opt/miniconda3/bin/conda" if $DISTRO == "arch" else "/home/gil/mambaforge/bin/conda"
