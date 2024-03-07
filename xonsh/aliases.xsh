@@ -181,3 +181,8 @@ aliases["validate"] = _validate_substrait_yaml
 aliases["pa"] = "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
 
 aliases["set_snowflake"] = _set_snowflake
+
+def _kill_theseus():
+    nvidia-smi | grep theseus | tr -s " " | cut -f5 -d " " | xargs kill
+
+aliases["kill_theseus"] = _kill_theseus
