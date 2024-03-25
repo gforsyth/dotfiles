@@ -213,6 +213,7 @@ bar {
 assign [class="(?i)Emacs"] number 1
 assign [class="(?i)firefox"] number 2
 assign [class="PrusaSlicer"] number 5
+assign [class="Pavucontrol"] number 8
 assign [class="(?i)Zotero"] number 8
 assign [class="(?i)nheko"] number 9
 assign [class="Slack"] number 10
@@ -255,3 +256,4 @@ exec emacs
 exec zotero
 exec nheko
 exec slack
+exec pavucontrol
