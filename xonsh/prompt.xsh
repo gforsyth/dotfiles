@@ -29,5 +29,5 @@ if $XONSH_INTERACTIVE:
         "{cwd:{}}",
         "{gitstatus:{}}",
         os.linesep,
-        "🐚 ",
+        ">".join(["🐚"] * $SHLVL) + " ",
     ])
