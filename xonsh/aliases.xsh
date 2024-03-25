@@ -171,6 +171,9 @@ abbrevs["arrowcmake"] = r"""cmake -DCMAKE_INSTALL_PREFIX=$ARROW_HOME \
       ..
 """
 
+# bangbang
+abbrevs['!!'] = lambda buffer, word: __xonsh__.history[-1].cmd
+
 #druid is terrible
 abbrevs["nodruid"] = "docker compose stop druid-broker druid-coordinator druid-historical druid-middlemanager druid-zookeeper druid druid-postgres"
 
