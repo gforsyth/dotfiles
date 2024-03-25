@@ -88,6 +88,7 @@ aliases["gpF"] = "git push --force"
 abbrevs["gcp"] = "git cherry-pick "
 aliases["gcm"] = "git checkout main"
 aliases["grm"] = "git rebase main"
+aliases["gdf"] = "git difftool"  # difftastic diffs
 
 def _get_default_branch(remote="upstream"):
     try:

@@ -17,10 +17,6 @@
 	amend = commit --amend
 [credential]
 	helper = cache --timeout=3600
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
 [transfer]
 	fsckobjects = true
 [fetch]
@@ -43,3 +39,15 @@
 	insteadOf = "https://github.com/"
 [commit]
     verbose = true
+[diff]
+        tool = difftastic
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
+
