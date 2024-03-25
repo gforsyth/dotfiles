@@ -167,7 +167,7 @@ bar {
     tray_output primary
     font pango:DroidSansM Nerd Font Mono
     position top
-    status_command /usr/bin/py3status
+    status_command /home/gil/.nix-profile/bin/i3status-rs
     colors {
         separator #666666
         statusline #ffffff
@@ -198,7 +198,7 @@ bar {
     output eDP1
     font pango:DroidSansM Nerd Font Mono
     position top
-    status_command /usr/bin/py3status
+    status_command /home/gil/.nix-profile/bin/i3status-rs
     colors {
         separator #666666
         statusline #ffffff
