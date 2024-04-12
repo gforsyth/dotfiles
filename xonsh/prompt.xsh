@@ -9,6 +9,7 @@ $PROMPT = $PROMPT.replace("BOLD_GREEN", "BOLD_WHITE")
 if $XONSH_INTERACTIVE:
     from xontrib_powerline3.colors import Colors
     xontrib load powerline3
+    xontrib load cmd_done
     import os
 
     # Have to override these because they were hardcoded upstream
@@ -31,3 +32,6 @@ if $XONSH_INTERACTIVE:
         os.linesep,
         ">".join(["🐚"] * $SHLVL) + " ",
     ])
+
+    $XONTRIB_CD_LONG_DURATION = 10  # notify if command longer than
+    $RIGHT_PROMPT = "{long_cmd_duration:⌛{}}"
