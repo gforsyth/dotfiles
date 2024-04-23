@@ -30,3 +30,8 @@ $PROMPT_FIELDS["env_name"] = nix_env_name
 aliases["nix-fmt"] = "nixpkgs-fmt"
 
 $NIXPKGS_ALLOW_UNFREE=1
+
+# Force xonsh to use system bash to load completions so that bash completion
+# doesn't break inside of nix environments
+
+$XONSH_BASH_PATH_OVERRIDE = p"/usr/bin/bash"
