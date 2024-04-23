@@ -74,8 +74,6 @@ source ~/github.com/gforsyth/dotfiles/xonsh/nix.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/fzf.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/github.xsh
 
-source ~/github.com/gforsyth/secrets/rmfakecloud.xsh
-
 CONDA_PATH = "/home/gil/mambaforge/bin/conda"
 
 # >>> conda initialize >>>
