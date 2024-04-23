@@ -6,7 +6,7 @@ from xonsh.completers.tools import *
 
 __all__ = ()
 
-GIT_REGEX = re.compile("(github.com)?[/|:]?([A-Za-z-_0-9]+)/([A-Za-z-_0-9]+)?")
+GIT_REGEX = re.compile(r"(github.com)?[/|:]?([A-Za-z-_0-9]+)/([A-Za-z-_0-9\.]+)?")
 
 def _clone_or_cd(args):
     url = args[0]
