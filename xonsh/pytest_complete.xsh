@@ -1,7 +1,15 @@
 import ast
+import re
 from functools import lru_cache
 
+import xonsh.lazyasd as xl
+
 __all__ = ()
+
+
+@xl.lazyobject
+def RE_PYTEST_TEST():
+    return re.compile(r"(.*test_.+\.(?:py|xsh))::(.*)")
 
 
 @lru_cache
@@ -22,11 +30,13 @@ def _scrape_test_names(fname: str) -> list[str]:
 @contextual_completer
 def _complete_pytest(context):
     if context.command.command == "pytest" and (
-        fname := context.command.prefix
-    ).endswith(".py::"):
+        fname := re.match(RE_PYTEST_TEST, context.command.prefix)
+    ):
+        fname, test_prefix = fname.groups()
         yield from {
-            RichCompletion(f"{fname}{match}", display=match)
-            for match in _scrape_test_names(fname.strip(":"))
+            RichCompletion(f"{fname}::{match}", display=match)
+            for match in _scrape_test_names(fname)
+            if match.startswith(test_prefix)
         }
 
 
