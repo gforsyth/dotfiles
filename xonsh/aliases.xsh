@@ -123,6 +123,8 @@ aliases["pip"] = "python -m pip"
 aliases["ver"] = _ver
 aliases["loc"] = _loc
 
+abbrevs["pipu"] = "pip list | fzf --multi --reverse | xargs pip uninstall -y"
+
 def _calibre():
     with cleanpath():
         /usr/bin/calibre
