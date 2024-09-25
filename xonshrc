@@ -18,6 +18,7 @@ if $DISTRO == "ubuntu":
     $PATH = [
         "/home/gil/.local/bin",
         "/home/gil/.config/emacs/bin",
+        "/home/gil/.pixi/bin",
         "/home/gil/.cargo/bin",
         "/usr/local/bin",
         "/usr/bin",
@@ -27,6 +28,7 @@ elif $DISTRO == "arch":
     $PATH = [
         "/home/gil/.local/bin",
         "/home/gil/.emacs.d/bin",
+        "/home/gil/.pixi/bin",
         "/home/gil/.cargo/bin",
         "/usr/local/bin",
         "/usr/bin",
@@ -75,7 +77,7 @@ source ~/github.com/gforsyth/dotfiles/xonsh/fzf.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/github.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/pytest_complete.xsh
 
-CONDA_PATH = "/home/gil/mambaforge/bin/conda"
+CONDA_PATH = "/home/gil/miniforge/bin/conda"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by "conda init" !!
