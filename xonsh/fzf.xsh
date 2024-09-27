@@ -1,4 +1,4 @@
-xontrib load fzf-widgets
+xontrib load fzf-completions
 $fzf_history_binding = "c-r"
 $fzf_ssh_binding = "c-s"      # Ctrl+S
 $fzf_file_binding = "c-t"      # Ctrl+T
