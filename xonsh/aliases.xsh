@@ -59,12 +59,6 @@ aliases["bd.."] = "bd and bd"
 aliases["bd..."] = "bd and bd and bd"
 aliases["bd...."] = "bd.. and bd.."
 
-## sudo
-if !(which doas):
-    aliases["sudo"] = "doas"
-    aliases["sudoedit"] = "doas vim"
-
-
 ## Rust utils
 aliases["cat"] = "bat"
 aliases["tree"] = "exa -T"
@@ -186,7 +180,10 @@ aliases["validate"] = _validate_substrait_yaml
 
 aliases["pa"] = "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
 
-aliases["set_snowflake"] = _set_snowflake
+try:
+    aliases["set_snowflake"] = _set_snowflake
+except NameError:
+    pass
 
 def _kill_theseus():
     nvidia-smi | grep theseus | tr -s " " | cut -f5 -d " " | xargs kill
