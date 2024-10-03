@@ -30,7 +30,7 @@ if $XONSH_INTERACTIVE:
         "{cwd:{}}",
         "{gitstatus:{}}",
         os.linesep,
-        ">".join(["🐚"] * $SHLVL) + " ",
+        ">".join(["🐚"] * ($SHLVL-2)) + " ",
     ])
 
     $XONTRIB_CD_LONG_DURATION = 10  # notify if command longer than
