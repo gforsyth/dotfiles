@@ -1,10 +1,8 @@
-
 [icons]
 # font awesome
 firefox = ""
 kitty = ""
 slack = ""
-deluge = ""
 emacs = "⌨"
 nheko = "🐈"
 zotero = "📚"
@@ -14,20 +12,18 @@ psst = "🎶"
 zoom = "📹"
 discord = "💬"
 
-[aliases]
+[aliases.class]
 Slack = "slack"
-Deluge-gtk = "deluge"
 Emacs = "emacs"
 Zotero = "zotero"
 Signal = "signal"
-Psst-gui = "psst"
 ".*action=join.*" = "zoom"
 ".*launch?.*" = "zoom"
 Discord = "discord"
 
 [general]
 separator = "  "
-default_icon = ""
+default_icon = "∯"
 wm_property = "class"
 
 [options]
