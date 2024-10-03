@@ -1,0 +1,13 @@
+[Unit]
+Description=Start i3wsr after X server starts
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/i3wsr
+Restart=always
+RestartSec=5
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target
+
