@@ -1,3 +1,9 @@
-@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
 configuration {
+font: "0xProto Nerd Font 12";
+show-icons: true;
+terminal: "kitty";
+matching: "fuzzy";
+kb-accept-entry: "Control+m,Return,KP_Enter";
+kb-row-down: "Down,Control+j";
 }
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
