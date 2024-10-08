@@ -9,11 +9,15 @@ __all__ = ()
 GIT_REGEX = re.compile(r"(github.com)?[/|:]?([A-Za-z-_0-9]+)/([A-Za-z-_0-9\.]+)?")
 
 def _clone_or_cd(args):
+    home = p"~".expanduser()
+
+    if not args:
+        _change_working_directory(home / "github.com")
+        return
+
     url = args[0]
     match = re.findall(GIT_REGEX, url)
     base, org, repo = match[0]
-
-    home = p"~".expanduser()
 
     if base:
         base = home / base
