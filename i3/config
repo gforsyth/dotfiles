@@ -34,7 +34,14 @@ default_border pixel 1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec kitty
+# On machines with both an Intel and NVIDIA GPU where the discrete GPU gets
+# powered down, Kitty lags hard because it tries to wake the NVIDIA GPU to do
+# rendering on a per-keypress basis (and I have it hard shut down).
+# Starting Kitty with these options forces it to use the Intel GPU which is plenty
+# https://github.com/kovidgoyal/kitty/issues/4292
+
+# BUT also startup is way too slow now, which is strange.
+bindsym $mod+t exec MESA_LOADER_DRIVER_OVERRIDE=i965 __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json kitty -1
 
 # kill focused window
 bindsym $mod+Shift+q kill
