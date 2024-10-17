@@ -221,7 +221,7 @@ bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindsym XF86AudioMute exec amixer sset 'Master' toggle
 # Map PrintScreen to flameshot
-bindsym Print exec flameshot gui --path /home/gil/screenshots
+bindsym Print exec flameshot gui
 # Map Scroll Lock to suspend
 bindsym Scroll_Lock exec systemctl suspend
 
