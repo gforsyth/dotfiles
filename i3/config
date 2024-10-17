@@ -241,11 +241,3 @@ exec_always --no-startup-id dunst
 
 # remap caps lock to ctrl
 exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/setxkblog
-
-# auto workspace renamer
-exec_always --no-startup-id /home/gil/.nix-profile/bin/i3wsr
-
-exec emacs
-exec zotero
-exec slack
-exec pavucontrol
