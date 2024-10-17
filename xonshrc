@@ -28,6 +28,7 @@ elif $DISTRO == "arch":
     $PATH = [
         "/home/gil/.local/bin",
         "/home/gil/.emacs.d/bin",
+        "/home/gil/miniforge3/condabin/",
         "/home/gil/.pixi/bin",
         "/home/gil/.cargo/bin",
         "/usr/local/bin",
