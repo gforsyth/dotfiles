@@ -50,7 +50,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+b exec i3_balance_workspace
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 
 # window selection
 bindsym $mod+space exec rofi -show window
