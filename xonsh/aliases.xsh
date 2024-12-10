@@ -132,7 +132,7 @@ abbrevs["sagi"] = "sudo apt install"
 abbrevs["sagr"] = "sudo apt remove"
 abbrevs["acs"] = "apt-cache search"
 # pacman
-abbrevs["spi"] = "sudo pacman -Sy "
+abbrevs["spi"] = "sudo pacman -Sy"
 # nix
 abbrevs["npi"] = "nix profile install 'nixpkgs#<edit>'"
 abbrevs["npl"] = "nix profile list"
