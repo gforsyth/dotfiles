@@ -1,0 +1,11 @@
+[Unit]
+Description=Start rofication daemon
+
+[Service]
+ExecStart=/usr/bin/rofication-daemon.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
+
