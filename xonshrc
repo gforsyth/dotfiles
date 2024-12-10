@@ -16,21 +16,22 @@ del socket
 
 if $DISTRO == "ubuntu":
     $PATH = [
-        "/home/gil/.local/bin",
-        "/home/gil/.config/emacs/bin",
-        "/home/gil/.pixi/bin",
-        "/home/gil/.cargo/bin",
+        "$HOME/.local/bin",
+        "$HOME/.config/emacs/bin",
+        "$HOME/miniforge3/condabin/",
+        "$HOME/.pixi/bin",
+        "$HOME/.cargo/bin",
         "/usr/local/bin",
         "/usr/bin",
         "/usr/sbin",
         ]
 elif $DISTRO == "arch":
     $PATH = [
-        "/home/gil/.local/bin",
-        "/home/gil/.emacs.d/bin",
-        "/home/gil/miniforge3/condabin/",
-        "/home/gil/.pixi/bin",
-        "/home/gil/.cargo/bin",
+        "$HOME/.local/bin",
+        "$HOME/.emacs.d/bin",
+        "$HOME/miniforge3/condabin/",
+        "$HOME/.pixi/bin",
+        "$HOME/.cargo/bin",
         "/usr/local/bin",
         "/usr/bin",
         "/usr/bin/vendor_perl",
@@ -39,7 +40,7 @@ elif $DISTRO == "arch":
 
 $SHELL_TYPE="prompt_toolkit"
 
-$XONSH_HISTORY_FILE="/home/gil/.local/share/xonsh/xonsh-history.sqlite"
+$XONSH_HISTORY_FILE=p"~/.local/share/xonsh/xonsh-history.sqlite"
 $XONSH_HISTORY_BACKEND="sqlite"
 $XONSH_HISTORY_SIZE=1_000_000
 
@@ -78,7 +79,7 @@ source ~/github.com/gforsyth/dotfiles/xonsh/fzf.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/github.xsh
 source ~/github.com/gforsyth/dotfiles/xonsh/pytest_complete.xsh
 
-CONDA_PATH = "/home/gil/miniforge3/bin/conda"
+CONDA_PATH = p"~/miniforge3/bin/conda"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by "conda init" !!

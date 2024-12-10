@@ -182,7 +182,6 @@ set $gray #a89984
 set $darkgray #1d2021
 set $lightgray #bdae93
 
-
 # class                 border|backgr|text|indicator|child_border
 client.focused          $lightgray $lightgray $bg $purple $darkgray
 client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
@@ -233,3 +232,11 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/set
 
 # start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# auto workspace renamer
+#exec_always --no-startup-id /home/gil/.nix-profile/bin/i3wsr
+
+#exec emacs
+#exec zotero
+#exec slack
+#exec pavucontrol

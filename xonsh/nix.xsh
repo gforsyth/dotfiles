@@ -1,5 +1,5 @@
 $PATH.insert(0, "/nix/var/nix/profiles/default/bin")
-$PATH.insert(0, "/home/gil/.nix-profile/bin")
+$PATH.insert(0, "$HOME/.nix-profile/bin")
 
 xontrib load direnv
 $DIRENV_LOG_FORMAT=""  # reduce direnv verbosity

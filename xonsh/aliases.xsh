@@ -179,15 +179,3 @@ def _validate_substrait_yaml(args):
     ajv validate -s text/simple_extensions_schema.yaml --strict=true --spec=draft2020 -d @(args[0])
 
 aliases["validate"] = _validate_substrait_yaml
-
-aliases["pa"] = "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
-
-try:
-    aliases["set_snowflake"] = _set_snowflake
-except NameError:
-    pass
-
-def _kill_theseus():
-    nvidia-smi | grep theseus | tr -s " " | cut -f5 -d " " | xargs kill
-
-aliases["kill_theseus"] = _kill_theseus
