@@ -41,7 +41,8 @@ floating_modifier $mod
 # https://github.com/kovidgoyal/kitty/issues/4292
 
 # BUT also startup is way too slow now, which is strange.
-bindsym $mod+t exec MESA_LOADER_DRIVER_OVERRIDE=i965 __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json kitty -1
+#bindsym $mod+t exec MESA_LOADER_DRIVER_OVERRIDE=mesa __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json kitty -1
+bindsym $mod+t exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
