@@ -182,20 +182,6 @@ set $gray #a89984
 set $darkgray #1d2021
 set $lightgray #bdae93
 
-bar {
-    position top
-    font pango:0xProto Nerd Font Mono 14
-    status_command /usr/bin/i3status-rs
-    colors {
-        separator #666666
-        statusline $lightgray
-        #                border  backgr.  text
-        focused_workspace $aqua $aqua $darkgray
-        active_workspace $darkgray $darkgray $lightgray
-        inactive_workspace $darkgray $darkgray $lightgray
-        urgent_workspace $red $red $bg
-    }
-}
 
 # class                 border|backgr|text|indicator|child_border
 client.focused          $lightgray $lightgray $bg $purple $darkgray
@@ -232,13 +218,18 @@ for_window [window_role="vlc-video"] floating enable move down 100px;
 
 # start some stuff
 # network manager
-exec_always --no-startup-id nm-applet
+#exec_always --no-startup-id nm-applet
 ## notify daemon
-exec_always --no-startup-id dunst
+#exec_always --no-startup-id dunst
 ## Fix for blueman applet to display blueman manager
 #exec_always --no-startup-id dbus-update-activation-environment DISPLAY
 ## bluetooth applet
 #exec_always --no-startup-id blueman-applet
 
+exec solaar -w hide
+
 # remap caps lock to ctrl
 exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/setxkblog
+
+# start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
