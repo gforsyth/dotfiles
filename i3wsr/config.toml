@@ -11,6 +11,7 @@ signal = "🔒"
 psst = "🎶"
 zoom = "📹"
 discord = "💬"
+bitwarden = "🔒"
 
 [aliases.class]
 Slack = "slack"
@@ -20,10 +21,11 @@ Signal = "signal"
 ".*action=join.*" = "zoom"
 ".*launch?.*" = "zoom"
 Discord = "discord"
+Bitwarden = "bitwarden"
 
 [general]
 separator = "  "
-default_icon = "∯"
+default_icon = "?"
 wm_property = "class"
 
 [options]
