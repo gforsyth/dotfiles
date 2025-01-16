@@ -198,8 +198,8 @@ assign [class="(?i)nheko"] number 9
 assign [class="Slack"] number 10
 
 # map XF86Display to toggle external monitor
-bindsym XF86Display exec toggle_external_monitor
-bindsym F7 exec toggle_external_monitor
+bindsym XF86Display exec autorandr --change
+bindsym F8 exec autorandr --change
 # disable airplane key that kills wifi
 bindsym XF86WLAN exec echo null > /dev/null
 # map volume keys
