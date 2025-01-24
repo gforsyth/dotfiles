@@ -140,42 +140,9 @@ abbrevs["npr"] = "nix profile remove <edit>"
 abbrevs["nixb"] = "nix build \"<edit>\" --fallback --keep-going --print-build-logs"
 # gh
 abbrevs["prc"] = "gh pr checkout <edit>"
-# nmcli
-abbrevs["list_wireless"] = "nmcli device wifi0 list"
-abbrevs["new_wireless"] = "nmcli device wifi0 connect <edit> "
 # vlcsharescreen
 abbrevs["vlcshare"] = "cvlc --no-video-deco --no-embedded-video --screen-fps=15 --screen-left=0 --screen-width=1920 --screen-height=1080 screen://"
-
-#pyarrow funtimes
-abbrevs["arrowcmake"] = r"""cmake -DCMAKE_INSTALL_PREFIX=$ARROW_HOME \
-      -DCMAKE_INSTALL_LIBDIR=lib \
-      -DCMAKE_BUILD_TYPE=Debug \
-      -DARROW_BUILD_TESTS=ON \
-      -DARROW_COMPUTE=ON \
-      -DARROW_CSV=ON \
-      -DARROW_DATASET=ON \
-      -DARROW_FILESYSTEM=ON \
-      -DARROW_HDFS=ON \
-      -DARROW_JSON=ON \
-      -DARROW_PARQUET=ON \
-      -DARROW_WITH_BROTLI=ON \
-      -DARROW_WITH_BZ2=ON \
-      -DARROW_WITH_LZ4=ON \
-      -DARROW_WITH_SNAPPY=ON \
-      -DARROW_WITH_ZLIB=ON \
-      -DARROW_WITH_ZSTD=ON \
-      -DPARQUET_REQUIRE_ENCRYPTION=ON \
-      <edit>
-      ..
-"""
 
 # bangbang
 abbrevs['!!'] = lambda buffer, word: __xonsh__.history[-1].cmd
 
-#druid is terrible
-abbrevs["nodruid"] = "docker compose stop druid-broker druid-coordinator druid-historical druid-middlemanager druid-zookeeper druid druid-postgres"
-
-def _validate_substrait_yaml(args):
-    ajv validate -s text/simple_extensions_schema.yaml --strict=true --spec=draft2020 -d @(args[0])
-
-aliases["validate"] = _validate_substrait_yaml
