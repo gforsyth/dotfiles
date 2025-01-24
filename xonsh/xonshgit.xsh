@@ -18,6 +18,7 @@ def _clone_or_cd(args):
     url = args[0]
     match = re.findall(GIT_REGEX, url)
     base, org, repo = match[0]
+    repo = repo.removesuffix(".git")
 
     if base:
         base = home / base
