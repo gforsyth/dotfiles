@@ -56,6 +56,7 @@ $VI_MODE=True
 $BROWSER="firefox"
 $EDITOR="/usr/bin/vim"
 $SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
+$SHELL="xonsh"
 
 #Encoding
 $LANG="en_US.UTF-8"
@@ -93,3 +94,4 @@ __xonsh__.execer.exec($(f"{CONDA_PATH}" "shell.xonsh" "hook"),
 _sys.modules["xontrib.conda"] = _mod
 del _sys, _mod, _ModuleType
 # <<< conda initialize <<<
+
