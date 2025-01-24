@@ -12,12 +12,13 @@ if $XONSH_INTERACTIVE:
     xontrib load cmd_done
     import os
 
+
     # Have to override these because they were hardcoded upstream
     Colors.GREEN = "#00441b"
     Colors.WHITE = "#000000"
     Colors.PINK = "#d53e4f"
 
-    $POWERLINE_MODE = "squares"
+    $POWERLINE_MODE = "powerline"
     $PROMPT_FIELDS["user__pl_colors"] = ("YELLOW", "#333333")
     $PROMPT_FIELDS["env_name__pl_colors"] = ("YELLOW", "#333333")
     $PROMPT_FIELDS["cwd__pl_colors"] = ("YELLOW", "#333333")
@@ -30,7 +31,7 @@ if $XONSH_INTERACTIVE:
         "{cwd:{}}",
         "{gitstatus:{}}",
         os.linesep,
-        ">".join(["🐚"] * ($SHLVL-2)) + " ",
+        ">".join(["🐚"] * ($SHLVL-$SHLVLMOD)) + " ",
     ])
 
     $XONTRIB_CD_LONG_DURATION = 10  # notify if command longer than
