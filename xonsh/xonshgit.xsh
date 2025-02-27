@@ -45,7 +45,7 @@ def _clone_or_cd(args):
 def _list_repos():
     p = p"~/github.com".expanduser()
 
-    yield from ('/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir())
+    yield from ('/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir() and not any(f.startswith(".") for f in repo.parts[-2:]))
 
 
 
