@@ -48,7 +48,8 @@ aliases["music"] = "mps"
 aliases["dd"] = "dcfldd"
 aliases["lookup"] = "/usr/bin/dict" #collision with Python dict
 aliases["xo"] = "xdg-open"
-aliases["htop"] = "btop"
+if ![which btop a>out]:
+    aliases["htop"] = "btop"
 
 # always send xclip stuff to the system clipboard
 aliases["xclip"] = ["xclip", "-sel", "clip"]
@@ -60,9 +61,11 @@ aliases["bd..."] = "bd and bd and bd"
 aliases["bd...."] = "bd.. and bd.."
 
 ## Rust utils
-aliases["cat"] = "bat"
-aliases["tree"] = "exa -T"
-aliases["ls"] = "exa"
+if ![which bat a>out]:
+    aliases["cat"] = "bat"
+if ![which exa a>out]:
+    aliases["tree"] = "exa -T"
+    aliases["ls"] = "exa"
 
 ##dont go boom aliases
 aliases["rm"] = "rm -I"
