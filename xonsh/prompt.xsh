@@ -8,7 +8,7 @@ $PROMPT = $PROMPT.replace("BOLD_GREEN", "BOLD_WHITE")
 
 if $XONSH_INTERACTIVE:
 
-    if ![which starship all>err]:
+    if ![which starship all> /dev/null]:
         execx($(starship init xonsh))
     else:
         $POWERLINE_MODE = "powerline"

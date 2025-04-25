@@ -28,7 +28,7 @@ def _loc(args, stdin=None):
     """Helper for grabbing file location of python library in local env"""
     pkg, *_ = args
     python -c @(f"import {pkg}; print({pkg}.__file__)")
-    
+
 
 # Need to reset $SHELL for sysz to work
 aliases["sysz"] = _sysz
@@ -48,7 +48,7 @@ aliases["music"] = "mps"
 aliases["dd"] = "dcfldd"
 aliases["lookup"] = "/usr/bin/dict" #collision with Python dict
 aliases["xo"] = "xdg-open"
-if ![which btop a>out]:
+if ![which btop all> /dev/null]:
     aliases["htop"] = "btop"
 
 # always send xclip stuff to the system clipboard
@@ -61,9 +61,9 @@ aliases["bd..."] = "bd and bd and bd"
 aliases["bd...."] = "bd.. and bd.."
 
 ## Rust utils
-if ![which bat a>out]:
+if ![which bat all> /dev/null]:
     aliases["cat"] = "bat"
-if ![which exa a>out]:
+if ![which exa all> /dev/null]:
     aliases["tree"] = "exa -T"
     aliases["ls"] = "exa"
 
@@ -149,3 +149,10 @@ abbrevs["vlcshare"] = "cvlc --no-video-deco --no-embedded-video --screen-fps=15 
 # bangbang
 abbrevs['!!'] = lambda buffer, word: __xonsh__.history[-1].cmd
 
+# check wheel size downloading only headers
+abbrevs["wheelsize"] = "curl -sI <edit> | grep -i Content-Length"
+
+# github action watcher
+abbrevs["runs"] = """with ${...}.swap({'GITHUB_AUTH': $(gh auth token)}):
+    watch_gha_runs --sha $(git rev-parse HEAD)
+"""
