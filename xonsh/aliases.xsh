@@ -141,6 +141,9 @@ abbrevs["npi"] = "nix profile install 'nixpkgs#<edit>'"
 abbrevs["npl"] = "nix profile list"
 abbrevs["npr"] = "nix profile remove <edit>"
 abbrevs["nixb"] = "nix build \"<edit>\" --fallback --keep-going --print-build-logs"
+#pixi
+abbrevs["pgi"] = "pixi global install <edit>"
+abbrevs["pgu"] = "pixi global uninstall <edit>"
 # gh
 abbrevs["prc"] = "gh pr checkout <edit>"
 # vlcsharescreen
