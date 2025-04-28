@@ -9,7 +9,7 @@ Fix is to add `mem_sleep_default=deep` to kernel cmdline and regenerate grub con
 
 ```
 sudo systemctl enable pcscd.service
-sudo systemctl start pcscd.service 
+sudo systemctl start pcscd.service
 sudo systemctl status pcscd.service
 ```
 
@@ -33,7 +33,7 @@ gpg --import /path/to/mastersub2021.key
 ```
 
 ## change expiry dates
-set `$KEYID`, then 
+set `$KEYID`, then
 
 ```
 gpg --expert --edit-key $KEYID
@@ -50,7 +50,7 @@ to select all subkeys, then type `expire` (won't expire things) to change expiry
 
 then type `save` and exit.
 
-## export 
+## export
 Now export the new public key
 
 ```
@@ -92,3 +92,16 @@ then `gpg --card-status` to confirm yubikey is working.
 * feh
 * flameshot
 * gopass
+
+# Firefox configs that are annoying
+
+### Enable adding custom search engines
+
+in `about:config`, create and set to `true`: `browser.urlbar.update2.engineAliasRefresh`
+
+### Make sure apt firefox is default
+
+```
+xdg-mime default firefox.desktop x-scheme-handler/https
+xdg-mime default firefox.desktop x-scheme-handler/http
+```
