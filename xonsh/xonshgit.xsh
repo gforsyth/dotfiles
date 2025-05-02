@@ -1,3 +1,5 @@
+import itertools
+import os
 import re
 from pathlib import Path
 
@@ -6,7 +8,13 @@ from xonsh.completers.tools import *
 
 __all__ = ()
 
-GIT_REGEX = re.compile(r"(github.com)?[/|:]?([A-Za-z-_0-9]+)/([A-Za-z-_0-9\.]+)?")
+_FORGES = ["github.com"]
+if "FORGE" in ${...}:
+    _FORGES.append($FORGE)
+
+_forge_str = "|".join(_FORGES)
+
+_GIT_REGEX = re.compile(rf"({_forge_str})?[/|:]?([A-Za-z-_0-9]+)/([A-Za-z-_0-9\.]+)?")
 
 def _clone_or_cd(args):
     home = p"~".expanduser()
@@ -16,8 +24,8 @@ def _clone_or_cd(args):
         return
 
     url = args[0]
-    match = re.findall(GIT_REGEX, url)
-    base, org, repo = match[0]
+    match = re.findall(_GIT_REGEX, url)
+    base, org, repo = map(str.lower, match[0])
     repo = repo.removesuffix(".git")
 
     if base:
@@ -38,15 +46,14 @@ def _clone_or_cd(args):
             ![git clone @(url)]
             _change_working_directory(repo.__str__())
     else:
-        ghrepo = home / "github.com" / org / repo
-        _change_working_directory(ghrepo)
+        for forge in _FORGES:
+            if (ghrepo := home / forge / org / repo).exists():
+                _change_working_directory(ghrepo)
 
 
 def _list_repos():
-    p = p"~/github.com".expanduser()
-
-    yield from ('/'.join(repo.parts[-2:]) for repo in p.glob('*/*') if repo.is_dir() and not any(f.startswith(".") for f in repo.parts[-2:]))
-
+    superglob = itertools.chain.from_iterable([pf"~/{forge}".expanduser().glob("*/*") for forge in _FORGES])
+    yield from ('/'.join(repo.parts[-2:]) for repo in superglob if repo.is_dir() and not any(f.startswith(".") for f in repo.parts[-2:]))
 
 
 @contextual_completer
