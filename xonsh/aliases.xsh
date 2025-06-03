@@ -156,6 +156,11 @@ abbrevs['!!'] = lambda buffer, word: __xonsh__.history[-1].cmd
 abbrevs["wheelsize"] = "curl -sI <edit> | grep -i Content-Length"
 
 # github action watcher
-abbrevs["runs"] = """with ${...}.swap({'GITHUB_AUTH': $(gh auth token)}):
+abbrevs["runs"] = """with ${...}.swap({'GITHUB_TOKEN': $(gh auth token)}):
     watch_gha_runs --sha $(git rev-parse HEAD)
 """
+
+# myprs
+abbrevs["myprs"] = "gh search prs --author @me --state open"
+abbrevs["myprsgreen"] = "gh search prs --author @me --state open --checks success"
+abbrevs["myprsred"] = "gh search prs --author @me --state open --checks failure"
