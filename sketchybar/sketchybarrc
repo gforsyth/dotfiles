@@ -78,9 +78,28 @@ sketchybar --add item chevron left \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
-           --add item volume right \
+
+### time and date
+sketchybar -m --add       item               time             right                                        \
+              --set       time               update_freq=2                                                 \
+                                             icon.padding_right=0                                          \
+                                             label.padding_left=0                                          \
+                                             script="~/.config/sketchybar/plugins/time.sh"                 \
+                                                                                                           \
+              --add       item               date             right                                        \
+              --set       date               update_freq=60                                                \
+                                             background.color=0xffe8e8e9                                   \
+                                             label.color=0xff000000                                        \
+                                             label.font="SF Pro:Semibold:12"                               \
+                                             icon.padding_right=0                                          \
+                                             label.padding_left=0                                          \
+                                             background.height=15                                          \
+                                             background.corner_radius=4                                    \
+                                             script="~/.config/sketchybar/plugins/date.sh"
+
+#sketchybar --add item clock right \
+#           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+sketchybar --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change \
            --add item battery right \
@@ -129,3 +148,4 @@ sketchybar -m --add       item               network_up left                    
                                              icon=                                                         \
                                              icon.highlight_color=0xff10528c                               \
                                              y_offset=-5
+                                            
