@@ -1,0 +1,9 @@
+font-family = 0xProto Nerd Font Mono
+
+command = /home/gforsyth/miniforge3/bin/xonsh
+
+window-decoration = none
+
+theme = GruvboxDarkHard
+
+custom-shader = /home/gforsyth/github.com/hackr-sh/ghostty-shaders/cubes.glsl
