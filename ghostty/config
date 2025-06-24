@@ -1,6 +1,6 @@
 font-family = 0xProto Nerd Font Mono
 
-command = /home/gforsyth/miniforge3/bin/xonsh
+command = $HOME/miniforge3/bin/xonsh
 
 window-decoration = none
 
