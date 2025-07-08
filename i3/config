@@ -211,6 +211,10 @@ bindsym Print exec flameshot gui
 # Map Scroll Lock to suspend
 bindsym Scroll_Lock exec systemctl suspend
 
+# Map monitor brightness keys
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
 
 # float the vlc share window so it doesn't tile
 for_window [window_role="vlc-video"] floating enable move down 100px;
