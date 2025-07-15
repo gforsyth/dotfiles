@@ -1,5 +1,7 @@
 # Reference: https://github.com/i3/i3/blob/next/etc/config
 
+start-at-login = true
+
 # i3 doesn't have "normalizations" feature that why we disable them here.
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.
@@ -105,3 +107,6 @@ end if'
     l = 'resize width +50'
     enter = 'mode main'
     esc = 'mode main'
+
+[gaps]
+outer.top = 40
