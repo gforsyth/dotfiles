@@ -13,9 +13,16 @@ ICONS = {
     "firefox": "",
 }
 
+RENAMES = {
+    "microsoft outlook": "outlook",
+    "microsoft teams": "teams"
+}
+
+$WINDOWS = map(lambda x: RENAMES.get(x, x), $AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR)
+
 if $SENDER == "front_app_switched":
     sketchybar --set $NAME label=$INFO
-    sketchybar --set @("space." + $AEROSPACE_FOCUSED_MONITOR_NO) label=@(" | ".join($AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR))
+    sketchybar --set @("space." + $AEROSPACE_FOCUSED_MONITOR_NO) label=@($AEROSPACE_FOCUSED_MONITOR_NO + ": " + " | ".join($WINDOWS))
 
 
 #if [ "$SENDER" = "front_app_switched" ]; then
