@@ -7,37 +7,28 @@
 
 $AEROSPACE_FOCUSED_MONITOR_NO=$(aerospace list-workspaces --focused).strip("\n").split("\n")[0]
 
-$AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR=set(map(lambda x: x.split("|")[1].strip().lower(),$(aerospace list-windows --workspace $AEROSPACE_FOCUSED_MONITOR_NO).strip("\n").split("\n")))
+_windows = $(aerospace list-windows --workspace $AEROSPACE_FOCUSED_MONITOR_NO)
 
-ICONS = {
-    "firefox": "",
-}
+if _windows:
+    $AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR=set(map(lambda x: x.split("|")[1].strip().lower(), _windows.strip("\n").split("\n")))
 
-RENAMES = {
-    "microsoft outlook": "outlook",
-    "microsoft teams": "teams"
-}
+    RENAMES = {
+        "microsoft outlook": "outlook",
+        "microsoft teams": "teams",
+        "ghostty": "",
+        "firefox": "",
+    }
 
-$WINDOWS = map(lambda x: RENAMES.get(x, x), $AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR)
+    $WINDOWS = list(map(lambda x: RENAMES.get(x, x), $AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR))
+
+else:
+    $WINDOWS = []
 
 if $SENDER == "front_app_switched":
     sketchybar --set $NAME label=$INFO
-    sketchybar --set @("space." + $AEROSPACE_FOCUSED_MONITOR_NO) label=@($AEROSPACE_FOCUSED_MONITOR_NO + ": " + " | ".join($WINDOWS))
+    if $WINDOWS:
+        sketchybar --set @("space." + $AEROSPACE_FOCUSED_MONITOR_NO) label=@($AEROSPACE_FOCUSED_MONITOR_NO + ": " + " | ".join($WINDOWS))
 
-
-#if [ "$SENDER" = "front_app_switched" ]; then
-#  sketchybar --set "$NAME" label="$INFO"
-
-#  source $HOME/.config/sketchybar/plugins/icon_map.sh
-#  apps=$AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR
-#  icon_strip=" "
-#  if [ "${apps}" != "" ]; then
-#    while read -r app
-#    do
-#      icon_strip+=" $(icon_map "$app")"
-#    done <<< "${apps}"
-#  else
-#    icon_strip=" —"
-#  fi
-#  sketchybar --set space.$AEROSPACE_FOCUSED_MONITOR_NO label="$icon_strip"
-#fi
+for i in range(1, 11):
+    if not $(aerospace list-windows --workspace @(i)):
+        sketchybar --set @(f"space.{i}") @(f"label={i}")
