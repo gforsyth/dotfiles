@@ -12,6 +12,7 @@ psst = "🎶"
 zoom = "📹"
 discord = "💬"
 bitwarden = "🔒"
+ghostty = ""
 
 [aliases.class]
 Slack = "slack"
@@ -22,6 +23,7 @@ Signal = "signal"
 ".*launch?.*" = "zoom"
 Discord = "discord"
 Bitwarden = "bitwarden"
+".*ghostty" = "ghostty"
 
 [general]
 separator = "  "
