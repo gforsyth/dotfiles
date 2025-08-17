@@ -1,5 +1,5 @@
 configuration {
-font: "0xProto Nerd Font 12";
+font: "0xProto Nerd Font 14";
 show-icons: true;
 terminal: "kitty";
 matching: "fuzzy";
