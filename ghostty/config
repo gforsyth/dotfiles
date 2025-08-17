@@ -1,9 +1,11 @@
 font-family = 0xProto Nerd Font Mono
 
-command = $HOME/miniforge3/bin/xonsh
+command = $HOME/.pixi/bin/xonsh
 
 window-decoration = none
 
 theme = GruvboxDarkHard
 
-custom-shader = /home/gforsyth/github.com/hackr-sh/ghostty-shaders/cubes.glsl
+font-size = 18
+
+#custom-shader = /home/gil/.config/ghostty/shaders/retro-terminal.glsl
