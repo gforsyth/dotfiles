@@ -25,6 +25,17 @@ Discord = "discord"
 Bitwarden = "bitwarden"
 ".*ghostty" = "ghostty"
 
+[aliases.app_id]
+Slack = "slack"
+Emacs = "emacs"
+Zotero = "zotero"
+Signal = "signal"
+".*action=join.*" = "zoom"
+".*launch?.*" = "zoom"
+Discord = "discord"
+Bitwarden = "bitwarden"
+".*ghostty" = "ghostty"
+
 [general]
 separator = "  "
 default_icon = "?"
