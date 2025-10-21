@@ -4,7 +4,7 @@ command = $HOME/.pixi/bin/xonsh
 
 window-decoration = none
 
-theme = GruvboxDarkHard
+theme = Gruvbox Dark
 
 font-size = 18
 
