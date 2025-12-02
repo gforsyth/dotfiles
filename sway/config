@@ -252,7 +252,7 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 output eDP-1 scale 1.5
 
 # auto workspace renamer
-#exec_always --no-startup-id /home/gil/.nix-profile/bin/i3wsr
+exec_always --no-startup-id /usr/bin/i3wsr
 
 #exec emacs
 #exec zotero
