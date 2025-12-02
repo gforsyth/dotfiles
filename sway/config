@@ -220,6 +220,9 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 # float the vlc share window so it doesn't tile
 for_window [window_role="vlc-video"] floating enable move down 100px;
 
+# float the pinentry-gtk window
+for_window [instance="pinentry-gtk"] floating enable
+
 # start some stuff
 # network manager
 #exec_always --no-startup-id nm-applet
