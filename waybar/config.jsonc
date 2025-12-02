@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
+    //"height": 24, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 2, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -19,6 +19,7 @@
 //        "mpd",
         "idle_inhibitor",
         "pulseaudio",
+        "custom/tailscale",
         "network",
         "power-profiles-daemon",
         "cpu",
@@ -28,7 +29,6 @@
         "keyboard-state",
 //        "sway/language",
         "battery",
-        "battery#bat2",
         "clock",
         "tray",
         "custom/power"
@@ -216,5 +216,18 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+    "custom/tailscale" : {
+        "exec": "~/.config/waybar/scripts/waybar-tailscale.sh --status",
+        "on-click": "exec ~/.config/waybar/scripts/waybar-tailscale.sh --toggle",
+        "exec-on-event": true,
+        "format": "TS: {icon} 󰩈: {text}",
+        "format-icons": {
+            "connected": "",
+            "stopped": ""
+        },
+        "tooltip": true,
+        "return-type": "json",
+        "interval": 3
     }
 }
