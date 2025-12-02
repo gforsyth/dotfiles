@@ -244,6 +244,13 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/set
 # start waybar
 exec waybar
 
+# start notification daemon and bind keys for control center
+exec swaync
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
+# sway set display scale
+output eDP-1 scale 1.5
+
 # auto workspace renamer
 #exec_always --no-startup-id /home/gil/.nix-profile/bin/i3wsr
 
