@@ -164,3 +164,7 @@ abbrevs["runs"] = """with ${...}.swap({'GITHUB_TOKEN': $(gh auth token)}):
 abbrevs["myprs"] = "gh search prs --author @me --state open"
 abbrevs["myprsgreen"] = "gh search prs --author @me --state open --checks success"
 abbrevs["myprsred"] = "gh search prs --author @me --state open --checks failure"
+
+# tailscale
+abbrevs["tul"] = "sudo tailscale up --exit-node=library --operator=gil"
+abbrevs["tu"] = "sudo tailscale up --exit-node= --operator=gil"
