@@ -6,6 +6,6 @@ window-decoration = none
 
 theme = Gruvbox Dark
 
-font-size = 18
+font-size = 12
 
 #custom-shader = /home/gil/.config/ghostty/shaders/retro-terminal.glsl
