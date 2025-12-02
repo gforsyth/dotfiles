@@ -189,13 +189,14 @@ set $lightgray #bdae93
 #client.urgent           $red $red $white $red $red
  
 # force windows to named workspaces
-assign [class="(?i)Emacs"] number 1
-assign [class="(?i)firefox"] number 2
-assign [class="PrusaSlicer"] number 5
-assign [class="Pavucontrol"] number 8
-assign [class="(?i)Zotero"] number 8
-assign [class="(?i)nheko"] number 9
-assign [class="Slack"] number 10
+assign [app_id="(?i)Emacs"] workspace number 1
+assign [app_id="(?i)firefox"] workspace number 2
+assign [app_id="PrusaSlicer"] workspace number 5
+assign [app_id="Pavucontrol"] workspace number 8
+assign [app_id="(?i)Zotero"] workspace number 8
+assign [app_id="(?i)signal"] workspace number 8
+assign [app_id="(?i)nheko"] workspace number 9
+assign [app_id="Slack"] workspace number 10
 
 # map XF86Display to toggle external monitor
 bindsym XF86Display exec autorandr --change
