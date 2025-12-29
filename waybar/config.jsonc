@@ -191,7 +191,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "~/.config/waybar/scripts/toggle-audio-sink.sh"
     },
     "custom/media": {
         "format": "{icon} {text}",
