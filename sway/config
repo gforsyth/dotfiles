@@ -260,8 +260,12 @@ exec_always --no-startup-id /usr/bin/i3wsr
 #exec pavucontrol
 
 # sway lock after 5 minutes, sleep after 10
-#exec swayidle -w \
-#	timeout 300 'swaylock -f -c 000000' \
-#	timeout 600 'swaymsg "output * dpms off"' \
-#		resume 'swaymsg "output * dpms on"' \
-#	before-sleep 'swaylock -f -c 000000'
+# configured in .config/swayidle/config
+# exec swayidle -w
+
+bindsym $mod+x mode "xkill"
+mode "xkill" {
+bindsym --whole-window button1 kill
+bindsym Escape mode "default"
+bindsym Return mode "default"
+}
