@@ -233,14 +233,6 @@ for_window [instance="pinentry-gtk"] floating enable
 ## bluetooth applet
 #exec_always --no-startup-id blueman-applet
 
-exec solaar -w hide
-
-# remap caps lock to ctrl
-exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps" &> /tmp/setxkblog
-
-# start polybar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # start waybar
 exec waybar
 
@@ -268,4 +260,9 @@ mode "xkill" {
 bindsym --whole-window button1 kill
 bindsym Escape mode "default"
 bindsym Return mode "default"
+}
+ 
+# Custom keymap
+input * {
+    xkb_options caps:super
 }
