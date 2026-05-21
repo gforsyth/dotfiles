@@ -81,6 +81,11 @@ gpg --edit-key $KEYID
 
 then `gpg --card-status` to confirm yubikey is working.
 
+## publish renewed key
+
+```
+gpg --send-key $KEYID
+```
 
 
 # Stuff to install on machines (via mamba or nix)
