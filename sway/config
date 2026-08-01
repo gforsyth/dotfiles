@@ -266,3 +266,7 @@ bindsym Return mode "default"
 input * {
     xkb_options caps:super
 }
+
+# Add these two env-vars to the systemd user session so that
+# xdg-desktop-portal correctly uses a file picker
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
