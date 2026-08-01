@@ -168,3 +168,7 @@ abbrevs["myprsred"] = "gh search prs --author @me --state open --checks failure"
 # tailscale
 abbrevs["tul"] = "sudo tailscale up --exit-node=library --operator=gil"
 abbrevs["tu"] = "sudo tailscale up --exit-node= --operator=gil"
+abbrevs["tud"] = "sudo tailscale down"
+
+# help me learn new wayland stuff
+aliases["arandr"] = "wdisplays"
